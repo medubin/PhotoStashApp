@@ -12,6 +12,7 @@ var PhotosIndex = React.createClass({
       return (
       <li key={idx} photo={el}>
         {el.user_id + "----" + el.image + "----" + el.caption}
+        <img src={el.image}/>
       </li>
       );
     });

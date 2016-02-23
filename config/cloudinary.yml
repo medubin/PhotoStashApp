@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: photostash
+  api_key: '622322543768893'
+  api_secret: zlybDF1j1tWicgBwje6VHuc2B3I
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: photostash
+  api_key: '622322543768893'
+  api_secret: zlybDF1j1tWicgBwje6VHuc2B3I
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: photostash
+  api_key: '622322543768893'
+  api_secret: zlybDF1j1tWicgBwje6VHuc2B3I
+  enhance_image_tag: true
+  static_image_support: false

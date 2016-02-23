@@ -49,7 +49,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Photos can be created and read and destroyed through
 the API.
 
-- [ ] create `Photo` model
+- [x] create `Photo` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for photos (`PhotosController`)
 - [ ] jBuilder views for photos
