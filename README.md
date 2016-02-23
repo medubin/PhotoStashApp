@@ -17,9 +17,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Post photos
 - [ ] Follow other users
 - [ ] Add captions and hash tags to photos
-- [ ] Tag other users in photos
-- [ ] Comments on a photo
-- [ ] Search for a photo by hash tag
+
 
 ## Design Docs
 * [View Wireframes][views]
@@ -40,11 +38,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [X] create new project
+- [X] create `User` model
+- [X] authentication
+- [X] user signup/signin pages
+- [X] blank landing page after signin
 
 ### Phase 2: Photo Model, API, and basic APIUtil (1.5 days / 2.0 days total)
 
@@ -106,7 +104,17 @@ user interface.
 - [ ] Style new elements
 
 
-### Phase 7: Hash Tags (1.5 days / 9.5 days total)
+
+### Phase 7: Styling Cleanup and Seeding (0.5 day / 8.5 days total)
+
+**objective:** Make the site feel more cohesive and awesome.
+
+- [ ] Get feedback on my UI from others
+- [ ] Refactor HTML classes & CSS rules
+- [ ] Add modals, transitions, and other styling flourishes.
+<!--  bonus -->
+
+### Phase 8: Hash Tags (1.5 days / 10.0 days total)
 
 **Objective:** Photos can be tagged with multiple tags, and tags are searchable.
 
@@ -117,14 +125,6 @@ user interface.
 - [ ] Style new elements
 
 
-### Phase 8: Styling Cleanup and Seeding (0.5 day / 10.0 days total)
-
-**objective:** Make the site feel more cohesive and awesome.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
-
 ### Bonus Features (TBD)
   - [ ] Like other users photos
   - [ ] Tag users in a photo
@@ -133,6 +133,9 @@ user interface.
   - [ ] Apply a filter to a photo.
   - [ ] Infinite scroll for Photos Index
   - [ ] Multiple sessions
+  - [ ] Tag other users in photos
+  - [ ] Comments on a photo
+  - [ ] Search for a photo by hash tag
 
 
 

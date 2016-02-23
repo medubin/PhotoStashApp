@@ -10,8 +10,8 @@
 
 
 ### Views
-* users/new.json.jbuilder
-* session/new.json.jbuilder
+* users/new.html.erb
+* session/new.html.erb
 
 ## Flux
 ### Views (React Components)
@@ -24,3 +24,6 @@
 
 ## Gems/Libraries
 * BCrypt (Gem)
+* pry-rails
+* better_errors
+* binding_of_caller

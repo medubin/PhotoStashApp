@@ -37,4 +37,5 @@
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
+* Babel
 * Twitter Bootstrap

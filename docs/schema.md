@@ -10,24 +10,23 @@ username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
-
 ## photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-image       | blob      | not null
+image       | string    | not null
 caption     | text      |
-location_id | integer   | not null, foreign key (references locations), indexed
+location_id | integer   | foreign key (references locations), indexed
 filter      | string    |
 
-
-##likes
+##follows
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-photo_id    | integer   | not null, foreign key (references photos), indexed
+follower_id | integer   | not null, foreign key (references users), indexed
+followee_id | integer   | not null, foreign key (references users), indexed
+
 
 
 ##comments
@@ -39,12 +38,15 @@ photo_id    | integer   | not null, foreign key (references photos), indexed
 body        | text      | not null
 
 
-##follows
+
+##likes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-follower_id | integer   | not null, foreign key (references users), indexed
-followee_id | integer   | not null, foreign key (references users), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
+photo_id    | integer   | not null, foreign key (references photos), indexed
+
+
 
 
 ##hash_tags

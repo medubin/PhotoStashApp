@@ -41,7 +41,7 @@
 - `GET /api/users/:id/followees`
   - index of all followees for a user
 - `POST /api/users/:id/follow`
-- `DELETE /api/users/:id/followees/:id`
+- `DELETE /api/users/:id/follow/`
 
 ### Hash Tags
 

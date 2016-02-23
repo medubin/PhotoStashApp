@@ -13,29 +13,32 @@ Holds all persisted Photo data.
 - `PhotoIndex` (passes to `PhotoIndexItem` via props)
 - `PhotoDetail`
 
-### PhotoFormStore
-
-Holds un-persisted Photo data to send to the API.
-
-##### Actions:
-- `receivePhotoFormParams`
-
-##### Listeners:
-- `PhotoForm`
-
-### FollowStore
+### FollowersStore
 
 Holds all persisted follow data.
-
+<!-- split into two stores!! -->
 ##### Actions:
 - `receiveAllFollowers`
-- `receiveAllFollowees`
 - `addFollower`
 - `removeFollower`
 
 ##### Listeners:
 - `FollowerIndex`
+
+
+
+
+### FolloweesStore
+
+Holds all persisted follow data.
+<!-- split into two stores!! -->
+##### Actions:
+
+- `receiveAllFollowees`
+
+##### Listeners:
 - `FolloweeIndex`
+
 
 
 ### CommentStore

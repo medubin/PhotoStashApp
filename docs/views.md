@@ -1,6 +1,6 @@
 # View Wireframes
 
-## New User
+<!-- ## New User
 ![new-user]
 
 ## New Session
@@ -13,10 +13,11 @@
 ![notebooks]
 
 ## NotebookForm
-![notebook-form]
+![notebook-form] -->
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[new-user]: ./wireframes/sign_up.png
+[new-session]: ./wireframes/Sign_in_wireframe.png
+[feed]: ./wireframes/feed.png
+[user_profile]: ./wireframes/profile.png
+[user_profile-image-selected]: ./wireframes/profile_wireframe_photo_selected.png
+[upload-photo]: ./wireframes/upload_photo.png
