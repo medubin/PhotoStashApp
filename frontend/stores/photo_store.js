@@ -22,4 +22,5 @@ PhotoStore.all = function() {
 };
 
 
+
 module.exports = PhotoStore;
