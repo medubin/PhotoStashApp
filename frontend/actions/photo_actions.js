@@ -12,7 +12,10 @@ var PhotoActions = {
 
   retrieveAllPhotos: function() {
     ApiUtil.fetchAllPhotos(this.recieveAllPhotos);
-  }
+  },
+
+
+
 };
 
 module.exports = PhotoActions;

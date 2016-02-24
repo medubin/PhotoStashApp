@@ -1,10 +1,14 @@
 var React = require('react');
+
 var Header = React.createClass({
+
+
+
 
   render: function() {
     return (
       <header>
-        test
+        {this.props.currentUser.username}
       </header>
     );
   }

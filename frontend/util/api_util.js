@@ -5,6 +5,14 @@ var ApiUtil = {
       dataType: 'json',
       success: callback
     });
+  },
+
+  fetchCurrentUser: function(callback) {
+    $.ajax({
+      url: 'api/session',
+      dataType: 'json',
+      success: callback
+    });
   }
 };
 
