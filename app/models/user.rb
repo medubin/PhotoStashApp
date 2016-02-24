@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many :photos
+
 
   def self.find_by_credentials(username, password)
     user = find_by(username: username)

@@ -6,12 +6,16 @@ var PhotoUploader = React.createClass({
 
 upload: function (e) {
   e.preventDefault();
-  cloudinary.openUploadWidget({cloud_name: window.CLOUD_NAME, upload_preset: window.UPLOAD_PRESET}, function(error, results){
+  cloudinary.openUploadWidget({
+    cloud_name: window.CLOUD_NAME,
+    upload_preset: window.UPLOAD_PRESET},
+    function(error, results){
+      
     if(!error){
       var photo = {image: results[0].url};
       PhotoActions.postPhoto(photo);
     }
-  }.bind(this));
+  });
 },
 
   render: function() {
