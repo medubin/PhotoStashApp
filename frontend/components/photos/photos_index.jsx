@@ -1,6 +1,7 @@
 var React = require('react');
 var PhotoStore = require('../../stores/photo_store');
 var PhotoActions = require('../../actions/photo_actions');
+var PhotoIndexItem = require('./photo_index_item');
 
 var PhotosIndex = React.createClass({
   getInitialState: function() {
@@ -10,10 +11,8 @@ var PhotosIndex = React.createClass({
   createPhotoList: function() {
     var listOfPhotos = this.state.photos.map(function(el, idx) {
       return (
-      <li key={idx} photo={el}>
-        {el.user_id + "----" + el.image + "----" + el.caption}
-        <img src={el.image}/>
-      </li>
+      <PhotoIndexItem key={idx} photo={el} className='feedItem'/>
+
       );
     });
     return listOfPhotos;

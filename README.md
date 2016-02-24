@@ -49,13 +49,13 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Photos can be created and read and destroyed through
 the API.
 
-- [x] create `Photo` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for photos (`PhotosController`)
-- [ ] jBuilder views for photos
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [X] create `Photo` model
+- [X] seed the database with a small amount of test data
+- [X] CRUD API for photos (`PhotosController`)
+- [X] jBuilder views for photos
+- [X] setup Webpack & Flux scaffold
+- [X] setup `APIUtil` to interact with the API
+- [X] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (1.5 days / 3.5 days total)
 

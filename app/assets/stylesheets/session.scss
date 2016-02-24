@@ -1,3 +1,30 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.logo {
+
+  font-size: 32px;
+  color: blue;
+  font-family:  Helvetica;
+  font-style: italic;
+  padding-bottom: 20px;
+
+
+}
+
+section {
+    border: 1px #000 solid;
+    display: inline-block;
+    background-color: #ccc;
+    padding: 20px;
+    margin: auto;
+}
+
+input {
+  width: 200px;
+  margin: auto;
+
+}
