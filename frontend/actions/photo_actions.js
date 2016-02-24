@@ -16,6 +16,22 @@ var PhotoActions = {
 
 
 
+  postedPhotoSuccess: function(photo) {
+
+    Dispatcher.dispatch({
+      actionType: PhotoConstants.PHOTO_SAVED,
+      photo: photo
+    });
+  },
+
+  postPhoto: function(photo) {
+    ApiUtil.addPhoto(photo, this.postedPhotoSuccess);
+  }
+
+
+
+
+
 };
 
 module.exports = PhotoActions;

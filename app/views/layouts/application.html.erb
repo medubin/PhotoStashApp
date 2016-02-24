@@ -8,7 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <script type="text/javascript">
+    window.UPLOAD_PRESET = "<%= ENV["UPLOAD_PRESET"] %>";
+    window.CLOUD_NAME = "<%= ENV["CLOUD_NAME"] %>";
+  </script>
 <%= yield %>
 
 </body>

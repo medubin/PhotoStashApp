@@ -4,21 +4,24 @@ class Api::PhotosController < ApplicationController
     render :index
   end
 
-end
 
 
-def create
-  @photo = Photo.new(photo_params)
-  if @photo.save
-    render :index
-  else
-    #throw errors?
+  def create
+    @photo = Photo.new(photo_params)
+    @photo.user_id = current_user.id if signed_in?
+    puts 'this was created'
+    if @photo.save
+      render :show
+    else
+      #throw errors?
+    end
   end
-end
 
 
-private
+  private
 
-def photo_params
-  params.require(:photo).permit(:user_id, :image, :captions)
+  def photo_params
+    params.require(:photo).permit(:image, :captions)
+  end
+
 end

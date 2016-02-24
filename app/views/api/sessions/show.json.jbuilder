@@ -1,1 +1,1 @@
-@user ? json.extract!(@user, :username) : nil
+@user ? json.extract!(@user, :username, :id) : nil

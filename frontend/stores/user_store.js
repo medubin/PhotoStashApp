@@ -16,6 +16,7 @@ UserStore.__onDispatch = function(payload) {
 UserStore.resetUser = function(user) {
   _currentUser = {};
   _currentUser.username = user.username;
+  _currentUser.id = user.id;
 },
 
 UserStore.currentUser = function() {
