@@ -5,7 +5,7 @@
 
 
 
-
+/*****************HEADER*******************/
 header {
   display: block;
   border: 1px solid #000;
@@ -14,8 +14,15 @@ header {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-
   background-color: #125688;
+  height: 75px;
+}
 
+.logo {
+  float: left;
+}
 
+.username {
+  float: right;
+  margin-right: 100px;
 }

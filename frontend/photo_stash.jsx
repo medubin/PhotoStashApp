@@ -30,6 +30,5 @@ var routes = (
 
 document.addEventListener('DOMContentLoaded', function() {
   var root = document.getElementById('content');
-  console.log('test');
   ReactDOM.render(<Router>{routes}</Router>, root);
 });

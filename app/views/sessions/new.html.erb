@@ -1,24 +1,24 @@
 
-<section>
-  <div class='logo'> PhotoStash </div>
-  Sign In
-  <br>
-  <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
+  <section>
+    <div class='logo'> PhotoStash </div>
+    Sign In
+    <br>
+    <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 
-  <form action='<%=session_url%>' method="post">
-    <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
+    <form action='<%=session_url%>' method="post">
+      <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
 
-    <article>
-      <input type="text" name="user[username]" value='<%=@user.username%>' id='username' placeholder= 'Username'>
-    </article>
+      <article>
+        <input type="text" name="user[username]" value='<%=@user.username%>' id='username' placeholder= 'Username'>
+      </article>
 
-    <article>
-      <input placeholder= 'Password' type="password" name="user[password]" value='<%=@user.password%>' id='password'>
-    </article>
+      <article>
+        <input placeholder= 'Password' type="password" name="user[password]" value='<%=@user.password%>' id='password'>
+      </article>
 
-    <article>
-      <input type="submit" value="Sign In">
-    </article>
+      <article>
+        <input type="submit" value="Log in" class='submitbutton'>
+      </article>
 
-  </form>
+    </form>
 </section>

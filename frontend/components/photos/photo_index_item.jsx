@@ -6,6 +6,7 @@ var PhotoIndexItem = React.createClass({
     return (
       <li className='photo-index-item'>
         <img src={this.props.photo.image}/>
+        <br></br>
         {this.props.photo.user_id + "----" +
          this.props.photo.image + "----" +
          this.props.photo.caption}

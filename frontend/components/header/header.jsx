@@ -1,4 +1,6 @@
 var React = require('react');
+var Logo = require('./logo');
+var UserName = require('./user_name');
 
 var Header = React.createClass({
 
@@ -8,7 +10,8 @@ var Header = React.createClass({
   render: function() {
     return (
       <header>
-        {this.props.currentUser.username}
+        <Logo/>
+        <UserName currentUser={this.props.currentUser}/>
       </header>
     );
   }

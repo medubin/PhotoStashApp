@@ -27,6 +27,12 @@ var PhotosIndex = React.createClass({
     PhotoActions.retrieveAllPhotos();
  },
 
+ componentWillUnmount: function() {
+   this.photoToken.remove();
+ },
+
+
+
  _onChange: function() {
   this.setState({photos: PhotoStore.all()});
 },
