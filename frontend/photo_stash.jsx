@@ -3,6 +3,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
+var IndexRoute = require('react-router').IndexRoute;
+
 
 //Dispatcher
 var Dispatcher = require('./dispatcher/dispatcher');
@@ -12,6 +14,7 @@ var PhotoStore = require('./stores/photo_store');
 
 //Components
 var App = require('./components/app');
+var PhotosIndex = require('./components/photos/photos_index');
 
 //Util
 var ApiUtil = require('./util/api_util');
@@ -24,7 +27,11 @@ window.PhotoStore = PhotoStore;
 window.PhotoActions = PhotoActions;
 
 var routes = (
-  <Route component={App} path = '/'></Route>
+  <Route component={App} path = '/'>
+    <IndexRoute component={PhotosIndex}></IndexRoute>
+  </Route>
+
+  // <Route component={UserPage} path='user'></Route>
 );
 
 

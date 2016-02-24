@@ -62,8 +62,8 @@ the API.
 **Objective:** Photos can be created, read and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [X] setup the flux loop with skeleton files
+- [X] setup React Router
 - implement each photo component, building out the flux loop as needed.
   - [ ] `PhotosIndex`
   - [ ] `PhotoIndexItem`

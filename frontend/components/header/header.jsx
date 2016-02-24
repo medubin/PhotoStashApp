@@ -1,7 +1,9 @@
 var React = require('react');
 var Logo = require('./logo');
 var UserName = require('./user_name');
-var PhotoUploader = require('./photo_uploader');
+var PhotoUploader = require('./photo_uploader_button');
+
+
 
 var Header = React.createClass({
 

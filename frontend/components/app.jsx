@@ -27,7 +27,7 @@ var App = React.createClass({
     return (
       <main >
         <Header currentUser={this.state.currentUser}/>
-        <PhotosIndex />
+         {this.props.children}
       </main>
     );
   }
