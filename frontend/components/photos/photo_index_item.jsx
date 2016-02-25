@@ -5,12 +5,12 @@ var PhotoIndexItem = React.createClass({
   render: function() {
     return (
       <li className='photo-index-item'>
-        <img src={this.props.photo.image}/>
+        <article className='poster'>{this.props.photo.user.username} </article>
         <br></br>
-        {this.props.photo.user.username}
+        <img src={this.props.photo.image} className='image'/>
         <br></br>
-         {this.props.photo.caption}
-         <br></br>
+        <article className='caption'>{this.props.photo.caption}</article>
+
       </li>
     );
   }

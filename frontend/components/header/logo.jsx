@@ -1,12 +1,19 @@
 var React = require('react');
+var History = require('react-router').History;
 
 var Logo = React.createClass({
+  mixins: [History],
+
+
+  _goToRootPage: function() {
+    this.history.pushState(null, '/', {});
+  },
 
   render: function() {
     return (
-      <detail className='logo'>
+      <li className='headerItem' onClick={this._goToRootPage}>
         <img alt="Icon" src="/assets/Logo.png" width='125' />
-      </detail>
+      </li>
     );
   }
 
