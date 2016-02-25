@@ -17,8 +17,6 @@ var UserActions = {
 
 
   recieveSelectedUser: function(selectedUser) {
-    console.log(selectedUser);
-
     Dispatcher.dispatch({
       actionType : UserConstants.SELECTED_USER,
       selectedUser: selectedUser

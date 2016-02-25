@@ -1,5 +1,5 @@
 json.extract!(user, :username)
 
-json.photos(user.photos) do |photo|
+json.photos(user.photos.reverse) do |photo|
   json.extract!(photo, :image)
 end

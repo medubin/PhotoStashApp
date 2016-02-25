@@ -36,7 +36,6 @@ UserStore.currentUser = function() {
 };
 
 UserStore.selectedUser = function() {
-  console.log(_selectedUser);
   return _selectedUser;
 };
 

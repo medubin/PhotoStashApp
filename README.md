@@ -65,9 +65,9 @@ user interface.
 - [X] setup the flux loop with skeleton files
 - [X] setup React Router
 - implement each photo component, building out the flux loop as needed.
-  - [ ] `PhotosIndex`
-  - [ ] `PhotoIndexItem`
-  - [ ] `PhotoForm`
+  - [X] `PhotosIndex`
+  - [X] `PhotoIndexItem`
+  - [X] `PhotoForm`
   - [ ] `PhotoDetail`
 
 
