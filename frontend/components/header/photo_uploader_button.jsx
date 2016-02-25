@@ -9,7 +9,7 @@ var PhotoUploader = React.createClass({
 
 
 
-displayModal: function() {
+toggleModel: function() {
   this.setState({modalShown: !this.state.modalShown });
 
 },
@@ -17,10 +17,10 @@ displayModal: function() {
   render: function() {
     return (
       <div>
-        <detail onClick={this.displayModal}>
+        <detail onClick={this.toggleModel}>
           test
         </detail>
-        {(this.state.modalShown) ? <PhotoForm></PhotoForm> : null}
+        {(this.state.modalShown) ? <PhotoForm toggle={this.toggleModel}></PhotoForm> : null}
       </div>
     );
   }

@@ -7,22 +7,80 @@
 
 /*****************HEADER*******************/
 header {
-  display: block;
-  border: 1px solid #000;
+  display: inline-block;
+  border: 1px solid #ccc;
   font-size: 32px;
   color: #000;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #125688;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin: 0;
+  background-color: #fff;
   height: 75px;
+
 }
 
 .logo {
   float: left;
 }
 
+
+
 .username {
-  float: right;
-  margin-right: 100px;
+
+  display: flex;
+  flex-flow: row wrap;
+
+
+  justify-content: space-around;
 }
+
+.modal {
+    float: none;
+    display: block;
+    width: 300px;
+    padding: 25px 20px;
+    padding-bottom: 35px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    position: relative;
+    transform: translateY(100%);
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    z-index: 99999;
+    text-align: center;
+}
+
+  input, button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    color: #edf4f9;
+    text-decoration: none;
+    background-color: #4f94cf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    font-size: 0.3em;
+    font-weight: bold;
+    padding: 6px 10px 6px 10px;
+    line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }

@@ -24,21 +24,26 @@ var PhotoForm = React.createClass({
 
   onChangeOfCaption: function(e) {
     this.setState({caption:e.target.value});
+
   },
 
   submitPhoto: function() {
     PhotoActions.postPhoto({image: this.state.image, caption: this.state.caption});
+    this.props.toggle();
   },
 
 
 
   render: function() {
     return (
-      <detail>
-        <textarea onChange={this.onChangeOfCaption} placeholder='Caption'>{this.state.caption}</textarea>
+      <detail id='modalPhotoForm' className='modal'>
+        Upload A Photo
+        <br></br>
         <button onClick={this.selectPhoto}>Choose Photo</button>
+        <br></br>
+        <textarea onChange={this.onChangeOfCaption} placeholder='Caption'>{this.state.caption}</textarea>
+        <br></br>
         <input onClick={this.submitPhoto} type='submit'></input>
-
       </detail>
     );
   }
