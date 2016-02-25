@@ -17,9 +17,12 @@ var App = React.createClass({
     UserActions.retrieveCurrentUser();
   },
 
+  componentWillUnmount: function() {
+    this.currentUserToken.remove();
+  },
+
   _onChange: function() {
    this.setState({currentUser: UserStore.currentUser()});
-   console.log(this.state.currentUser);
  },
 
   render: function() {

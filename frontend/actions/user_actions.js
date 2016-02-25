@@ -10,11 +10,27 @@ var UserActions = {
       currentUser: currentUser
     });
   },
-
-
   retrieveCurrentUser: function() {
     ApiUtil.fetchCurrentUser(this.recieveCurrentUser);
+  },
+
+
+
+  recieveSelectedUser: function(selectedUser) {
+    console.log(selectedUser);
+
+    Dispatcher.dispatch({
+      actionType : UserConstants.SELECTED_USER,
+      selectedUser: selectedUser
+    });
+  },
+
+  retrieveSelectedUser: function(selectedUser) {
+
+    ApiUtil.fetchSelectedUser(selectedUser, this.recieveSelectedUser);
   }
+
+
 
 
 };

@@ -1,0 +1,11 @@
+CLOUDINARY
+
+instead of doing window.CLOUD_NAME
+you can add erb to the js file that uses it
+and use <%= %> to add ruby
+
+theme: "purple" in options changes the upload window
+
+Figaro.env.apiKey === ENV['apiKey']
+
+options hash can also do cropping and resizing and customizing

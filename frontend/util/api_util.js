@@ -15,6 +15,18 @@ var ApiUtil = {
     });
   },
 
+
+  fetchSelectedUser: function(user, callback) {
+    $.ajax({
+      url: 'api/users/' + user.id,
+      dataType: 'json',
+      data: {user: user},
+      success: callback,
+
+    });
+
+  },
+
   addPhoto: function(photo, callback) {
     $.ajax({
       url: 'api/photos',
@@ -26,6 +38,7 @@ var ApiUtil = {
       }
     });
   }
+
 
 
 };

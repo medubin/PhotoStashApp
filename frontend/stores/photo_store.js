@@ -9,7 +9,7 @@ PhotoStore.resetPhotos = function(photos) {
 };
 
 PhotoStore.addPhoto = function(photo) {
-  _photos.push(photo);
+  _photos.unshift(photo);
 };
 
 PhotoStore.__onDispatch = function(payload) {

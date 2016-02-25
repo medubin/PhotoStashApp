@@ -13,6 +13,7 @@ var PhotoForm = React.createClass({
   selectPhoto: function (e) {
     e.preventDefault();
     cloudinary.openUploadWidget({
+      // make options a hash outside of call
       cloud_name: window.CLOUD_NAME,
       upload_preset: window.UPLOAD_PRESET},
       function(error, results){

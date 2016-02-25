@@ -6,7 +6,7 @@ var UserName = React.createClass({
 
 
   _goToUserPage: function() {
-    this.history.pushState(null, '/user/', {});
+    this.history.pushState(null, '/users/' + this.props.currentUser.username, {});
   },
 
   render: function() {

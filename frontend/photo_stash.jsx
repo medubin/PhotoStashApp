@@ -23,16 +23,18 @@ var ApiUtil = require('./util/api_util');
 
 //Actions
 var PhotoActions = require('./actions/photo_actions');
+var UserActions = require('./actions/user_actions');
 
 
 //Testing
 window.PhotoStore = PhotoStore;
 window.PhotoActions = PhotoActions;
+window.UserActions = UserActions;
 
 var routes = (
   <Route component={App} path = '/'>
     <IndexRoute component={PhotosIndex}></IndexRoute>
-    <Route component={UserPage} path='user'></Route>
+    <Route component={UserPage} path='users/:username'></Route>
   </Route>
 
 );
