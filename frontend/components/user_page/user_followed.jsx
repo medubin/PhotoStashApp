@@ -9,7 +9,11 @@ var UserFollowed = React.createClass({
 
   componentDidMount: function() {
     this.followedUsersToken = FollowUsersStore.addListener(this._onChange);
-    FollowUsersActions.retrieveAllFollowed();
+    FollowUsersActions.retrieveAllFollowed(this.props.selectedUser);
+  },
+
+  componentWillReceiveProps: function(newProps) {
+      FollowUsersActions.retrieveAllFollowed(newProps.selectedUser);
   },
 
   componentWillUnmount: function() {
@@ -18,8 +22,7 @@ var UserFollowed = React.createClass({
 
   _onChange: function() {
     this.setState({followedUsers: FollowUsersStore.followed()});
-
-
+    console.log(this.state.followedUsers);
   },
 
   createFollowedList: function() {
@@ -37,7 +40,6 @@ var UserFollowed = React.createClass({
       </ul>
     );
   }
-
 });
 
 module.exports = UserFollowed;

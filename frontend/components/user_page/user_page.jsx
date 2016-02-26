@@ -18,7 +18,8 @@ var UserPage = React.createClass({
 
   componentDidMount: function() {
     this.selectedUserToken = UserStore.addListener(this._onChange);
-    UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
+    UserActions.retrieveSelectedUser(
+                                  {username: this.props.routeParams.username});
   },
 
   componentWillUnmount: function() {
@@ -26,8 +27,6 @@ var UserPage = React.createClass({
   },
 
   _onChange: function() {
-    //I had this.props.routeParams in here. I can't for the life of me figure out why. change on 2/25/16. if removing it didn't break anything i guess it's not needed
-  //  this.setState({selectedUser: UserStore.selectedUser(this.props.routeParams)});
    this.setState({selectedUser: UserStore.selectedUser()});
  },
 
@@ -44,7 +43,7 @@ var UserPage = React.createClass({
 
       <div>
         hello {this.state.selectedUser.username}
-        <UserFollowed/>
+        <UserFollowed selectedUser={this.state.selectedUser}/>
         {(this.state.selectedUser.photos) ? this.createPhotos() : null}
       </div>
 

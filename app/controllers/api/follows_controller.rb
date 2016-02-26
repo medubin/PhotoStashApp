@@ -10,12 +10,14 @@ class Api::FollowsController < ApplicationController
   end
 
   def index
-    @user = current_user if signed_in?
-    if params[:subAction] == 'followed'
-      @followed = current_user
-      render :followed
-    elsif params[:subAction] == 'followers'
-      render :followers
+    @user = User.find_by(username: params[:selectedUser])
+    if @user
+      if params[:subAction] == 'followed'
+        @followed = current_user
+        render :followed
+      elsif params[:subAction] == 'followers'
+        render :followers
+      end
     end
   end
 

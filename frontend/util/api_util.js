@@ -49,12 +49,12 @@ var ApiUtil = {
   },
 
 
-  fetchAllFollowed: function(callback) {
+  fetchAllFollowed: function(user, callback) {
     $.ajax({
       url: 'api/follows',
       method: 'get',
       dataType: 'json',
-      data: {subAction: 'followed'},
+      data: {subAction: 'followed', selectedUser: user.username},
       success: callback
     });
   },

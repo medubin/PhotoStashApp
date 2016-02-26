@@ -11,8 +11,8 @@ var FollowUsersActions = {
     });
   },
 
-  retrieveAllFollowed: function() {
-    ApiUtil.fetchAllFollowed(this.recieveAllFollowed);
+  retrieveAllFollowed: function(selectedUser) {
+    ApiUtil.fetchAllFollowed(selectedUser, this.recieveAllFollowed);
   },
 
 };
