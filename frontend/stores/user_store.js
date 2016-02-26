@@ -19,16 +19,11 @@ UserStore.__onDispatch = function(payload) {
 };
 
 UserStore.resetCurrentUser = function(user) {
-  _currentUser = {};
-  _currentUser.username = user.username;
-  _currentUser.id = user.id;
+  _currentUser = user;
 };
 
 UserStore.resetSelectedUser = function(user) {
-  _selectedUser = {};
-  _selectedUser.username = user.username;
-  _selectedUser.photos = user.photos;
-  // _selectedUser.id = user.id;
+  _selectedUser = user;
 };
 
 UserStore.currentUser = function() {

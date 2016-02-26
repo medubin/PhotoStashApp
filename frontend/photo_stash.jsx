@@ -12,7 +12,7 @@ var Dispatcher = require('./dispatcher/dispatcher');
 
 //Stores
 var PhotoStore = require('./stores/photo_store');
-var FollowUsersStore = require('./stores/follow_users_store');
+
 
 //Components
 var App = require('./components/app');
@@ -25,7 +25,6 @@ var ApiUtil = require('./util/api_util');
 //Actions
 var PhotoActions = require('./actions/photo_actions');
 var UserActions = require('./actions/user_actions');
-var FollowUsersActions = require('./actions/follow_users_actions');
 
 
 //Testing
@@ -33,8 +32,7 @@ window.PhotoStore = PhotoStore;
 window.PhotoActions = PhotoActions;
 window.UserActions = UserActions;
 window.ApiUtil = ApiUtil;
-window.FollowUsersActions = FollowUsersActions;
-window.FollowUsersStore = FollowUsersStore;
+
 
 var routes = (
   <Route component={App} path = '/'>

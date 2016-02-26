@@ -26,9 +26,6 @@ var App = React.createClass({
  },
 
   render: function() {
-
-
-
     return (
       <main >
         <Header currentUser={this.state.currentUser}/>

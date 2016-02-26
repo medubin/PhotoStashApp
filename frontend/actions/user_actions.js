@@ -24,7 +24,6 @@ var UserActions = {
   },
 
   retrieveSelectedUser: function(selectedUser) {
-
     ApiUtil.fetchSelectedUser(selectedUser, this.recieveSelectedUser);
   }
 

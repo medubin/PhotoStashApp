@@ -38,31 +38,6 @@ var ApiUtil = {
     });
   },
 
-  fetchAllFollowers: function(callback) {
-    $.ajax({
-      url: 'api/follows',
-      method: 'get',
-      dataType: 'json',
-      data: {subAction: 'followers'},
-      success: callback
-    });
-  },
-
-
-  fetchAllFollowed: function(user, callback) {
-    $.ajax({
-      url: 'api/follows',
-      method: 'get',
-      dataType: 'json',
-      data: {subAction: 'followed', selectedUser: user.username},
-      success: callback
-    });
-  },
-
-
-
-
-
 };
 
 module.exports = ApiUtil;

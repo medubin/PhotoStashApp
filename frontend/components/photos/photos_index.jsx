@@ -12,14 +12,12 @@ var PhotosIndex = React.createClass({
     var listOfPhotos = this.state.photos.map(function(el, idx) {
       return (
       <PhotoIndexItem key={idx} photo={el} className='feedItem'/>
-
       );
     });
     return listOfPhotos;
   },
 
   render: function() {
-    console.log(this.props);
     return ( <ul className='feed'> { this.createPhotoList() } </ul> );
   },
 
@@ -28,17 +26,15 @@ var PhotosIndex = React.createClass({
     PhotoActions.retrieveAllPhotos();
  },
 
- componentWillUnmount: function() {
-   this.photoToken.remove();
+  componentWillUnmount: function() {
+    this.photoToken.remove();
  },
 
+  _onChange: function() {
+    this.setState({photos: PhotoStore.all()});
+  },
 
-
- _onChange: function() {
-  this.setState({photos: PhotoStore.all()});
-},
-
-
+  
 });
 
 module.exports = PhotosIndex;
