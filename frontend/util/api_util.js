@@ -20,8 +20,7 @@ var ApiUtil = {
     $.ajax({
       url: 'api/users/' + user.username,
       dataType: 'json',
-      success: callback,
-
+      success: callback
     });
 
   },

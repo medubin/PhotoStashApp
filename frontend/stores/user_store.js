@@ -3,7 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 
 var UserStore = new Store(AppDispatcher);
 var _currentUser = {};
-var _selectedUser = {};
+var _selectedUser = {id:''};
 
 UserStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -13,7 +13,6 @@ UserStore.__onDispatch = function(payload) {
       break;
     case 'SELECTED_USER':
       this.resetSelectedUser(payload.selectedUser);
-      this.__emitChange();
       break;
   }
 };
@@ -23,7 +22,11 @@ UserStore.resetCurrentUser = function(user) {
 };
 
 UserStore.resetSelectedUser = function(user) {
-  _selectedUser = user;
+  if(_selectedUser.id !== user.id){
+    _selectedUser = user;
+    this.__emitChange();
+  }
+
 };
 
 UserStore.currentUser = function() {

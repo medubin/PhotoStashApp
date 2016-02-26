@@ -2,15 +2,19 @@ var React = require('react');
 var UserActions = require('../../actions/user_actions');
 var UserStore = require('../../stores/user_store');
 var UserPhotoItem = require('./user_photo_item');
-var UserFollowed = require('./user_followed');
+var UserFollowedList = require('./user_followed_list');
 var FollowUserButton = require('./follow_user_button');
+var UserFollowedCount = require('./user_followed_count');
 
 
 var UserPage = React.createClass({
   getInitialState: function() {
     return({
-      selectedUser: {},
+      selectedUser: UserStore.selectedUser()
     });
+  },
+  componentWillReceiveProps: function(newProps) {
+    UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
   },
 
   componentDidMount: function() {
@@ -27,6 +31,7 @@ var UserPage = React.createClass({
  },
 
 
+
  createPhotos: function() {
    return this.state.selectedUser.photos.map(function(photo, idx) {
      return ( <UserPhotoItem key={idx} photo={photo} /> );
@@ -36,17 +41,18 @@ var UserPage = React.createClass({
   render: function() {
     return (
       <div>
-        hello {this.state.selectedUser.username}
-
+        {this.state.selectedUser.username}s page
         <FollowUserButton
+         selectedUser={this.state.selectedUser}
+         currentUser={this.props.currentUser}
+       />
+        <UserFollowedCount
           selectedUser={this.state.selectedUser}
-          followedUsers = {this.state.selectedUser}
-          currentUser={this.props.params.username}
-          />
+       />
 
-        <UserFollowed
+       <UserFollowedList
           selectedUser={this.state.selectedUser}
-          followedUsers = {this.state.selectedUser}
+          currentUser = {this.props.currentUser}
           />
 
         {(this.state.selectedUser.photos) ? this.createPhotos() : null}

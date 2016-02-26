@@ -1,6 +1,6 @@
 var React = require('react');
 
-var UserFollowed = React.createClass({
+var UserFollowedList = React.createClass({
 
   createFollowedList: function() {
     if (this.props.selectedUser.followed) {
@@ -10,14 +10,13 @@ var UserFollowed = React.createClass({
     }
 
   },
-
-  componentWillReceiveProps: function(newProps) {
-
-  },
+  // componentWillReceiveProps: function(newProps) {
+  //
+  // },
 
   render: function() {
     return ( <ul> {this.createFollowedList()} </ul> );
   }
 });
 
-module.exports = UserFollowed;
+module.exports = UserFollowedList;

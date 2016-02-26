@@ -32,7 +32,6 @@ var App = React.createClass({
          {this.props.children && React.cloneElement(this.props.children, {
            currentUser: this.state.currentUser
          })}
-
       </main>
     );
   }

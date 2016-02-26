@@ -6,17 +6,26 @@ var UserAction = require('../../actions/user_actions');
 
 var FollowUserButton = React.createClass({
 
+_is_following: function() {
+
+  if (!this.props.currentUser.followed || !this.props.selectedUser) return false;
+    return this.props.currentUser.followed.some(function(follow) {
+    if (follow.username === this.props.selectedUser.username) {
+      return true;
+    }
+  }.bind(this));
+
+},
 
 
  _toggleButton: function() {
-
-   if (this.props.currentUser.username === this.props.currentUser) {
+   if (this.props.currentUser.username === this.props.selectedUser.username) {
      return null;
-   } else if (true){
-    return ("follow");
+   } else if (this._is_following()){
+     return 'unfollow';
+   } else {
+     return 'follow';
    }
-   //toggle follow/unfollow/none based on following/notfollowing/sameuser
-  //  if this.state.currentUser
  },
 
  followOrUnfollow: function() {
