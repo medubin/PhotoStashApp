@@ -18,8 +18,9 @@ class Api::FollowsController < ApplicationController
       elsif params[:subAction] == 'followers'
         render :followers
       end
+    else
+      render json: {followed: [username: nil]}
     end
-    render json: nil
   end
 
 
