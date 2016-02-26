@@ -7,6 +7,26 @@ class User < ActiveRecord::Base
 
   has_many :photos
 
+  has_many :follower_connections,
+    foreign_key: :follower_id,
+    primary_key: :id,
+    class_name: "Follow"
+
+  has_many :followed_connections,
+    foreign_key: :followed_id,
+    primary_key: :id,
+    class_name: "Follow"
+
+  has_many :followed,
+    through: :follower_connections,
+    source: :followed
+
+  has_many :followers,
+    through: :followed_connections,
+    source: :follower
+
+
+
 
   def self.find_by_credentials(username, password)
     user = find_by(username: username)

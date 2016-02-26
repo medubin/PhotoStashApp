@@ -18,9 +18,8 @@ var ApiUtil = {
 
   fetchSelectedUser: function(user, callback) {
     $.ajax({
-      url: 'api/users/' + user.id,
+      url: 'api/users/' + user.username,
       dataType: 'json',
-      data: {user: user},
       success: callback,
 
     });
@@ -37,7 +36,30 @@ var ApiUtil = {
         callback(data);
       }
     });
-  }
+  },
+
+  fetchAllFollowers: function(callback) {
+    $.ajax({
+      url: 'api/follows',
+      method: 'get',
+      dataType: 'json',
+      data: {subAction: 'followers'},
+      success: callback
+    });
+  },
+
+
+  fetchAllFollowed: function(callback) {
+    $.ajax({
+      url: 'api/follows',
+      method: 'get',
+      dataType: 'json',
+      data: {subAction: 'followed'},
+      success: callback
+    });
+  },
+
+
 
 
 
