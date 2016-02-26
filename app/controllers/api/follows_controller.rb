@@ -19,6 +19,7 @@ class Api::FollowsController < ApplicationController
         render :followers
       end
     end
+    render json: nil
   end
 
 

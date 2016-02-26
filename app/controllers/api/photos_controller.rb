@@ -1,6 +1,7 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.all.reverse
+    # @photos = Photo.all.reverse
+    @user = current_user if signed_in?
     render :index
   end
 
