@@ -6,25 +6,12 @@ var UserAction = require('../../actions/user_actions');
 // all of these dumb dumb listeners
 
 var FollowUserButton = React.createClass({
-  getInitialState: function() {
-    return({currentUser: UserStore.currentUser() });
-  },
 
-  componentDidMount: function() {
-    this.currentUserToken = UserStore.addListener(this._onChange);
-  },
 
-  componentWillUnmount: function() {
-    this.currentUserToken.remove();
-  },
-
-  _onChange: function() {
-   this.setState({currentUser: UserStore.currentUser()});
- },
 
  _toggleButton: function() {
 
-   if (this.state.currentUser.username === this.props.currentUser) {
+   if (this.props.currentUser.username === this.props.currentUser) {
      return null;
    } else if (true){
     return ("follow");
