@@ -28,10 +28,13 @@ var App = React.createClass({
   render: function() {
 
 
+
     return (
       <main >
         <Header currentUser={this.state.currentUser}/>
-         {this.props.children}
+         {this.props.children && React.cloneElement(this.props.children, {
+           currentUser: this.state.currentUser
+         })}
 
       </main>
     );

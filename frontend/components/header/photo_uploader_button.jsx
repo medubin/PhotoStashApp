@@ -16,12 +16,10 @@ toggleModal: function() {
 
   render: function() {
     return (
-      <div className='container'>
-        <li onClick={this.toggleModal} className='headerItem'>
-          <img alt="Upload" src="/assets/Photo_uploader.png" width='50' />
-        </li>
+      <li className='headerItem'>
+        <img alt="Upload" src="/assets/Photo_uploader.png" width='50' onClick={this.toggleModal} />
         {(this.state.modalShown) ? <PhotoForm toggle={this.toggleModal}></PhotoForm> : null}
-      </div>
+      </li>
     );
   }
 });

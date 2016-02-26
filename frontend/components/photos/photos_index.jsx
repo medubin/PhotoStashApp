@@ -19,6 +19,7 @@ var PhotosIndex = React.createClass({
   },
 
   render: function() {
+    console.log(this.props);
     return ( <ul className='feed'> { this.createPhotoList() } </ul> );
   },
 

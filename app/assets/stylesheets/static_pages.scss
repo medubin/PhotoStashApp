@@ -20,7 +20,7 @@ ul {
 
 }
 
-.header li, .header div {
+.header li {
   flex-grow: 1;
   margin-left:auto;
   margin-right:auto;
@@ -121,4 +121,9 @@ ul {
 .feed {
   margin-left: auto;
   margin-right: auto;
+}
+
+
+* {
+  border: 1px solid black;
 }

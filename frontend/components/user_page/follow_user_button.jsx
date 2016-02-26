@@ -28,25 +28,20 @@ var FollowUserButton = React.createClass({
      return null;
    } else if (true){
     return ("follow");
-     // I need to add a currentUser followed into the store
+  //    // I need to add a currentUser followed into the store
    }
    //toggle follow/unfollow/none based on following/notfollowing/sameuser
   //  if this.state.currentUser
  },
 
  followOrUnfollow: function() {
-   debugger;
+
    console.log(this.props);
  },
 
 
   render: function() {
-
-    return (
-      <div onClick={this.followOrUnfollow}>
-        {this._toggleButton()}
-      </div>
-    );
+    return (<div onClick={this.followOrUnfollow}>{this._toggleButton()} </div>);
   }
 
 });

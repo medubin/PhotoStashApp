@@ -26,3 +26,6 @@ FollowUsersStore.followed = function() {
 
 
 module.exports = FollowUsersStore;
+
+
+///Put following info in userstore

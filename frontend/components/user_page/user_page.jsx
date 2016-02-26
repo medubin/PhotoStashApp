@@ -23,7 +23,6 @@ var UserPage = React.createClass({
   componentDidMount: function() {
     this.selectedUserToken = UserStore.addListener(this._onChangeSelectedUser);
     UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
-
     this.followedUsersToken = FollowUsersStore.addListener(this._onChangeFollowUsers);
   },
 

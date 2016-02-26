@@ -6,22 +6,15 @@ var UserFollowed = React.createClass({
 
   createFollowedList: function() {
     return this.props.followedUsers.map(function(user, idx) {
-      return (
-        <li key={idx}> {user.username} </li>
-      );
+      return (  <li key={idx}> {user.username} </li> );
     });
   },
-
 
   componentWillReceiveProps: function(newProps) {
   },
 
   render: function() {
-    return (
-      <ul>
-        {this.createFollowedList()}
-      </ul>
-    );
+    return ( <ul> {this.createFollowedList()} </ul> );
   }
 });
 
