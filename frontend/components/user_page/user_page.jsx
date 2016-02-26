@@ -2,6 +2,7 @@ var React = require('react');
 var UserActions = require('../../actions/user_actions');
 var UserStore = require('../../stores/user_store');
 var UserPhotoItem = require('./user_photo_item');
+var UserFollowed = require('./user_followed');
 
 
 var UserPage = React.createClass({
@@ -25,7 +26,9 @@ var UserPage = React.createClass({
   },
 
   _onChange: function() {
-   this.setState({selectedUser: UserStore.selectedUser(this.props.routeParams)});
+    //I had this.props.routeParams in here. I can't for the life of me figure out why. change on 2/25/16. if removing it didn't break anything i guess it's not needed
+  //  this.setState({selectedUser: UserStore.selectedUser(this.props.routeParams)});
+   this.setState({selectedUser: UserStore.selectedUser()});
  },
 
  createPhotos: function() {
@@ -41,6 +44,7 @@ var UserPage = React.createClass({
 
       <div>
         hello {this.state.selectedUser.username}
+        <UserFollowed/>
         {(this.state.selectedUser.photos) ? this.createPhotos() : null}
       </div>
 

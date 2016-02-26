@@ -19,7 +19,6 @@ FollowUsersStore.resetFollowed = function(followed) {
 };
 
 FollowUsersStore.followed = function() {
-  console.log(_followed);
   return _followed.slice();
 };
 
