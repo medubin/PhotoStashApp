@@ -14,8 +14,6 @@ var PhotoActions = {
     ApiUtil.fetchAllPhotos(this.recieveAllPhotos);
   },
 
-
-
   postedPhotoSuccess: function(photo) {
 
     Dispatcher.dispatch({
@@ -27,11 +25,7 @@ var PhotoActions = {
   postPhoto: function(photo) {
     ApiUtil.addPhoto(photo, this.postedPhotoSuccess);
   }
-
-
-
-
-
+  
 };
 
 module.exports = PhotoActions;

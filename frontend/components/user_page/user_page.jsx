@@ -54,7 +54,7 @@ var UserPage = React.createClass({
          currentUser={this.props.currentUser}
        />
         <UserFollowedCount
-          selectedUser={this.state.selectedUser}
+          followCount={this.state.selectedUser.followed.length}
        />
 
        <UserFollowedList
