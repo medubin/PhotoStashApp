@@ -1,7 +1,8 @@
 class Api::FollowsController < ApplicationController
   def create
-    @follow = Follow.new(follow_params)
+    @follow = Follow.new(followed_id: params[:user_id])
     @follow.follower_id = current_user.id if signed_in?
+
     if @follow.save
       render :show
     else
@@ -22,11 +23,6 @@ class Api::FollowsController < ApplicationController
       render json: {followed: [username: nil]}
     end
   end
-
-
-  def show
-  end
-
 
   private
   def follow_params

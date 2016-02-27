@@ -3,14 +3,14 @@ var PropTypes = React.PropTypes;
 
 var UserFollowedCount = React.createClass({
 
-
-  componentWillReceiveProps: function(newProps) {
-    console.log(newProps.followCount);
-
-  },
+  //
+  // componentWillReceiveProps: function(newProps) {
+  //   console.log(newProps.followCount);
+  //
+  // },
 
   createFollowingButton: function() {
-    return (this.props.followCount) ? this.props.followCount + ' following' : null;
+    return (this.props.followCount || this.props.followCount === 0) ? this.props.followCount + ' following' : null;
   },
 
   render: function() {

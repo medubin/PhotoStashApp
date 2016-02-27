@@ -25,6 +25,8 @@ var ApiUtil = require('./util/api_util');
 //Actions
 var PhotoActions = require('./actions/photo_actions');
 var UserActions = require('./actions/user_actions');
+var FollowUsersActions = require('./actions/follow_users_actions');
+
 
 
 //Testing
@@ -32,6 +34,7 @@ window.PhotoStore = PhotoStore;
 window.PhotoActions = PhotoActions;
 window.UserActions = UserActions;
 window.ApiUtil = ApiUtil;
+window.FollowUsersActions = FollowUsersActions;
 
 
 var routes = (

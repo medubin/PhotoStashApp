@@ -37,6 +37,46 @@ var ApiUtil = {
     });
   },
 
+  addFollow: function(user, callback) {
+    $.ajax({
+      // url: 'api/users/' + user.id + '/follow',
+      url: 'api/users/' + user.id + '/follow',
+      method: 'post',
+      dataType: 'json',
+      data: {follow: {test:'test'}},
+      success: callback
+
+    });
+  },
+
+
+
+
+
+  //////DEPRACATED FOR NOW///////////
+
+  fetchAllFollowers: function(callback) {
+  $.ajax({
+    url: 'api/follows',
+    method: 'get',
+    dataType: 'json',
+    data: {subAction: 'followers'},
+    success: callback
+  });
+},
+
+
+fetchAllFollowed: function(user, callback) {
+  $.ajax({
+    url: 'api/follows',
+    method: 'get',
+    dataType: 'json',
+    data: {subAction: 'followed', selectedUser: user.username},
+    success: callback
+  });
+},
+
+
 };
 
 module.exports = ApiUtil;

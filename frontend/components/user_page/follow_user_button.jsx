@@ -2,12 +2,12 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var UserStore = require('../../stores/user_store');
 var UserAction = require('../../actions/user_actions');
+var FollowUserAction = require('../../actions/follow_users_actions');
 
 
 var FollowUserButton = React.createClass({
 
 _is_following: function() {
-
   if (!this.props.currentUser.followed || !this.props.selectedUser) return false;
     return this.props.currentUser.followed.some(function(follow) {
     if (follow.username === this.props.selectedUser.username) {
@@ -29,8 +29,7 @@ _is_following: function() {
  },
 
  followOrUnfollow: function() {
-
-   console.log(this.props);
+   FollowUserAction.postFollow(this.props.selectedUser);
  },
 
 
