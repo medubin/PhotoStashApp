@@ -10,7 +10,7 @@ var UserFollowedCount = require('./user_followed_count');
 var UserPage = React.createClass({
   getInitialState: function() {
     return({
-      selectedUser: UserStore.selectedUser()
+      selectedUser: UserStore.selectedUser() || {username: '', followed: []}
     });
   },
   componentWillReceiveProps: function(newProps) {
@@ -38,7 +38,14 @@ var UserPage = React.createClass({
    });
  },
 
+ updateSelectedUser: function() {
+   if (this.state.selectedUser.username !== this.props.routeParams.username){
+     UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
+   }
+  },
+
   render: function() {
+    this.updateSelectedUser();
     return (
       <div>
         {this.state.selectedUser.username}s page

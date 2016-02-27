@@ -7,18 +7,19 @@ var UserFollowedCount = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
+    console.log(newProps.selectedUser.followed);
     this.setState({selectedUser: newProps.selectedUser});
   },
 
   createFollowingButton: function() {
-    return (this.selectedUser) ? this.state.selectedUser.followed.length + 'following' : null;
+    return (this.state.selectedUser) ? this.state.selectedUser.followed.length + ' following' : null;
   },
 
-
   render: function() {
+
     return (
       <div>
-        {this.state.selectedUser.followed.length} following
+        {this.createFollowingButton()}
       </div>
     );
   }
