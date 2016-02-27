@@ -14,6 +14,8 @@ UserStore.__onDispatch = function(payload) {
     case 'SELECTED_USER':
       this.resetSelectedUser(payload.selectedUser);
       break;
+    case 'LOGOUT_CURRENT_USER':
+      if (payload.logout === 'successful') this.resetCurrentUser({});
   }
 };
 

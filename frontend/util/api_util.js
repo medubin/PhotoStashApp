@@ -25,6 +25,17 @@ var ApiUtil = {
 
   },
 
+  logoutCurrentUser: function(callback) {
+    $.ajax({
+      url: 'session',
+      method: 'delete',
+      success: function() {
+        window.location.reload();
+        callback();
+      }
+    });
+  },
+
   addPhoto: function(photo, callback) {
     $.ajax({
       url: 'api/photos',

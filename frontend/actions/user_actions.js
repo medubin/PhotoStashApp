@@ -25,7 +25,21 @@ var UserActions = {
 
   retrieveSelectedUser: function(selectedUser) {
     ApiUtil.fetchSelectedUser(selectedUser, this.recieveSelectedUser);
+  },
+
+
+  logoutCurrentUser: function() {
+    ApiUtil.logoutCurrentUser();
+  },
+
+  logoutSuccessful: function() {
+    Dispatcher.dispatch({
+      actionType : UserConstants.LOGOUT_CURRENT_USER,
+      logout: 'successful'
+    });
+    
   }
+
 
 
 
