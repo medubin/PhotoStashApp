@@ -1,1 +1,1 @@
-@user ? json.extract!(@user, :username, :id) : nil
+json.partial! 'current_user', user: @user

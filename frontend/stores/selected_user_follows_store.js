@@ -27,6 +27,7 @@ SelectedUserFollowsStore.allFollowed = function() {
 SelectedUserFollowsStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case 'FOLLOWED_RECIEVED':
+
       this.resetFollowed(payload.followed);
       this.__emitChange();
       break;
@@ -39,8 +40,3 @@ SelectedUserFollowsStore.__onDispatch = function(payload) {
 
 
 module.exports = SelectedUserFollowsStore;
-
-/*
-FOLLOWED_RECIEVED: 'FOLLOWED_RECIEVED',
-FOLLOWERS_RECIEVED: 'FOLLOWERS_RECIEVED'
-*/

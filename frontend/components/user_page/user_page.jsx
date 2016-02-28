@@ -2,10 +2,10 @@ var React = require('react');
 var UserActions = require('../../actions/user_actions');
 var UserStore = require('../../stores/user_store');
 var UserPhotoItem = require('./user_photo_item');
-var UserFollowedList = require('./user_followed_list');
+
 var FollowUserButton = require('./follow_user_button');
 var UserFollowedCount = require('./user_followed_count');
-
+var UserFollowersCount = require('./user_followers_count');
 
 var UserPage = React.createClass({
   getInitialState: function() {
@@ -55,13 +55,13 @@ var UserPage = React.createClass({
          currentUser={this.props.currentUser}
        />
         <UserFollowedCount
-          followCount={this.state.selectedUser.followed.length}
+          selectedUser={this.state.selectedUser}
        />
 
-       <UserFollowedList
-          selectedUser={this.state.selectedUser}
+       <UserFollowersCount
+         selectedUser={this.state.selectedUser}
+      />
 
-          />
 
         {(this.state.selectedUser.photos) ? this.createPhotos() : null}
       </div>
