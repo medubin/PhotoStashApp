@@ -50,3 +50,11 @@ User.all.each do |user|
   Follow.create(follower_id: user.id, followed_id: (user.id + 1) % User.all.length )
   Follow.create(follower_id: user.id, followed_id: (user.id + 2) % User.all.length )
 end
+
+
+
+User.create(username: 'allphotos', password: password)
+
+photos.each do |photo|
+  Photo.create(user_id: User.find_by(username: 'allphotos').id, image: photo, caption: Faker::Hipster.sentence)
+end

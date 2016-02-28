@@ -11,8 +11,8 @@ var Logo = React.createClass({
 
   render: function() {
     return (
-      <li className='headerItem' onClick={this._goToRootPage}>
-        <img alt="Icon" src="/assets/Logo.png" width='125' />
+      <li className='headerItem' id='header-title' onClick={this._goToRootPage}>
+        Photostash
       </li>
     );
   }
@@ -20,3 +20,5 @@ var Logo = React.createClass({
 });
 
 module.exports = Logo;
+
+// <img alt="Icon" src="/assets/Logo.png" width='125' />

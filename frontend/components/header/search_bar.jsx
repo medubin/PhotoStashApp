@@ -5,7 +5,7 @@ var SearchBar = React.createClass({
   render: function() {
     return (
       <li className='headerItem'>
-        <input placeholder='Search...'></input>
+        <input type='text' id='header-search-input' placeholder='Search...'></input>
       </li>
     );
   }
@@ -13,3 +13,5 @@ var SearchBar = React.createClass({
 });
 
 module.exports = SearchBar;
+
+//🔍 not working

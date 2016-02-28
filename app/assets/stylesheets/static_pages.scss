@@ -6,16 +6,50 @@ ul {
   list-style: none;
 }
 
+#content {
+  padding-top: 100px;
+}
+
+/************* Header ***************/
+
+#header-search-input {
+  border-radius:100px;
+  text-align: center;
+  width: 198px;
+  height: 20px;
+
+
+}
+
+#header-title {
+  font-family: 'Brush Script MT', cursive;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+  margin-left: 10%;
+}
+
+#header-logout {
+  margin-right: 10%;
+
+}
+
+
 .header {
   display: flex;
   flex-direction: row;
   background-color: #fff;
   margin: 0;
   padding:0;
-  position: relative;
+  position: fixed;
   top: -7px;
   left: -7px;
   align-items: center;
+  height: 78px;
+  z-index: 50;
+  width: 100%;
 
 
 }
@@ -25,7 +59,10 @@ ul {
   margin-left:auto;
   margin-right:auto;
   font-family: sans-serif;
-  font-size: 32px;
+  font-size: 16px;
+  color: #135582;
+  font-weight: 200;
+  text-align: center;
 }
 
 
@@ -37,20 +74,22 @@ ul {
     display: block;
     width: 300px;
     padding: 25px 20px;
-    padding-bottom: 35px;
+    // padding-bottom: 35px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    top: 50%;
-    position: absolute;
-    transform: translate(-90%, 100%);;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
+    top: 5%;
+    position: fixed;
+    transform: translate(-0%, 200%);;
+    background: rgba(255,255,255,1);
+    color: #000;
     z-index: 99999;
     text-align: center;
+    left: 35%;
+    border: 1px #EEEFEF solid;
 }
 
-  input, button {
+  .modal input, .modal button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -81,13 +120,65 @@ ul {
 
 
 
-/**************PHOTOS*********************/
+/**************PHOTO FEED*********************/
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.photo-index-item {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border: 1px #EEEFEF solid;
+  width: 800px;
+  transform: translateX(-4%);
+  margin-bottom: 100px;
+
+}
+
+
+#photo-bottom {
+  min-height: 48px;
+}
+
+#photo-top {
+  height: 48px;
+  margin-left: 75px;
+  margin-top: 24px;
+
+}
+
+
+#photo-top-user-link {
+
+}
+
+#caption-user-link {
+  display: inline-block;
+  width: 20px;
+}
+#caption > #user-link {
+  display: inline-block;
+
+}
+
+#caption {
+  display: inline-block;
+}
+
 
 .photo-index-item img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 800px;
+  height: 800px;
   height: auto;
 
 }
@@ -103,22 +194,13 @@ ul {
 }
 
 
-.photo-index-item {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background: white;
-  border: 1px #ccc solid;
-  width: 800px;
-  transform: translateX(-4%);
-  margin-bottom: 100px;
 
 
+/************** USER LINKS **************/
 
+#user-link {
+  color: #135582;
+  font-size: 18px;
+  font-weight: bold;
 
-}
-
-.feed {
-  margin-left: auto;
-  margin-right: auto;
 }

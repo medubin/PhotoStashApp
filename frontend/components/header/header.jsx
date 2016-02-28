@@ -15,8 +15,8 @@ var Header = React.createClass({
     return (
       <ul className='header'>
         <Logo/>
-        <SearchBar/>
         <PhotoUploader currentUser ={this.props.currentUser}/>
+        <SearchBar/>
         <UserName currentUser={this.props.currentUser}/>
         <LogoutButton/>
       </ul>

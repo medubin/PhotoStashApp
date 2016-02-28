@@ -10,9 +10,9 @@ var LogoutButton = React.createClass({
 
   render: function() {
     return (
-      <div onClick={this.logout}>
-        LOGOUT
-      </div>
+      <li className='headerItem' id='header-logout' onClick={this.logout}>
+        Log out
+      </li>
     );
   }
 
