@@ -14,10 +14,15 @@ var PhotoForm = React.createClass({
     e.preventDefault();
     cloudinary.openUploadWidget({
       // make options a hash outside of call
+      cropping: 'server',
+      cropping_aspect_ratio: 1,
+      max_image_height: 1080,
+      max_image_width: 1080,
       cloud_name: window.CLOUD_NAME,
       upload_preset: window.UPLOAD_PRESET},
       function(error, results){
       if(!error){
+        console.log(results);
         this.state.image = results[0].url;
       }
     }.bind(this));

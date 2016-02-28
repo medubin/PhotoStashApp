@@ -16,7 +16,23 @@ UserStore.__onDispatch = function(payload) {
       break;
     case 'LOGOUT_CURRENT_USER':
       if (payload.logout === 'successful') this.resetCurrentUser({});
+      break;
+    case 'FOLLOWED_USER':
+      this.addFollow(payload.follow);
+      this.__emitChange();
+      break;
+    case 'UNFOLLOWED_USER':
+      this.removeFollow(payload.unfollow);
+      this.__emitChange();
   }
+};
+
+UserStore.addFollow = function(followed) {
+  _currentUser.followed.push(followed);
+};
+
+UserStore.removeFollow = function(unfollowed) {
+  _currentUser.followed.splice(unfollowed, 1);
 };
 
 UserStore.resetCurrentUser = function(user) {

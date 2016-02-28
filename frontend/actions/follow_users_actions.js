@@ -16,6 +16,18 @@ var FollowUsersActions = {
     });
   },
 
+  deleteFollow: function(user) {
+    ApiUtil.removeFollow(user, this.removedFollowSuccessful);
+  },
+
+  removedFollowSuccessful: function(unfollow) {
+    Dispatcher.dispatch({
+      actionType: FollowUsersConstants.UNFOLLOWED_USER,
+      unfollow: unfollow
+
+    });
+  },
+
 
 
 

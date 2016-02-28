@@ -1,5 +1,6 @@
 var FollowUsersConstants = {
   FOLLOWED_USER: 'FOLLOWED_USER',
+  UNFOLLOWED_USER: "UNFOLLOWED_USER",
 
 
 
