@@ -45,6 +45,7 @@ var UserPage = React.createClass({
   },
 
   render: function() {
+
     this.updateSelectedUser();
     return (
       <div>
@@ -59,7 +60,7 @@ var UserPage = React.createClass({
 
        <UserFollowedList
           selectedUser={this.state.selectedUser}
-          currentUser = {this.props.currentUser}
+
           />
 
         {(this.state.selectedUser.photos) ? this.createPhotos() : null}

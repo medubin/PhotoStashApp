@@ -50,12 +50,9 @@ var ApiUtil = {
 
   addFollow: function(user, callback) {
     $.ajax({
-      // url: 'api/users/' + user.id + '/follow',
       url: 'api/users/' + user.id + '/follow',
       method: 'post',
       dataType: 'json',
-      // data: {follow: {followed_id: user.id}},
-      data: {user_id: user.id},
       success: callback
 
     });
@@ -66,20 +63,14 @@ var ApiUtil = {
       url: 'api/users/' + user.id + '/follow',
       method: 'delete',
       dataType: 'json',
-      data: {follow: {test:'test'}},
       success: callback
     });
   },
 
 
-
-
-
-  //////DEPRACATED FOR NOW///////////
-
-  fetchAllFollowers: function(callback) {
+  fetchAllFollowers: function(user, callback) {
   $.ajax({
-    url: 'api/follows',
+    url: 'api/users/' + user.id + '/follows',
     method: 'get',
     dataType: 'json',
     data: {subAction: 'followers'},
@@ -89,11 +80,12 @@ var ApiUtil = {
 
 
 fetchAllFollowed: function(user, callback) {
+
   $.ajax({
-    url: 'api/follows',
+    url: 'api/users/' + user.id + '/follows',
     method: 'get',
     dataType: 'json',
-    data: {subAction: 'followed', selectedUser: user.username},
+    data: {subAction: 'followed'},
     success: callback
   });
 },

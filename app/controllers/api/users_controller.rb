@@ -2,7 +2,11 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:id])
-    render :show
+    if @user
+      render :show
+    else
+      render json: {username: nil, id: nil}
+    end
   end
 
 

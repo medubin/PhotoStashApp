@@ -11,16 +11,15 @@ class Api::FollowsController < ApplicationController
   end
 
   def index
-    @user = User.find_by(username: params[:selectedUser])
+    @user = User.find_by(id: params[:user_id])
     if @user
       if params[:subAction] == 'followed'
-        @followed = current_user
         render :followed
       elsif params[:subAction] == 'followers'
         render :followers
       end
     else
-      render json: {followed: [username: nil]}
+      render json: {followed: [], followers: []}
     end
   end
 

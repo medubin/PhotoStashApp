@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:index, :create]
     resources :users, only: [:show] do
       resource :follow, only: [:create, :destroy]
+      resources :follows, only: [:index]
     end
     resource :session, only: [:show], defaults: {format: :json}
   end
