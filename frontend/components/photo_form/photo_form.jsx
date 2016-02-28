@@ -43,13 +43,13 @@ var PhotoForm = React.createClass({
   render: function() {
     return (
       <detail id='modalPhotoForm' className='modal'>
-        Upload A Photo
-        <br></br>
-        <button onClick={this.selectPhoto}>Choose Photo</button>
-        <br></br>
-        <textarea onChange={this.onChangeOfCaption} placeholder='Caption'>{this.state.caption}</textarea>
-        <br></br>
-        <input onClick={this.submitPhoto} type='submit'></input>
+        <h3>Upload A Photo</h3>
+        <div id='photo-input-fields'>
+          <textarea onChange={this.onChangeOfCaption} placeholder='Write your caption here...'>{this.state.caption}</textarea>
+            <button onClick={this.selectPhoto} id='choose-photo'>Choose Photo</button>
+            <input onClick={this.submitPhoto} type='submit' value='Submit' id='submit-photo'></input>
+            <input onClick={this.props.toggle} type='submit'value='Go Back' id='go-back'></input>
+          </div>
       </detail>
     );
   }

@@ -36,7 +36,7 @@ var UserFollowedList = React.createClass({
   },
 
   render: function() {
-    return ( <ul> {this.createFollowedList()} </ul> );
+    return ( <ul id='user-followed-list'> {this.createFollowedList()} </ul> );
   }
 });
 

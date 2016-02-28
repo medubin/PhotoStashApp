@@ -7,8 +7,8 @@ class Follow < ActiveRecord::Base
 
   def follower_and_followed_must_be_different
     if self.followed_id == self.follower_id
-      errors.add(:followed_id, 'must be different to follower_id')
-      errors.add(:follower_id, 'must be different to followed_id')
+      errors.add(:followed_id, 'must be different from follower_id')
+      errors.add(:follower_id, 'must be different from followed_id')
     end
   end
 

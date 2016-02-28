@@ -10,6 +10,16 @@ ul {
   padding-top: 100px;
 }
 
+body {
+  background-color: #FAFAFA;
+  height: 100%;
+  width: 100%;
+}
+
+textarea {
+    resize: none;
+}
+
 /************* Header ***************/
 
 #header-search-input {
@@ -17,6 +27,7 @@ ul {
   text-align: center;
   width: 198px;
   height: 20px;
+  // box-shadow: inset 0px 0px 2px 2px black;
 
 
 }
@@ -80,7 +91,7 @@ ul {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     top: 5%;
     position: fixed;
-    transform: translate(-0%, 200%);;
+    transform: translate(-0%, 150%);;
     background: rgba(255,255,255,1);
     color: #000;
     z-index: 99999;
@@ -95,27 +106,32 @@ ul {
     box-sizing: border-box;
     display: inline;
     outline: 0;
-    border: 0;
-    color: #edf4f9;
-    text-decoration: none;
-    background-color: #4f94cf;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    font-size: 0.3em;
+    border: 1px solid black;
+    color: #000;
+    background-color: #51AFE9;
+    // border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    font-size: 12px;
     font-weight: bold;
-    padding: 6px 10px 6px 10px;
+    padding: 6px 12px 6px 12px;
     line-height: normal;
     text-align: center;
     vertical-align: middle;
     margin: auto;
     cursor: pointer;
     text-transform: uppercase;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  #choose-photo {
+
+    display: block;
+    margin-bottom: 15px;
   }
 
 
@@ -183,17 +199,82 @@ ul {
 
 }
 
-.photo-index-item .caption,  {
+.photo-index-item .caption  {
   display: inline-block;
   padding: 0;
 }
 
-.photo-index-item .poster,  {
+.photo-index-item .poster  {
   display: inline-block;
   font-size: 24px;
 }
 
 
+/************** USER PAGE **************/
+
+#user-followed-count, #user-followers-count {
+  display: inline;
+  font-weight: bold;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-size: 24px;
+
+}
+
+#user-followed-count > div, #user-followers-count > div {
+  display: inline;
+}
+
+
+#user-followed-list, #user-followers-list {
+  float: none;
+  display: block;
+  width: 300px;
+  padding: 25px 20px;
+  // padding-bottom: 35px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  top: 5%;
+  position: fixed;
+  transform: translate(-0%, 150%);;
+  background: rgba(255,255,255,1);
+  color: #000;
+  z-index: 99999;
+  text-align: left;
+  left: 35%;
+  border: 1px #EEEFEF solid;
+
+}
+
+#user-followed-list > li, #user-followers-list > li {
+  width: 0;
+}
+
+#user-page-top {
+  margin-bottom: 50px;
+}
+
+#user-page-photos-index {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-page-photo {
+    display:inline-block;
+    width: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+}
+
+.user-photo-item {
+  max-width:100%;
+
+}
 
 
 /************** USER LINKS **************/
@@ -203,4 +284,12 @@ ul {
   font-size: 18px;
   font-weight: bold;
 
+}
+
+
+
+@media (max-width: 600px) {
+  * {
+    border: 1px solid black;
+  }
 }

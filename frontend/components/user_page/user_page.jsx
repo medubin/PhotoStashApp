@@ -49,21 +49,24 @@ var UserPage = React.createClass({
     this.updateSelectedUser();
     return (
       <div>
-        {this.state.selectedUser.username}s page
-        <FollowUserButton
-         selectedUser={this.state.selectedUser}
-         currentUser={this.props.currentUser}
-       />
-        <UserFollowedCount
-          selectedUser={this.state.selectedUser}
-       />
+          <div id='user-page-top'>
+            {this.state.selectedUser.username}s page
+            <FollowUserButton
+            selectedUser={this.state.selectedUser}
+            currentUser={this.props.currentUser}
+           />
 
-       <UserFollowersCount
-         selectedUser={this.state.selectedUser}
-      />
+          <UserFollowersCount
+            selectedUser={this.state.selectedUser}
+          />
 
-
-        {(this.state.selectedUser.photos) ? this.createPhotos() : null}
+          <UserFollowedCount
+            selectedUser={this.state.selectedUser}
+          />
+        </div>
+        <ul id='user-photos-index'>
+          {(this.state.selectedUser.photos) ? this.createPhotos() : null}
+        </ul>
       </div>
 
     );

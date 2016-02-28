@@ -5,9 +5,9 @@ var UserPhotoItem = React.createClass({
 
   render: function() {
     return (
-      <div>
-         <img src={this.props.photo.image}/>
-      </div>
+      <li className='user-page-photo'>
+         <img src={this.props.photo.image} className='user-photo-item'/>
+      </li>
     );
   }
 

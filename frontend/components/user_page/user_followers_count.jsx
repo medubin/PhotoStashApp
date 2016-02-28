@@ -22,7 +22,7 @@ toggleFollowedList: function() {
 
   render: function() {
     return (
-      <div>
+      <div id='user-followers-count'>
         <div onClick={this.toggleFollowedList}>
           {this.createFollowingButton()}
         </div>

@@ -18,7 +18,7 @@ toggleModal: function() {
     return (
       <li className='headerItem'>
         <img alt="Upload" src="/assets/Photo_uploader.png" width='25' onClick={this.toggleModal} />
-        {(this.state.modalShown) ? <PhotoForm toggle={this.toggleModal}></PhotoForm> : null}
+        {(this.state.modalShown) ? <PhotoForm toggle={this.toggleModal}/> : null}
       </li>
     );
   }
