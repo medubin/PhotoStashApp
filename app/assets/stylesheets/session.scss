@@ -4,7 +4,7 @@
 //
 //
 
-.sign-in-box {
+.sign-in-box, .sign-up-box {
   display: block;
   background-color: #fff;
   height: 300px;
@@ -59,7 +59,11 @@
 .submitbutton:hover {
     background-color: #2C6499;
     cursor: pointer;
+}
 
+.no-account, .yes-account {
+  margin-top: 8px;
+  font-size: 12px;
 }
 
 // .submitbutton {

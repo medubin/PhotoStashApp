@@ -11,8 +11,8 @@ var Logo = React.createClass({
 
   render: function() {
     return (
-      <li className='headerItem' id='header-title' onClick={this._goToRootPage}>
-        Photostash
+      <li className='headerItem' id='header-title'>
+        <div onClick={this._goToRootPage} className='link-wrapper' >Photostash </div>
       </li>
     );
   }

@@ -38,13 +38,25 @@ textarea {
 
 
 
+
+
 /************* Header ***************/
+.link-wrapper {
+  display: inline-block;
+  text-align: center;
+}
+
+.header li>*:hover {
+  cursor: pointer;
+}
 
 #header-search-input {
   border-radius:100px;
+  border: 1px #EEEFEF solid;
   text-align: center;
   width: 198px;
   height: 20px;
+
   // box-shadow: inset 0px 0px 2px 2px black;
 
 
@@ -85,6 +97,7 @@ textarea {
 
 .header li {
   flex-grow: 1;
+
   margin-left:auto;
   margin-right:auto;
   font-family: sans-serif;
@@ -107,44 +120,81 @@ textarea {
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    top: 5%;
     position: fixed;
-    transform: translate(-0%, 150%);;
     background: rgba(255,255,255,1);
     color: #000;
     z-index: 99999;
     text-align: center;
-    left: 35%;
     border: 1px #EEEFEF solid;
+    cursor: default !important;
+
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
-  .modal input, .modal button {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    outline: 0;
-    border: 1px solid black;
-    color: #000;
-    background-color: #51AFE9;
-    // border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    font-size: 12px;
-    font-weight: bold;
-    padding: 6px 12px 6px 12px;
-    line-height: normal;
-    text-align: center;
-    vertical-align: middle;
-    margin: auto;
-    cursor: pointer;
-    text-transform: uppercase;
-    // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  .modal input, .modal #choose-photo {
+    display:block;
+    background-color: #4090DB;
+    width: 200px;
+    height: 30px;
+    border-radius:10px;
+    border: 1px #EEEFEF solid;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    transition: all .1s;
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .modal input {
+    width: 150px;
+    display: inline-block;
+  }
+
+  .modal h3 {
+    color: #135582;
+    margin-bottom: 30px;
+  }
+
+
+
+  .modal textarea {
+    width: 200px;
+    height: 50px;
+  }
+
+    // background-color: #51AFE9;
+    // border-radius: 3px;
+    //
+    // -webkit-box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+    // box-sizing: border-box;
+    // display: inline;
+    // outline: 0;
+    // border: 1px solid black;
+    // color: #000;
+    // // border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    // font-size: 12px;
+    // font-weight: bold;
+    // padding: 6px 12px 6px 12px;
+    // line-height: normal;
+    // text-align: center;
+    // vertical-align: middle;
+    // margin: auto;
+    // cursor: pointer;
+    // text-transform: uppercase;
+    // // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    // -webkit-border-radius: 3px;
+    // -moz-border-radius: 3px;
+    // -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    // -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
 
   #choose-photo {
 
@@ -301,13 +351,16 @@ textarea {
   color: #135582;
   font-size: 18px;
   font-weight: bold;
+}
 
+#user-link {
+  cursor: pointer;
 }
 
 
-
-@media (max-width: 600px) {
-  * {
-    border: 1px solid black;
-  }
-}
+//
+// @media (max-width: 1900px) {
+//   * {
+//     border: 1px solid black;
+//   }
+// }

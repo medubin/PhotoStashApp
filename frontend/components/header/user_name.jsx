@@ -11,8 +11,9 @@ var UserName = React.createClass({
 
   render: function() {
     return (
-      <li className='headerItem' onClick={this._goToUserPage}>
-        {this.props.currentUser.username}
+      <li className='headerItem'>
+        <div onClick={this._goToUserPage} className='link-wrapper'>{this.props.currentUser.username}</div>
+
       </li>
     );
   }

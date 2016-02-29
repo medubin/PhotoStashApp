@@ -10,8 +10,8 @@ var LogoutButton = React.createClass({
 
   render: function() {
     return (
-      <li className='headerItem' id='header-logout' onClick={this.logout}>
-        Log out
+      <li className='headerItem' id='header-logout' >
+        <div onClick={this.logout} className='link-wrapper'>Log out </div>
       </li>
     );
   }
