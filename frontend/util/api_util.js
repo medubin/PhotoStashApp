@@ -90,6 +90,17 @@ fetchAllFollowed: function(user, callback) {
   });
 },
 
+searchDatabase: function(searchTerm, callback) {
+  $.ajax({
+    url: 'api/search/',
+    method: 'get',
+    dataType: 'json',
+    data: {searchTerm: searchTerm},
+    success: callback
+  });
+
+}
+
 
 };
 

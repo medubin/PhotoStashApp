@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
 
 
 
+  def self.search(query)
+    where("username like ?", "%#{query}%")
+  end
 
   def self.find_by_credentials(username, password)
     user = find_by(username: username)
@@ -51,4 +54,5 @@ class User < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
   end
+
 end

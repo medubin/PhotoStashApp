@@ -2,6 +2,16 @@ class Api::PhotosController < ApplicationController
   def index
     # @photos = Photo.all.reverse
     @user = current_user if signed_in?
+
+    @all_photos = []
+    @user.followed.each do |followed|
+      @all_photos += followed.photos
+    end
+    
+    @all_photos += @user.photos
+    @all_photos.sort!{ |x,y| y.created_at <=> x.created_at }
+
+
     render :index
   end
 

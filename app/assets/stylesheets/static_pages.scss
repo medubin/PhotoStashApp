@@ -37,6 +37,20 @@ textarea {
 }
 
 
+/************** USER LINKS **************/
+
+#user-link {
+  color: #135582;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#user-link {
+  cursor: pointer;
+}
+
+
+
 
 
 
@@ -106,6 +120,35 @@ textarea {
   font-weight: 200;
   text-align: center;
 }
+
+#search-results {
+  overflow: hidden;
+  float: none;
+  display: block;
+  position:absolute;
+  top: 78px;
+  padding-left: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(255,255,255,1);
+  width: 100px;
+
+}
+#search-results>li{
+  position:relative;
+  text-align: left;
+}
+
+#search-results>li>#user-link{
+  color: black;
+  font-weight: normal;
+  border: 1px #EEEFEF solid;
+}
+#search-results>li>#user-link:hover{
+  background-color: rgba(200,200,200,1);
+}
+
+
 
 
 /*************MODAL***************/
@@ -389,18 +432,6 @@ textarea {
 
 }
 
-
-/************** USER LINKS **************/
-
-#user-link {
-  color: #135582;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#user-link {
-  cursor: pointer;
-}
 
 
 
