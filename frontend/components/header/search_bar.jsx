@@ -17,10 +17,15 @@ var SearchBar = React.createClass({
 
   renderSearchResults:function() {
     if (this.state.searchPartial) {
-      return (<SearchResults/>);
+      return (<SearchResults callback={this.closeSearch}/>);
     } else {
       return null;
     }
+  },
+
+  closeSearch: function() {
+    this.setState({searchPartial: ''});
+    console.log(this.state.searchPartial);
   },
 
   render: function() {

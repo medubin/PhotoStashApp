@@ -7,6 +7,7 @@ var UserLink = React.createClass({
 
   _goToUserPage: function() {
     this.history.pushState(null, '/users/' + this.props.username, {});
+    if (this.props.callback) this.props.callback();
   },
 
 

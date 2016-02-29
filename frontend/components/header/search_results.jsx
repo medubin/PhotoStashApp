@@ -10,8 +10,8 @@ var SearchResults = React.createClass({
 
 createSearchResults: function() {
   return this.state.searchResults.map(function(result, idx){
-    return ( <li key={idx}> <UserPageLink username={result.username}/> </li> );
-  });
+    return ( <li key={idx}> <UserPageLink username={result.username} callback={this.props.callback}/> </li> );
+  }.bind(this));
 },
   componentDidMount: function() {
     this.searchResultsToken = SearchStore.addListener(this.newSearchResults);

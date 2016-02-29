@@ -58,10 +58,12 @@ var UserPage = React.createClass({
 
           <UserFollowersCount
             selectedUser={this.state.selectedUser}
+            currentUser={this.props.currentUser}
           />
 
           <UserFollowedCount
             selectedUser={this.state.selectedUser}
+            currentUser={this.props.currentUser}
           />
         </div>
         <ul id='user-photos-index'>

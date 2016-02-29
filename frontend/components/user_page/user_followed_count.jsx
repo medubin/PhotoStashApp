@@ -29,14 +29,15 @@ toggleFollowedList: function() {
 
   render: function() {
     return (
-    <div id='user-followed-count'>
+    <button id='user-followed-count'>
       <div onClick={this.toggleFollowedList}>
         {this.createFollowingButton()}
       </div>
         {(this.state.followedShown) ? <UserFollowedList
-                                        selectedUser={this.props.selectedUser}>
+                                        selectedUser={this.props.selectedUser}
+                                        callback={this.toggleFollowedList}>
                                       </UserFollowedList> : null}
-      </div>
+      </button>
     );
   }
 

@@ -36,6 +36,13 @@ textarea {
    color: #818488;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 
 /************** USER LINKS **************/
 
@@ -70,11 +77,10 @@ textarea {
   text-align: center;
   width: 198px;
   height: 20px;
+}
 
   // box-shadow: inset 0px 0px 2px 2px black;
 
-
-}
 
 #header-title {
   font-family: 'Brush Script MT', cursive;
@@ -126,7 +132,7 @@ textarea {
   float: none;
   display: block;
   position:absolute;
-  top: 78px;
+  top: 50px;
   padding-left: 0px;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -431,6 +437,49 @@ textarea {
   margin-right: auto;
 
 }
+///// FINISH THIS
+#user-followed-list>li, #user-followers-list>li {
+
+  border: 1px #EEEFEF solid;
+}
+
+#user-followed-list>li>#user-link, #user-followers-list>li>#user-link{
+  color: black;
+  font-weight: normal;
+  border: 1px #EEEFEF solid;
+}
+
+#user-followed-list>li>#user-link:hover, #user-followers-list>li>#user-link:hover {
+  background-color: rgba(200,200,200,1);
+}
+
+
+// #search-results {
+//   overflow: hidden;
+//   float: none;
+//   display: block;
+//   position:absolute;
+//   top: 50px;
+//   padding-left: 0px;
+//   left: 50%;
+//   transform: translate(-50%, 0%);
+//   background: rgba(255,255,255,1);
+//   width: 100px;
+//
+// }
+// #search-results>li{
+//   position:relative;
+//   text-align: left;
+// }
+//
+// #search-results>li>#user-link{
+//   color: black;
+//   font-weight: normal;
+//   border: 1px #EEEFEF solid;
+// }
+// #search-results>li>#user-link:hover{
+//   background-color: rgba(200,200,200,1);
+// }
 
 
 

@@ -1,7 +1,9 @@
 var React = require('react');
 var SelectedUserFollowsStore = require('../../stores/selected_user_follows_store');
+var UserStore = require('../../stores/user_store');
 var SelectedUserFollowsActions = require('../../actions/selected_user_follows_actions');
 var UserPageLink = require('../links/user_page_link');
+var FollowUserButton = require('./follow_user_button');
 
 var UserFollowedList = React.createClass({
   getInitialState: function() {
@@ -23,11 +25,19 @@ var UserFollowedList = React.createClass({
 
   },
 
+
+
   createFollowedList: function() {
     if (this.state.selectedUserFollowed) {
       return this.state.selectedUserFollowed.map(function(user, idx) {
-        return (  <li key={idx}> <UserPageLink username={user.username}/> </li> );
-      });
+        return (
+          <li key={idx}>
+            <UserPageLink username={user.username} callback={this.props.callback}/>
+            <FollowUserButton selectedUser={user} currentUser={UserStore.currentUser()}/>
+          </li>
+
+        );
+      }.bind(this));
     }
 
   },
