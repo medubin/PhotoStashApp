@@ -14,6 +14,7 @@ var PhotoForm = React.createClass({
     e.preventDefault();
     cloudinary.openUploadWidget({
       // make options a hash outside of call
+      theme: 'minimal',
       cropping: 'server',
       cropping_aspect_ratio: 1,
       max_image_height: 1080,
@@ -23,7 +24,7 @@ var PhotoForm = React.createClass({
       function(error, results){
       if(!error){
         console.log(results);
-        this.state.image = results[0].url;
+        this.setState({image: results[0].url});
       }
     }.bind(this));
   },
@@ -31,6 +32,14 @@ var PhotoForm = React.createClass({
   onChangeOfCaption: function(e) {
     this.setState({caption:e.target.value});
 
+  },
+
+  previewPhoto: function() {
+    if (this.state.image) {
+      return ( <img src={this.state.image} width='100' height='100'></img>);
+    } else {
+      return null;
+    }
   },
 
   submitPhoto: function() {
@@ -47,6 +56,9 @@ var PhotoForm = React.createClass({
         <div id='photo-input-fields'>
           <textarea onChange={this.onChangeOfCaption} placeholder='Write your caption here...'>{this.state.caption}</textarea>
             <button onClick={this.selectPhoto} id='choose-photo'>Choose Photo</button>
+            <div id='photo-preview'>
+              {this.previewPhoto()}
+            </div>
             <input onClick={this.submitPhoto} type='submit' value='Submit' id='submit-photo'></input>
             <input onClick={this.props.toggle} type='submit'value='Go Back' id='go-back'></input>
           </div>
