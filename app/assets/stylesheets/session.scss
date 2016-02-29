@@ -3,17 +3,62 @@
 // // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 //
-// .logo {
-//
-//   font-size: 32px;
-//   color: blue;
-//   font-family:  Helvetica;
-//   font-style: italic;
-//   padding-bottom: 20px;
-//
-//
-// }
-//
+
+.sign-in-box {
+  display: block;
+  background-color: #fff;
+  height: 300px;
+  width: 450px;
+  border: 1px #EEEFEF solid;
+  text-align: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+
+  font-family: 'Brush Script MT', cursive;
+	font-size: 56px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+  color: #135582;
+
+}
+
+
+.username-input, .password-input {
+  width: 270px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius:10px;
+  border: 1px #EEEFEF solid;
+  font-size: 16px;
+  font-weight: lighter;
+  // box-shadow: inset 0px 0px 0px 0px white;
+
+}
+
+.submitbutton {
+  background-color: #4090DB;
+  width: 270px;
+  height: 40px;
+  border-radius:10px;
+  border: 1px #EEEFEF solid;
+  font-size: 16px;
+  font-weight: bolder;
+  color: white;
+}
+
+.submitbutton:hover {
+    background-color: #2C6499;
+}
+
 // .submitbutton {
 //   background-color: #03A9F4;
 //   color: white;

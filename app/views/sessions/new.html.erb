@@ -1,19 +1,16 @@
-
-  <section>
-    <div class='logo'> PhotoStash </div>
-    Sign In
-    <br>
+  <section class='sign-in-box'>
+    <h1 class='logo'> Photostash </h1>
     <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
 
     <form action='<%=session_url%>' method="post">
       <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
 
       <article>
-        <input type="text" name="user[username]" value='<%=@user.username%>' id='username' placeholder= 'Username'>
+        <input type="text" name="user[username]" value='<%=@user.username%>' class='username-input' placeholder= 'Username'>
       </article>
 
       <article>
-        <input placeholder= 'Password' type="password" name="user[password]" value='<%=@user.password%>' id='password'>
+        <input placeholder= 'Password' type="password" name="user[password]" value='<%=@user.password%>' class='password-input'>
       </article>
 
       <article>

@@ -20,6 +20,24 @@ textarea {
     resize: none;
 }
 
+::-webkit-input-placeholder {
+    color: #818488;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #818488;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #818488;
+}
+
+:-ms-input-placeholder {
+   color: #818488;
+}
+
+
+
 /************* Header ***************/
 
 #header-search-input {
