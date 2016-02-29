@@ -53,10 +53,13 @@
   font-size: 16px;
   font-weight: bolder;
   color: white;
+  transition: all .1s;
 }
 
 .submitbutton:hover {
     background-color: #2C6499;
+    cursor: pointer;
+
 }
 
 // .submitbutton {
