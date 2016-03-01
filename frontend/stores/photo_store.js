@@ -22,8 +22,45 @@ PhotoStore.__onDispatch = function(payload) {
       this.addPhoto(payload.photo);
       this.__emitChange();
       break;
+    case 'LIKED_PHOTO':
+      this.likePhoto(payload.like);
+      this.__emitChange();
+      break;
+    case 'UNLIKED_PHOTO':
+      this.unlikePhoto(payload.unlike);
+      this.__emitChange();
+      break;
   }
 };
+
+var _findPhotoById = function(id) {
+  for (var i = 0; i < _photos.length; i++) {
+    if (_photos[i].id === id) return _photos[i];
+  }
+};
+
+var _findLikeByUsername = function(username, unlikedPhoto) {
+  for (var i = 0; i < unlikedPhoto.likes.length; i++) {
+    if (unlikedPhoto.likes[i].username === username) return unlikedPhoto.likes[i];
+  }
+};
+
+
+PhotoStore.likePhoto = function(like) {
+  var likedPhoto = _findPhotoById(like.id);
+  likedPhoto.likes.push({username: like.username});
+
+};
+
+PhotoStore.unlikePhoto = function(unlike) {
+  var unlikedPhoto = _findPhotoById(unlike.id);
+  var removedLike = _findLikeByUsername(unlike.username, unlikedPhoto);
+  unlikedPhoto.likes.splice(unlike.username, 1);
+
+};
+
+
+
 
 PhotoStore.all = function() {
   return _photos.slice(0);

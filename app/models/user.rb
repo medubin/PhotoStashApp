@@ -25,6 +25,12 @@ class User < ActiveRecord::Base
     through: :followed_connections,
     source: :follower
 
+  has_many :likes
+
+  has_many :liked_photos,
+    through: :likes,
+    source: :photo
+
 
 
   def self.search(query)

@@ -69,38 +69,53 @@ var ApiUtil = {
 
 
   fetchAllFollowers: function(user, callback) {
-  $.ajax({
-    url: 'api/users/' + user.id + '/follows',
-    method: 'get',
-    dataType: 'json',
-    data: {subAction: 'followers'},
-    success: callback
-  });
-},
+    $.ajax({
+      url: 'api/users/' + user.id + '/follows',
+      method: 'get',
+      dataType: 'json',
+      data: {subAction: 'followers'},
+      success: callback
+    });
+  },
 
 
-fetchAllFollowed: function(user, callback) {
+  fetchAllFollowed: function(user, callback) {
+    $.ajax({
+      url: 'api/users/' + user.id + '/follows',
+      method: 'get',
+      dataType: 'json',
+      data: {subAction: 'followed'},
+      success: callback
+    });
+  },
 
-  $.ajax({
-    url: 'api/users/' + user.id + '/follows',
-    method: 'get',
-    dataType: 'json',
-    data: {subAction: 'followed'},
-    success: callback
-  });
-},
+  searchDatabase: function(searchTerm, callback) {
+    $.ajax({
+      url: 'api/search/',
+      method: 'get',
+      dataType: 'json',
+      data: {searchTerm: searchTerm},
+      success: callback
+    });
+  },
 
-searchDatabase: function(searchTerm, callback) {
-  $.ajax({
-    url: 'api/search/',
-    method: 'get',
-    dataType: 'json',
-    data: {searchTerm: searchTerm},
-    success: callback
-  });
+  addLike: function(photo, callback) {
+    $.ajax({
+      url: 'api/photos/' + photo.id + '/like',
+      method: 'post',
+      dataType: 'json',
+      success: callback
+    });
+  },
 
-}
-
+  removeLike: function(photo, callback) {
+    $.ajax({
+      url: 'api/photos/' + photo.id + '/like',
+      method: 'delete',
+      dataType: 'json',
+      success: callback
+    });
+  },
 
 };
 

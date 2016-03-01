@@ -9,12 +9,11 @@ var PhotosIndex = React.createClass({
   },
 
   createPhotoList: function() {
-    var listOfPhotos = this.state.photos.map(function(el, idx) {
+    return this.state.photos.map(function(el, idx) {
       return (
       <PhotoIndexItem key={idx} photo={el} className='feedItem'/>
       );
     });
-    return listOfPhotos;
   },
 
   render: function() {
@@ -34,7 +33,7 @@ var PhotosIndex = React.createClass({
     this.setState({photos: PhotoStore.all()});
   },
 
-  
+
 });
 
 module.exports = PhotosIndex;

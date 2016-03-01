@@ -25,7 +25,7 @@ var PhotoActions = {
   postPhoto: function(photo) {
     ApiUtil.addPhoto(photo, this.postedPhotoSuccess);
   }
-  
+
 };
 
 module.exports = PhotoActions;

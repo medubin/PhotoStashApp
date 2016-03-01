@@ -29,6 +29,8 @@ var PhotoActions = require('./actions/photo_actions');
 var UserActions = require('./actions/user_actions');
 var FollowUsersActions = require('./actions/follow_users_actions');
 var SearchActions = require('./actions/search_actions');
+var LikeActions = require('./actions/like_actions');
+
 
 
 
@@ -40,6 +42,7 @@ window.ApiUtil = ApiUtil;
 window.FollowUsersActions = FollowUsersActions;
 window.SearchActions = SearchActions;
 window.SearchStore = SearchStore;
+window.LikeActions = LikeActions;
 
 
 var routes = (

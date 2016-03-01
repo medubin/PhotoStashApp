@@ -1,6 +1,8 @@
 var React = require('react');
 var UserPageLink = require('../links/user_page_link');
 var PhotoCaption = require('./photo_caption');
+var PhotoLikes = require('./photo_likes');
+var PhotoLikeButton = require('./photo_like_button');
 
 var PhotoIndexItem = React.createClass({
 
@@ -18,11 +20,10 @@ var PhotoIndexItem = React.createClass({
 
         <div id ='photo-bottom'>
           <PhotoCaption caption={this.props.photo.caption} username={this.props.photo.user.username}/>
+          <PhotoLikes likes={this.props.photo.likes}/>
         </div>
         <div id = 'photo-input-fields'>
-          <div id='photo-like'>
-            <img alt="Upload" src="/assets/heart.png" width='50'/>
-          </div>
+          <PhotoLikeButton photo={this.props.photo}/>
           <input type='text' id='comment-box' placeholder=' Add a comment'/>
         </div>
 
