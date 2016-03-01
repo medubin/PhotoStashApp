@@ -45,6 +45,23 @@
 }
 
 .demo-user-button {
+  display: inline;
+  background-color: #4090DB;
+  border: 1px #EEEFEF solid;
+  border-radius:10px;
+}
+
+.demo-user-button:hover {
+  background-color: #2C6499;
+  cursor: pointer;
+}
+
+
+
+.demo-user-form {
+  width: 0px;
+  display: inline;
+  margin-left: 5px;
 }
 
 .submitbutton {

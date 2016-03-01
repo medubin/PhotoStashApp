@@ -1,23 +1,54 @@
   <section class='sign-up-box'>
   <h1 class='logo'> Photostash </h1>
   <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
-
   <form action='<%=users_url%>' method="post">
     <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
 
     <article>
-      <input type="text" name="user[username]" value='<%=@user.username%>' class='username-input' placeholder= 'Username'>
+      <input type="text"
+             name="user[username]"
+             value='<%=@user.username%>'
+             class='username-input'
+             placeholder= 'Username'
+             required
+             title='Username cannot be blank'>
     </article>
 
 
     <article>
-      <input type="text" name="user[password]" value='<%=@user.password%>' placeholder='Password' class='password-input'>
+      <input type="password"
+             name="user[password]"
+             value='<%=@user.password%>'
+             placeholder='Password'
+             class='password-input'
+             id="password"
+             pattern="^\S{6,}$"
+             onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;"
+             placeholder="Password"
+             required>
     </article>
 
     <article>
-      <input type="submit" value="Sign Up", class='submitbutton'>
+      <input type="password"
+             name="user[password]"
+             value='<%=@user.password%>'
+             placeholder='Re-enter password'
+             class='password-input'
+             id="password_two"
+             pattern="^\S{6,}$"
+             onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
+             placeholder="Verify Password"
+             required>
     </article>
 
+
+
+    <article>
+      <input type="submit"
+             value="Sign Up",
+             class='submitbutton'>
+    </article>
+  
     <article class='yes-account'>
     Already have an account? <%=  link_to 'Log in', new_session_url %>
     </article>

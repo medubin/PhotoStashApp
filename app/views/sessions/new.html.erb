@@ -6,25 +6,35 @@
       <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
 
       <article>
-        <input type="text" name="user[username]" value='<%=@user.username%>' class='username-input' placeholder= 'Username'>
+        <input type="text"
+               name="user[username]"
+               value='<%=@user.username%>'
+               class='username-input'
+               placeholder= 'Username'>
       </article>
 
       <article>
-        <input placeholder= 'Password' type="password" name="user[password]" value='<%=@user.password%>' class='password-input'>
+        <input placeholder= 'Password'
+               type="password"
+               name="user[password]"
+               value='<%=@user.password%>'
+               class='password-input'>
       </article>
 
       <article>
-        <input type="submit" value="Log in" class='submitbutton'>
+        <input type="submit"
+              value="Log in"
+              class='submitbutton'>
       </article>
 
       <article class='no-account'>
-        Don't have an account? <%=  link_to 'Sign_up', new_user_url %>
+        Don't have an account? <%=  link_to 'Sign_up', new_user_url %> or use the
       </form>
-        <form action='<%=session_url%>' method="post">
+        <form action='<%=session_url%>' method="post" class='demo-user-form'>
           <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
           <input type="hidden"  name="user[username]" value= 'matt'  >
           <input type="hidden"  name="user[password]" value= '123456'  >
-          <input type="submit" value="Demo Account" className='demo-user-button'>
+          <input type="submit" value="Demo Account" class='demo-user-button'>
         </form>
 
       </article>
