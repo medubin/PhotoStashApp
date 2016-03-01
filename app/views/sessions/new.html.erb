@@ -19,7 +19,15 @@
 
       <article class='no-account'>
         Don't have an account? <%=  link_to 'Sign_up', new_user_url %>
+      </form>
+        <form action='<%=session_url%>' method="post">
+          <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
+          <input type="hidden"  name="user[username]" value= 'matt'  >
+          <input type="hidden"  name="user[password]" value= '123456'  >
+          <input type="submit" value="Demo Account" className='demo-user-button'>
+        </form>
+
       </article>
 
-    </form>
+
 </section>
