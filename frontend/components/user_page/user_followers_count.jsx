@@ -37,7 +37,9 @@ toggleFollowersList: function() {
           >
         <UserFollowersList
           selectedUser={this.props.selectedUser}
-            callback={this.toggleFollowedList}/>
+            callback={this.toggleFollowersList} >
+        </UserFollowersList>
+
         </Modal>
         </button>
       </span>

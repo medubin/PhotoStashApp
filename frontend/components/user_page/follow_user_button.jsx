@@ -42,7 +42,11 @@ _isFollowing: function() {
 
 
   render: function() {
-    return (<div onClick={this.followOrUnfollow} className='follow-unfollow-button'>{this._toggleButton()} </div>);
+    if (this.props.currentUser.username !== this.props.selectedUser.username) {
+      return (<div onClick={this.followOrUnfollow} className='follow-unfollow-button'>{this._toggleButton()} </div>);
+    } else {
+      return(<div></div>);
+    }
   }
 
 });

@@ -14,7 +14,10 @@ var UserPage = React.createClass({
     });
   },
   componentWillReceiveProps: function(newProps) {
-    UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
+    console.log(newProps);
+    if (newProps.routeParams && newProps.routeParams.username && newProps.routeParams.username !== this.state.selectedUser.username) {
+      UserActions.retrieveSelectedUser({username: newProps.routeParams.username});
+    }
   },
 
   componentDidMount: function() {
@@ -38,23 +41,25 @@ var UserPage = React.createClass({
    });
  },
 
- updateSelectedUser: function() {
-   if (this.state.selectedUser.username !== this.props.routeParams.username){
-     UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
-   }
-  },
+ // updateSelectedUser: function() {
+ //   if (this.state.selectedUser.username !== this.props.routeParams.username){
+ //    //  UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
+ //   }
+ //  },
 
   render: function() {
 
-    this.updateSelectedUser();
+    // this.updateSelectedUser();
     return (
-      <div>
+      <div id='user-page-landing'>
           <div id='user-page-top'>
-            {this.state.selectedUser.username}s page
+            <h3 className='username-user-page'>{this.state.selectedUser.username}</h3>
+
             <FollowUserButton
             selectedUser={this.state.selectedUser}
             currentUser={this.props.currentUser}
            />
+         <br></br>
 
           <UserFollowersCount
             selectedUser={this.state.selectedUser}

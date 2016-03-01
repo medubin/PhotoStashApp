@@ -45,7 +45,8 @@ toggleFollowedList: function() {
         >
             <UserFollowedList
               selectedUser={this.props.selectedUser}
-              callback={this.toggleFollowedList}/>
+              callback={this.toggleFollowedList}>
+            </UserFollowedList>
 
         </Modal>
 

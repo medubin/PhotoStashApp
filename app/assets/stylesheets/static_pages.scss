@@ -375,6 +375,35 @@ button:focus {
 
 /************** USER PAGE **************/
 
+
+.username-user-page {
+  font-size: 36px;
+  color: #132b41;
+  margin-left: 140px;
+  display: inline;
+}
+
+
+#user-page-top > .follow-unfollow-button {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px #6dc993 solid;
+  font-weight: normal;
+  color: #6dc993;
+  font-size: 24px;
+  width: 100px;
+  text-align: center;
+  clear: right;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+#user-page-top > .follow-unfollow-button:hover {
+  background-color: #6dc993;
+  border: 1px #fff solid;
+  color: #fff;
+}
+
 #user-followed-count, #user-followers-count {
   display: inline;
   font-weight: bold;
@@ -382,7 +411,30 @@ button:focus {
   margin-left: 30px;
   font-size: 24px;
 
+  border: 1px #EEEFEF solid;
+  background-color: #fff;
+  border-radius:10px;
+  border: 1px #4090DB solid;
+  font-weight: normal;
+  color: #4090DB;
 }
+
+#user-followed-count {
+  margin-right: 25%;
+}
+
+#user-followers-count {
+
+    margin-left: 25%;
+}
+
+#user-followed-count:hover, #user-followers-count:hover {
+  background-color: #4090DB;
+  border: 1px #fff solid;
+  color: #fff;
+  cursor: pointer;
+}
+
 
 #user-followed-count > div, #user-followers-count > div {
   display: inline;
