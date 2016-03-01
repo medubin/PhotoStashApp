@@ -161,6 +161,7 @@ button:focus {
 //
 //
 .modal {
+  text-align: center;
 //     float: none;
 //     display: block;
 //     // width: 300px;
@@ -174,7 +175,6 @@ button:focus {
 //     background: rgba(255,255,255,1);
 //     color: #000;
 //     z-index: 99999;
-    text-align: center;
 //     border: 1px #EEEFEF solid;
 //     cursor: default !important;
 //
@@ -390,29 +390,92 @@ button:focus {
 
 
 #user-followed-list, #user-followers-list {
-  float: none;
-  display: block;
-  width: 300px;
-  padding: 25px 20px;
-  // padding-bottom: 35px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  top: 5%;
-  position: fixed;
-  transform: translate(-0%, 150%);;
-  background: rgba(255,255,255,1);
-  color: #000;
-  z-index: 99999;
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+  // float: none;
+  // display: block;
+  // width: 300px;
+  // padding: 25px 20px;
+  // // padding-bottom: 35px;
+  // -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  // -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  // top: 5%;
+  // position: fixed;
+  // transform: translate(-0%, 150%);;
+  // background: rgba(255,255,255,1);
+  // color: #000;
+  // z-index: 99999;
   text-align: left;
-  left: 35%;
+  // left: 35%;
+  // border: 1px #EEEFEF solid;
+
+}
+
+
+
+
+#user-followed-list > li, #user-followers-list > li {
+  width: auto;
+  padding: 0;
   border: 1px #EEEFEF solid;
 
 }
 
-#user-followed-list > li, #user-followers-list > li {
-  width: 0;
+
+#user-followed-list > li > div, #user-followers-list > li > div {
+  // width: 0px;
+  border: 0;
+  height: 24px;
+  display: inline;
+
 }
+#user-followed-list > li > div > span, #user-followers-list > li > div > span {
+  display: inline;
+  border: 0;
+  text-align: center;
+  float: right;
+
+}
+
+
+#user-followed-list > li > div > span:first-child, #user-followers-list > li > div > span:first-child {
+  border: 1px #EEEFEF solid;
+  background-color: #fff;
+  width: 70px;
+  // height: 22px;
+  border-radius:10px;
+  border: 1px #4090DB solid;
+  font-size: 16px;
+  font-weight: normal;
+  color: #4090DB;
+}
+
+#user-followed-list > li > div > span:first-child:hover, #user-followers-list > li > div > span:first-child:hover {
+  background-color: #4090DB;
+  border: 1px #fff solid;
+  color: #fff;
+}
+
+
+
+#user-followed-list>li>#user-link, #user-followers-list>li>#user-link{
+  color: black;
+  font-weight: normal;
+  // border: 1px #EEEFEF solid;
+
+}
+
+
+
+
+
+#user-followed-list>li>#user-link:hover, #user-followers-list>li>#user-link:hover {
+  background-color: rgba(200,200,200,1);
+}
+
+
 
 #user-page-top {
   margin-bottom: 50px;
@@ -440,21 +503,8 @@ button:focus {
   margin-right: auto;
 
 }
-///// FINISH THIS
-#user-followed-list>li, #user-followers-list>li {
 
-  border: 1px #EEEFEF solid;
-}
 
-#user-followed-list>li>#user-link, #user-followers-list>li>#user-link{
-  color: black;
-  font-weight: normal;
-  border: 1px #EEEFEF solid;
-}
-
-#user-followed-list>li>#user-link:hover, #user-followers-list>li>#user-link:hover {
-  background-color: rgba(200,200,200,1);
-}
 
 
 // #search-results {

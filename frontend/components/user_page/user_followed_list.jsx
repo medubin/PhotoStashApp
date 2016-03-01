@@ -32,7 +32,7 @@ var UserFollowedList = React.createClass({
       return this.state.selectedUserFollowed.map(function(user, idx) {
         return (
 
-          <li key={idx}>
+          <li key={idx} id='followed-user-list-item'>
             <UserPageLink username={user.username} callback={this.props.callback}/>
             <FollowUserButton selectedUser={user} currentUser={UserStore.currentUser()}/>
           </li>

@@ -2,22 +2,10 @@
 var React = require('react');
 var PhotoForm = require('../photo_form/photo_form');
 var Modal = require('react-modal');
+var PhotoFormStyle = require('../../modal_styles/photo_form_style');
 
 
-var customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    height: '340px',
-    width: '300px',
-    // padding: 25px '20px',
-    // padding-bottom: '35px'
-  }
-};
+
 
 
 
@@ -40,7 +28,7 @@ toggleModal: function() {
         <Modal
           isOpen={this.state.modalShown}
           onRequestClose={this.toggleModal}
-          style={customStyles}
+          style={PhotoFormStyle}
           >
             <PhotoForm toggle={this.toggleModal}/>
         </Modal>

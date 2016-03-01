@@ -1,6 +1,9 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var UserFollowersList = require('./user_followers_list');
+var FollowListsStyle = require('../../modal_styles/follow_lists_style');
+var Modal = require('react-modal');
+
 
 var UserFollowersCount = React.createClass({
   getInitialState: function () {
@@ -9,7 +12,7 @@ var UserFollowersCount = React.createClass({
 
 
 
-toggleFollowedList: function() {
+toggleFollowersList: function() {
   this.setState({followersShown: !this.state.followersShown });
 
 },
@@ -22,15 +25,22 @@ toggleFollowedList: function() {
 
   render: function() {
     return (
-      <button id='user-followers-count'>
-        <div onClick={this.toggleFollowedList}>
-          {this.createFollowingButton()}
-        </div>
-        {(this.state.followersShown) ? <UserFollowersList
-                                        selectedUser={this.props.selectedUser}
-                                        callback={this.toggleFollowedList}>
-                                      </UserFollowersList> : null}
-      </button>
+      <span>
+        <button id='user-followers-count'>
+          <div onClick={this.toggleFollowersList}>
+            {this.createFollowingButton()}
+          </div>
+          <Modal
+            isOpen={this.state.followersShown}
+            onRequestClose={this.toggleFollowersList}
+            style={FollowListsStyle}
+          >
+        <UserFollowersList
+          selectedUser={this.props.selectedUser}
+            callback={this.toggleFollowedList}/>
+        </Modal>
+        </button>
+      </span>
     );
   }
 

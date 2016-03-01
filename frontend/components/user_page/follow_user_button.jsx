@@ -42,7 +42,7 @@ _isFollowing: function() {
 
 
   render: function() {
-    return (<div onClick={this.followOrUnfollow}>{this._toggleButton()} </div>);
+    return (<div onClick={this.followOrUnfollow} className='follow-unfollow-button'>{this._toggleButton()} </div>);
   }
 
 });
