@@ -19,10 +19,9 @@ var PhotoIndexItem = React.createClass({
         <div id ='photo-bottom'>
           <PhotoCaption caption={this.props.photo.caption} username={this.props.photo.user.username}/>
         </div>
-
         <div id = 'photo-input-fields'>
           <div id='photo-like'>
-            ♡ 
+            <img alt="Upload" src="/assets/heart.png" width='50'/>
           </div>
           <input type='text' id='comment-box' placeholder=' Add a comment'/>
         </div>

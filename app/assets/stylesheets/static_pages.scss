@@ -201,6 +201,11 @@ button:focus {
     margin-right: auto;
   }
 
+  .modal input:hover, .modal #choose-photo:hover {
+    background-color: #2C6499;
+    cursor: pointer;
+
+  }
   .modal input {
     width: 150px;
     display: inline-block;
@@ -301,6 +306,7 @@ button:focus {
   padding: 0px;
   font-size: 18px;
   font-weight: lighter;
+  float: right;
 }
 
 #photo-like {
@@ -308,16 +314,15 @@ button:focus {
   display: inline-block;
   width: 50px;
   height: 50px;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   text-align: center;
   border-top:1px #EEEFEF solid;
   position: relative;
-  top: 11.8px;
+  top: 25px;
   transform: translateY(-50%);
-
-
-
 }
+
+
 #photo-bottom {
   min-height: 60px;
 }
@@ -352,7 +357,7 @@ button:focus {
 }
 
 
-.photo-index-item img {
+#photo-image > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -395,7 +400,7 @@ button:focus {
   text-align: center;
   clear: right;
   margin-bottom: 50px;
-  margin-left: 50px;
+  margin-left: 5
 }
 
 #user-page-top > .follow-unfollow-button:hover {
