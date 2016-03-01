@@ -24,7 +24,6 @@ var UserFollowedList = React.createClass({
 
   _onChangeFollowers: function() {
     this.setState({selectedUserFollowers: SelectedUserFollowsStore.allFollowers() });
-
   },
 
   createFollowersList: function() {

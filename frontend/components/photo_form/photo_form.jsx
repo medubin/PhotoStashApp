@@ -1,7 +1,12 @@
 /* global cloudinary */
 var React = require('react');
 var PhotoActions = require('../../actions/photo_actions');
+var LinkedStateMixin = require('react-addons-linked-state-mixin');
+
+
 var PhotoForm = React.createClass({
+  mixins: [LinkedStateMixin],
+
 
   getInitialState: function () {
     return({
@@ -23,16 +28,14 @@ var PhotoForm = React.createClass({
       upload_preset: window.UPLOAD_PRESET},
       function(error, results){
       if(!error){
-        console.log(results);
         this.setState({image: results[0].url});
       }
     }.bind(this));
   },
 
-  onChangeOfCaption: function(e) {
-    this.setState({caption:e.target.value});
-
-  },
+  // onChangeOfCaption: function(e) {
+  //   this.setState({caption:e.target.value});
+  // },
 
   previewPhoto: function() {
     if (this.state.image) {
@@ -54,7 +57,7 @@ var PhotoForm = React.createClass({
       <detail id='modalPhotoForm' className='modal'>
         <h3>Upload A Photo</h3>
         <div id='photo-input-fields'>
-          <textarea onChange={this.onChangeOfCaption} placeholder='Write your caption here...'>{this.state.caption}</textarea>
+          <textarea valueLink={this.linkState('caption')} placeholder='Write your caption here...'></textarea>
             <button onClick={this.selectPhoto} id='choose-photo'>Choose Photo</button>
             <div id='photo-preview'>
               {this.previewPhoto()}
