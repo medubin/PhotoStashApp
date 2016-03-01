@@ -7,11 +7,12 @@ var FollowUserButton = require('./follow_user_button');
 
 var UserFollowedList = React.createClass({
   getInitialState: function() {
-    return({selectedUserFollowed: SelectedUserFollowsStore.allFollowed()});
+    return({
+      selectedUserFollowed: SelectedUserFollowsStore.allFollowed(),
+    });
   },
 
   componentDidMount: function() {
-
     this.selectedUserFollowedToken = SelectedUserFollowsStore.addListener(this._onChangeFollowed);
     SelectedUserFollowsActions.retrieveAllFollowed(this.props.selectedUser);
   },
@@ -34,7 +35,7 @@ var UserFollowedList = React.createClass({
 
           <li key={idx} id='followed-user-list-item'>
             <UserPageLink username={user.username} callback={this.props.callback}/>
-            <FollowUserButton selectedUser={user} currentUser={UserStore.currentUser()}/>
+            <FollowUserButton selectedUser={user} currentUser={this.props.currentUser}/>
           </li>
 
         );

@@ -38,6 +38,7 @@ _isFollowing: function() {
    } else {
      FollowUserActions.deleteFollow(this.props.selectedUser);
    }
+
  },
 
 

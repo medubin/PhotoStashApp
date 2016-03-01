@@ -45,6 +45,7 @@ toggleFollowedList: function() {
         >
             <UserFollowedList
               selectedUser={this.props.selectedUser}
+              currentUser={this.props.currentUser}
               callback={this.toggleFollowedList}>
             </UserFollowedList>
 
