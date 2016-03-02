@@ -1,10 +1,20 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var UserPageLink = require('../links/user_page_link');
-
+var Modal = require('react-modal');
+var LikesModalContent = require('./likes_modal_content');
+var PhotoLikesListStyle = require('../../modal_styles/photo_form_style');
 
 
 var PhotoLikes = React.createClass({
+  getInitialState: function () {
+    return( {modalShown: false});
+  },
+
+  toggleModal: function() {
+    this.setState({modalShown: !this.state.modalShown });
+
+  },
 
 
   _createLikeGrammar: function(idx) {
@@ -19,14 +29,31 @@ var PhotoLikes = React.createClass({
     }
   },
 
+  createModal: function(){
+    return(
+      <span>
+        <span onClick={this.toggleModal}>{this.props.likes.length} likes</span>
+
+        <Modal
+          isOpen={this.state.modalShown}
+          onRequestClose={this.toggleModal}
+          style={PhotoLikesListStyle}
+          >
+          <LikesModalContent likes={this.props.likes}/>
+        </Modal>
+
+      </span> );
+  },
+
   createLikes: function() {
-    if (this.props.likes.length > 6) return(<span>{this.props.likes.length} likes</span>);
+    if (this.props.likes.length > 6) return (this.createModal());
 
     return this.props.likes.map(function(user, idx) {
       return (
         <span key={idx}>
         <UserPageLink username={user.username} key={idx} />
-          {this._createLikeGrammar(idx)} </span>);
+          {this._createLikeGrammar(idx)}
+        </span>);
     }.bind(this));
   },
 
