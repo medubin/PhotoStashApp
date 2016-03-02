@@ -34,6 +34,10 @@ PhotoStore.__onDispatch = function(payload) {
       this.commentOnPhoto(payload.comment);
       this.__emitChange();
       break;
+    case 'DELETED_COMMENT':
+      this.deleteComment(payload.uncomment);
+      this.__emitChange();
+      break;
   }
 };
 
@@ -47,6 +51,18 @@ var _findLikeByUsername = function(username, unlikedPhoto) {
   for (var i = 0; i < unlikedPhoto.likes.length; i++) {
     if (unlikedPhoto.likes[i].username === username) return unlikedPhoto.likes[i];
   }
+};
+
+var _findCommentById = function(id, uncommentedPhoto) {
+  for (var i = 0; i < uncommentedPhoto.comments.length; i++) {
+    if (uncommentedPhoto.comments[i].id === id) return uncommentedPhoto.comments[i];
+  }
+};
+
+PhotoStore.deleteComment = function(uncomment) {
+  var uncommentedPhoto = _findPhotoById(uncomment.photo_id);
+  var removedComment = _findCommentById(uncomment.id, uncommentedPhoto);
+  uncommentedPhoto.comments.splice(uncommentedPhoto.comments.indexOf(removedComment), 1);
 };
 
 PhotoStore.commentOnPhoto = function(comment) {

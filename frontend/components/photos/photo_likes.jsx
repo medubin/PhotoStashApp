@@ -60,7 +60,7 @@ var PhotoLikes = React.createClass({
   render: function() {
     return (
       <div className='photo-feed-users-who-liked'>
-        {this.props.likes ? this.createLikes() : null}
+        {this.props.likes ? this.createLikes() : <div></div>}
       </div>
     );
   }

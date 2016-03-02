@@ -12,11 +12,13 @@ and React.js. PhotoStash allows users to:
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Post photos
-- [ ] Follow other users
-- [ ] Add captions and hash tags to photos
+- [X] Create an account
+- [X] Log in / Log out
+- [X] Post photos
+- [X] Follow other users
+- [X] Add captions
+- [X] Like photos
+- [X] Comment on photos
 
 
 ## Design Docs
@@ -75,20 +77,20 @@ user interface.
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [X] create a basic style guide
+- [X] position elements on the page
+- [X] add basic colors & styles
 
 ### Phase 5: Follows (1.5 day / 6.5 days total)
 
 **Objective:** A user can follow another user
 
-- [ ] create `Follow` model
+- [X] create `Follow` model
 - build out API, Flux loop, and components for:
-  - [ ] Follow CRUD
-  - [ ] A user follow other users
-    - [ ] `FollowsIndex`
-    - [ ] `FollowIndexItem`
+  - [X] Follow CRUD
+  - [X] A user follow other users
+    - [X] `FollowsIndex`
+    - [X] `FollowIndexItem`
   - [ ] A user can search for other users
     - [ ] `UserIndex`
     - [ ] `UserIndexItem`

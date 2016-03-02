@@ -12,6 +12,17 @@ var CommentActions = {
       actionType: CommentConstants.POSTED_COMMENT,
       comment: comment
     });
+  },
+
+  deleteComment: function(comment){
+    ApiUtil.removeComment(comment, this.deletedCommentSuccessful);
+  },
+
+  deletedCommentSuccessful: function(uncomment) {
+    Dispatcher.dispatch({
+      actionType: CommentConstants.DELETED_COMMENT,
+      uncomment: uncomment
+    });
   }
 
 

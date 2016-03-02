@@ -6,7 +6,7 @@ class Api::PhotosController < ApplicationController
     # @user = current_user if signed_in?
 
     all_user_ids = current_user.followed.pluck(:id) + [current_user.id]
-    @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments).order(created_at: :desc)
+    @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc)
 
     # @user.followed.each do |followed|
     #   @all_photos += followed.photos.includes(:likes)

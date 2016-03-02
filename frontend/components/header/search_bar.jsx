@@ -1,11 +1,10 @@
 var React = require('react');
-var LinkedStateMixin = require('react-addons-linked-state-mixin');
+// var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchActions = require('../../actions/search_actions');
 var SearchResults = require('./search_results');
 ////
 
 var SearchBar = React.createClass({
-  mixins: [LinkedStateMixin],
 
   getInitialState: function() {
     // this.preventFirstUpdate = true;
@@ -13,13 +12,22 @@ var SearchBar = React.createClass({
   },
 
   componentDidUpdate: function() {
-    if (this.state.searchPartial) {
-      SearchActions.retrieveSearch(this.state.searchPartial);
+
     // } else if (!this.preventFirstUpdate){
       // SearchActions.clearSearch();
     // } else {
       // this.preventFirstUpdate = false;
+
+  },
+
+  _searchChanged: function(e) {
+    this.setState({searchPartial:e.currentTarget.value});
+    if (e.currentTarget.value) {
+      SearchActions.retrieveSearch(e.currentTarget.value);
+    } else {
+      SearchActions.clearSearch();
     }
+
   },
 
   renderSearchResults:function() {
@@ -40,7 +48,8 @@ var SearchBar = React.createClass({
         <input type='text'
           id='header-search-input'
           placeholder='Search...'
-          valueLink={this.linkState('searchPartial')}>
+          value={this.state.searchPartial}
+          onChange={this._searchChanged}>
         </input>
         {this.renderSearchResults()}
       </li>

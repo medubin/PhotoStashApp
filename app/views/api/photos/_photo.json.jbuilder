@@ -12,4 +12,5 @@ end
 json.comments(photo.comments) do |comment|
   json.username comment.user.username
   json.body comment.body
+  json.id comment.id
 end

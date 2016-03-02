@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
     through: :likes,
     source: :photo
 
+  has_many :comments
 
 
   def self.search(query)

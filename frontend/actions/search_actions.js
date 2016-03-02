@@ -16,6 +16,8 @@ var SearchActions = {
     ApiUtil.searchDatabase(searchTerms, this.recieveSearch);
   },
 
+
+
   clearSearch: function() {
     Dispatcher.dispatch({
       actionType : SearchConstants.SEARCH_RESULTS,

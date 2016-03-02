@@ -16,7 +16,7 @@ var PhotoUploader = React.createClass({
 
 
 
-toggleModal: function() {
+_toggleModal: function() {
   this.setState({modalShown: !this.state.modalShown });
 
 },
@@ -24,13 +24,13 @@ toggleModal: function() {
   render: function() {
     return (
       <li className='headerItem'>
-        <img alt="Upload" src="/assets/Photo_uploader.png" width='25' onClick={this.toggleModal} />
+        <img alt="Upload" src="/assets/Photo_uploader.png" width='25' onClick={this._toggleModal} />
         <Modal
           isOpen={this.state.modalShown}
-          onRequestClose={this.toggleModal}
+          onRequestClose={this._toggleModal}
           style={PhotoFormStyle}
           >
-            <PhotoForm toggle={this.toggleModal}/>
+            <PhotoForm toggle={this._toggleModal}/>
         </Modal>
       </li>
     );
@@ -39,4 +39,4 @@ toggleModal: function() {
 
 module.exports = PhotoUploader;
 
-// {(this.state.modalShown) ? <PhotoForm toggle={this.toggleModal}/> : null}
+// {(this.state.modalShown) ? <PhotoForm toggle={this._toggleModal}/> : null}

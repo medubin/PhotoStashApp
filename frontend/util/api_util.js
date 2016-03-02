@@ -129,7 +129,12 @@ var ApiUtil = {
   },
 
   removeComment: function(comment, callback) {
-
+    $.ajax({
+      url: 'api/photos/' + comment.photo_id + '/comments/' + comment.id,
+      method: 'delete',
+      dataType: 'json',
+      success: callback
+    });
   },
 
 
