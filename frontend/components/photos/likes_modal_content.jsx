@@ -8,7 +8,6 @@ var FollowUserButton = require('../links/follow_user_button');
 var LikesModalContent = React.createClass({
 
   createLikes: function() {
-    console.log(this.props);
     return (this.props.likes.map(function(user, idx) {
       return(
         <span key={idx + 0.1}>

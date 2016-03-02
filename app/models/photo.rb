@@ -6,6 +6,7 @@ class Photo < ActiveRecord::Base
   validates :user, presence: true
 
   has_many :likes
+  has_many :comments
 
   has_many :user_likes,
     through: :likes,

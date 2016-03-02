@@ -117,6 +117,23 @@ var ApiUtil = {
     });
   },
 
+  addComment: function(comment, callback) {
+    $.ajax({
+      url: 'api/photos/' + comment.photo_id + '/comments',
+      method: 'post',
+      dataType: 'json',
+      data: {comment: {body: comment.body}},
+      success: callback
+    });
+
+  },
+
+  removeComment: function(comment, callback) {
+
+  },
+
+
+
 };
 
 module.exports = ApiUtil;

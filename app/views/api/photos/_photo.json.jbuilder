@@ -8,3 +8,8 @@ end
 json.likes(photo.user_likes) do |like|
   json.username like.username
 end
+
+json.comments(photo.comments) do |comment|
+  json.username comment.user.username
+  json.body comment.body
+end

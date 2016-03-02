@@ -1,3 +1,2 @@
-photo = @like.photo
-json.extract!(photo, :id)
+json.extract!(@like, :photo_id)
 json.extract!(@like.user, :username)

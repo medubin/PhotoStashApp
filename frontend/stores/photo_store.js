@@ -30,6 +30,10 @@ PhotoStore.__onDispatch = function(payload) {
       this.unlikePhoto(payload.unlike);
       this.__emitChange();
       break;
+    case 'POSTED_COMMENT':
+      this.commentOnPhoto(payload.comment);
+      this.__emitChange();
+      break;
   }
 };
 
@@ -45,14 +49,19 @@ var _findLikeByUsername = function(username, unlikedPhoto) {
   }
 };
 
+PhotoStore.commentOnPhoto = function(comment) {
+  var commentedPhoto = _findPhotoById(comment.photo_id);
+  commentedPhoto.comments.push({username: comment.username, body: comment.body});
+};
+
 
 PhotoStore.likePhoto = function(like) {
-  var likedPhoto = _findPhotoById(like.id);
+  var likedPhoto = _findPhotoById(like.photo_id);
   likedPhoto.likes.push({username: like.username});
 };
 
 PhotoStore.unlikePhoto = function(unlike) {
-  var unlikedPhoto = _findPhotoById(unlike.id);
+  var unlikedPhoto = _findPhotoById(unlike.photo_id);
   var removedLike = _findLikeByUsername(unlike.username, unlikedPhoto);
   unlikedPhoto.likes.splice(unlikedPhoto.likes.indexOf(removedLike), 1);
 };

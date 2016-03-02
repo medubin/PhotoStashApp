@@ -30,6 +30,7 @@ var UserActions = require('./actions/user_actions');
 var FollowUsersActions = require('./actions/follow_users_actions');
 var SearchActions = require('./actions/search_actions');
 var LikeActions = require('./actions/like_actions');
+var CommentActions = require('./actions/comment_actions');
 
 
 
@@ -43,7 +44,7 @@ window.FollowUsersActions = FollowUsersActions;
 window.SearchActions = SearchActions;
 window.SearchStore = SearchStore;
 window.LikeActions = LikeActions;
-
+window.CommentActions = CommentActions;
 
 var routes = (
   <Route component={App} path = '/'>
