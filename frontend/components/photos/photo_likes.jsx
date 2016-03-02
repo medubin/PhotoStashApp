@@ -32,21 +32,21 @@ var PhotoLikes = React.createClass({
   createModal: function(){
     return(
       <span>
-        <span onClick={this.toggleModal}>{this.props.likes.length} likes</span>
+        <span className='photo-likes-overflow' onClick={this.toggleModal}>{this.props.likes.length} likes</span>
 
         <Modal
           isOpen={this.state.modalShown}
           onRequestClose={this.toggleModal}
           style={PhotoLikesListStyle}
           >
-          <LikesModalContent likes={this.props.likes}/>
+          <LikesModalContent likes={this.props.likes} currentUser={this.props.currentUser}/>
         </Modal>
 
       </span> );
   },
 
   createLikes: function() {
-    if (this.props.likes.length > 6) return (this.createModal());
+    if (this.props.likes.length > 10) return (this.createModal());
 
     return this.props.likes.map(function(user, idx) {
       return (

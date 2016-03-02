@@ -79,8 +79,6 @@ button:focus {
   height: 20px;
 }
 
-  // box-shadow: inset 0px 0px 2px 2px black;
-
 
 #header-title {
   font-family: 'Brush Script MT', cursive;
@@ -158,30 +156,11 @@ button:focus {
 
 
 /*************MODAL***************/
-//
-//
+
+
 .modal {
   text-align: center;
-//     float: none;
-//     display: block;
-//     // width: 300px;
-//     // height: 340px;
-//     padding: 25px 20px;
-//     padding-bottom: 35px;
-//     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-//     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-//     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-//     position: fixed;
-//     background: rgba(255,255,255,1);
-//     color: #000;
-//     z-index: 99999;
-//     border: 1px #EEEFEF solid;
-//     cursor: default !important;
-//
-//     top: 50%;
-//     left: 50%;
-//     margin-right: -50%;
-//     transform: translate(-50%, -50%);
+
 }
 .ReactModal__Overlay, .ReactModal__Overlay--after-open {
   z-index: 25;
@@ -219,47 +198,14 @@ button:focus {
     margin-bottom: 30px;
   }
 
-
-
   .modal textarea {
     width: 200px;
     height: 50px;
-    // z-index: 9999999999;
   }
-
-    // background-color: #51AFE9;
-    // border-radius: 3px;
-    //
-    // -webkit-box-sizing: border-box;
-    // -moz-box-sizing: border-box;
-    // box-sizing: border-box;
-    // display: inline;
-    // outline: 0;
-    // border: 1px solid black;
-    // color: #000;
-    // // border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    // font-size: 12px;
-    // font-weight: bold;
-    // padding: 6px 12px 6px 12px;
-    // line-height: normal;
-    // text-align: center;
-    // vertical-align: middle;
-    // margin: auto;
-    // cursor: pointer;
-    // text-transform: uppercase;
-    // // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    // -webkit-border-radius: 3px;
-    // -moz-border-radius: 3px;
-    // -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    // -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-
 
   #choose-photo {
     display: block;
     margin-bottom: 15px;
-
-
   }
 
   #photo-preview {
@@ -271,7 +217,6 @@ button:focus {
     height: 100px;
     background-color: white;
     border: 1px #000 dashed;
-
   }
 
 
@@ -317,13 +262,68 @@ button:focus {
   display: inline-block;
   width: 50px;
   height: 50px;
-  // box-sizing: border-box;
   text-align: center;
   border-top:1px #EEEFEF solid;
   position: relative;
   top: 25px;
   transform: translateY(-50%);
 }
+
+#photo-like:hover {
+  cursor: pointer;
+}
+
+.photo-likes-overflow {
+  color: #135582;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.photo-likes-overflow {
+  cursor: pointer;
+}
+
+
+
+.likes-overflow-modal #user-link {
+  display: inline-block;
+  position: relative;
+  border: 1px #EEEFEF solid;
+}
+
+.likes-overflow-modal #user-link:hover {
+  background-color: rgba(200,200,200,1);
+  cursor: pointer;
+}
+
+.likes-overflow-modal .follow-unfollow-button {
+  display: inline;
+  float: right;
+  border: 1px #EEEFEF solid;
+  background-color: #fff;
+  width: 70px;
+  border-radius:10px;
+  border: 1px #4090DB solid;
+  font-size: 16px;
+  font-weight: normal;
+  color: #4090DB;
+  text-align: center;
+
+}
+
+
+.likes-overflow-modal .follow-unfollow-button:hover {
+  background-color: #4090DB;
+  border: 1px #fff solid;
+  color: #fff;
+  cursor: pointer;
+}
+
+.likes-overflow-modal span {
+  display: block;
+
+}
+
 
 
 #photo-bottom {
@@ -332,7 +332,6 @@ button:focus {
 
 .photo-feed-users-who-liked #user-link {
   display: inline-block;
-  // background-color: blue;
 }
 
 #photo-input-fields {
@@ -458,24 +457,7 @@ button:focus {
   padding: 0;
   margin: 0;
   word-wrap: break-word;
-  // float: none;
-  // display: block;
-  // width: 300px;
-  // padding: 25px 20px;
-  // // padding-bottom: 35px;
-  // -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  // -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  // top: 5%;
-  // position: fixed;
-  // transform: translate(-0%, 150%);;
-  // background: rgba(255,255,255,1);
-  // color: #000;
-  // z-index: 99999;
   text-align: left;
-  // left: 35%;
-  // border: 1px #EEEFEF solid;
-
 }
 
 
@@ -485,12 +467,10 @@ button:focus {
   width: auto;
   padding: 0;
   border: 1px #EEEFEF solid;
-
 }
 
 
 #user-followed-list > li > div, #user-followers-list > li > div {
-  // width: 0px;
   border: 0;
   height: 24px;
   display: inline;
@@ -509,7 +489,6 @@ button:focus {
   border: 1px #EEEFEF solid;
   background-color: #fff;
   width: 70px;
-  // height: 22px;
   border-radius:10px;
   border: 1px #4090DB solid;
   font-size: 16px;
@@ -528,8 +507,6 @@ button:focus {
 #user-followed-list>li>#user-link, #user-followers-list>li>#user-link{
   color: black;
   font-weight: normal;
-  // border: 1px #EEEFEF solid;
-
 }
 
 
@@ -568,43 +545,3 @@ button:focus {
   margin-right: auto;
 
 }
-
-
-
-
-// #search-results {
-//   overflow: hidden;
-//   float: none;
-//   display: block;
-//   position:absolute;
-//   top: 50px;
-//   padding-left: 0px;
-//   left: 50%;
-//   transform: translate(-50%, 0%);
-//   background: rgba(255,255,255,1);
-//   width: 100px;
-//
-// }
-// #search-results>li{
-//   position:relative;
-//   text-align: left;
-// }
-//
-// #search-results>li>#user-link{
-//   color: black;
-//   font-weight: normal;
-//   border: 1px #EEEFEF solid;
-// }
-// #search-results>li>#user-link:hover{
-//   background-color: rgba(200,200,200,1);
-// }
-
-
-
-
-// @media (max-width: 1000px) {
-//   * {
-//     // border: 1px solid black;
-//     background-color: pink;
-//   }
-// }

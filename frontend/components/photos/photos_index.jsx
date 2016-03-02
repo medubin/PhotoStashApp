@@ -11,9 +11,9 @@ var PhotosIndex = React.createClass({
   createPhotoList: function() {
     return this.state.photos.map(function(el, idx) {
       return (
-      <PhotoIndexItem key={idx} photo={el} className='feedItem'/>
+      <PhotoIndexItem key={idx} photo={el} className='feedItem' currentUser={this.props.currentUser}/>
       );
-    });
+    }.bind(this));
   },
 
   render: function() {

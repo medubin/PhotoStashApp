@@ -20,7 +20,7 @@ var PhotoIndexItem = React.createClass({
 
         <div id ='photo-bottom'>
           <PhotoCaption caption={this.props.photo.caption} username={this.props.photo.user.username}/>
-          <PhotoLikes likes={this.props.photo.likes}/>
+          <PhotoLikes likes={this.props.photo.likes} currentUser={this.props.currentUser}/>
         </div>
         <div id = 'photo-input-fields'>
           <PhotoLikeButton photo={this.props.photo}/>

@@ -2,17 +2,24 @@ var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchActions = require('../../actions/search_actions');
 var SearchResults = require('./search_results');
-
+////
 
 var SearchBar = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function() {
+    // this.preventFirstUpdate = true;
     return( {searchPartial: ''});
   },
 
   componentDidUpdate: function() {
-    if (this.state.searchPartial) SearchActions.retrieveSearch(this.state.searchPartial);
+    if (this.state.searchPartial) {
+      SearchActions.retrieveSearch(this.state.searchPartial);
+    // } else if (!this.preventFirstUpdate){
+      // SearchActions.clearSearch();
+    // } else {
+      // this.preventFirstUpdate = false;
+    }
   },
 
   renderSearchResults:function() {
@@ -25,7 +32,6 @@ var SearchBar = React.createClass({
 
   closeSearch: function() {
     this.setState({searchPartial: ''});
-    console.log(this.state.searchPartial);
   },
 
   render: function() {

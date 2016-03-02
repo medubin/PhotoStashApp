@@ -3,7 +3,7 @@ var SelectedUserFollowsStore = require('../../stores/selected_user_follows_store
 var UserStore = require('../../stores/user_store');
 var SelectedUserFollowsActions = require('../../actions/selected_user_follows_actions');
 var UserPageLink = require('../links/user_page_link');
-var FollowUserButton = require('./follow_user_button');
+var FollowUserButton = require('../links/follow_user_button');
 
 
 

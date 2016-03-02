@@ -3,7 +3,7 @@ var UserActions = require('../../actions/user_actions');
 var UserStore = require('../../stores/user_store');
 var UserPhotoItem = require('./user_photo_item');
 
-var FollowUserButton = require('./follow_user_button');
+var FollowUserButton = require('../links/follow_user_button');
 var UserFollowedCount = require('./user_followed_count');
 var UserFollowersCount = require('./user_followers_count');
 
@@ -14,7 +14,6 @@ var UserPage = React.createClass({
     });
   },
   componentWillReceiveProps: function(newProps) {
-    console.log(newProps);
     if (newProps.routeParams && newProps.routeParams.username && newProps.routeParams.username !== this.state.selectedUser.username) {
       UserActions.retrieveSelectedUser({username: newProps.routeParams.username});
     }

@@ -1,13 +1,23 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var UserPageLink = require('../links/user_page_link');
+var FollowUserButton = require('../links/follow_user_button');
+// var UserStore = require('../../stores/user_store');
+
 
 var LikesModalContent = React.createClass({
 
   createLikes: function() {
+    console.log(this.props);
     return (this.props.likes.map(function(user, idx) {
-      return( <UserPageLink username={user.username} key={idx}/>);
-    }));
+      return(
+        <span key={idx + 0.1}>
+          <UserPageLink username={user.username} key={idx}/>
+          <FollowUserButton selectedUser={user} currentUser={this.props.currentUser} key={idx + 0.2}/>
+        </span>
+    );
+
+  }.bind(this)));
   },
 
 
@@ -15,7 +25,7 @@ var LikesModalContent = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className='likes-overflow-modal'>
         {this.createLikes()}
       </div>
     );
