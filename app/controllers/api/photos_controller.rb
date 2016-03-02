@@ -3,13 +3,15 @@ class Api::PhotosController < ApplicationController
     # @photos = Photo.all.reverse
     @user = current_user if signed_in?
 
-    @all_photos = []
-    @user.followed.each do |followed|
-      @all_photos += followed.photos.includes(:likes)
-    end
+    @all_user_ids = current_user.followed.pluck(:id) + [current_user.id]
+    @all_photos = Photo.where(user_id: @all_user_ids).includes(:user_likes, :user)
 
-    @all_photos += @user.photos
-    @all_photos.sort!{ |x,y| y.created_at <=> x.created_at }
+    # @user.followed.each do |followed|
+    #   @all_photos += followed.photos.includes(:likes)
+    # end
+    #
+    # @all_photos += @user.photos.includes(:likes)
+    # @all_photos.sort!{ |x,y| y.created_at <=> x.created_at }
 
 
     render :index
