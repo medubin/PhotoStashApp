@@ -14,7 +14,7 @@ var PhotoLikeButton = React.createClass({
   },
 
 
-  toggleLike: function() {
+  _toggleLike: function() {
     if (this._userLikedPhoto()) {
       LikeActions.deleteLike(this.props.photo);
     } else {
@@ -22,10 +22,22 @@ var PhotoLikeButton = React.createClass({
     }
   },
 
+  _setIcon: function() {
+    if (this._userLikedPhoto()) {
+      return (<img alt="Upload" src="/assets/heart-red-small" width='50'/>);
+    } else {
+      return (<img alt="Upload" src="/assets/heart-clear-small" width='50'/>);
+    }
+  },
+
+
+
+
+
   render: function() {
     return (
-      <div id='photo-like' onClick={this.toggleLike}>
-        <img alt="Upload" src="/assets/heart.png" width='50'/>
+      <div id='photo-like' onClick={this._toggleLike}>
+        {this._setIcon()}
       </div>
     );
   }

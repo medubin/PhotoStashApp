@@ -330,6 +330,11 @@ button:focus {
   min-height: 60px;
 }
 
+.photo-feed-users-who-liked #user-link {
+  display: inline-block;
+  // background-color: blue;
+}
+
 #photo-input-fields {
   height: 50px;
 }

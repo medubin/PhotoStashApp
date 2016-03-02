@@ -49,14 +49,12 @@ var _findLikeByUsername = function(username, unlikedPhoto) {
 PhotoStore.likePhoto = function(like) {
   var likedPhoto = _findPhotoById(like.id);
   likedPhoto.likes.push({username: like.username});
-
 };
 
 PhotoStore.unlikePhoto = function(unlike) {
   var unlikedPhoto = _findPhotoById(unlike.id);
   var removedLike = _findLikeByUsername(unlike.username, unlikedPhoto);
-  unlikedPhoto.likes.splice(unlike.username, 1);
-
+  unlikedPhoto.likes.splice(unlikedPhoto.likes.indexOf(removedLike), 1);
 };
 
 

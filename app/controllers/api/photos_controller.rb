@@ -5,9 +5,9 @@ class Api::PhotosController < ApplicationController
 
     @all_photos = []
     @user.followed.each do |followed|
-      @all_photos += followed.photos
+      @all_photos += followed.photos.includes(:likes)
     end
-    
+
     @all_photos += @user.photos
     @all_photos.sort!{ |x,y| y.created_at <=> x.created_at }
 
