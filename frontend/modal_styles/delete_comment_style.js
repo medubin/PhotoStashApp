@@ -6,9 +6,9 @@ var DeleteCommentStyle = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    height                : '340px',
-    width                 : '300px',
-    // padding: 25px '20px',
+    height                : '89px',
+    width                 : '510px',
+    padding               : '0px',
     // padding-bottom: '35px'
   }
 };

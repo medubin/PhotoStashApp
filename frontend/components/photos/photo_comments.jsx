@@ -21,9 +21,8 @@ var PhotoComments = React.createClass({
   },
 
   createDeleteButton: function(comment) {
-
     if (comment.username === UserStore.currentUser().username){
-      return (<span onClick={this._toggleModal.bind(this, comment)}>X</span>);
+      return (<span className='delete-comment-x' onClick={this._toggleModal.bind(this, comment)}>⨉</span>);
     }
   },
 
@@ -33,9 +32,9 @@ var PhotoComments = React.createClass({
     return (this.props.comments.map(function(comment, idx) {
       return(
         <div key={idx} className='photo-comment'>
+          {this.createDeleteButton(comment)}
           <UserPageLink username={comment.username} key={idx+ 0.1}/>
           {' ' + comment.body}
-          {this.createDeleteButton(comment)}
         </div>
       );
     }.bind(this)));
