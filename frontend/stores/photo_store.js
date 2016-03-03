@@ -3,7 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 
 var PhotoStore = new Store(AppDispatcher);
 var _photos = [];
-var _singlePhotoShow = {};
+var _singlePhotoShow = {id: undefined};
 
 PhotoStore.resetPhotos = function(photos) {
   _photos = photos;
@@ -45,21 +45,21 @@ PhotoStore.__onDispatch = function(payload) {
   }
 };
 
-var _findPhotoById = function(id) {
+var _findPhotoIndexById = function(id) {
   for (var i = 0; i < _photos.length; i++) {
-    if (_photos[i].id === id) return _photos[i];
+    if (_photos[i].id === id) return i;
   }
 };
 
-var _findLikeByUsername = function(username, unlikedPhoto) {
+var _findLikeIndexByUsername = function(username, unlikedPhoto) {
   for (var i = 0; i < unlikedPhoto.likes.length; i++) {
-    if (unlikedPhoto.likes[i].username === username) return unlikedPhoto.likes[i];
+    if (unlikedPhoto.likes[i].username === username) return i;
   }
 };
 
-var _findCommentById = function(id, uncommentedPhoto) {
+var _findCommentIndexById = function(id, uncommentedPhoto) {
   for (var i = 0; i < uncommentedPhoto.comments.length; i++) {
-    if (uncommentedPhoto.comments[i].id === id) return uncommentedPhoto.comments[i];
+    if (uncommentedPhoto.comments[i].id === id) return i;
   }
 };
 
@@ -68,26 +68,41 @@ PhotoStore.addSinglePhotoShow = function(photo) {
 };
 
 PhotoStore.deleteComment = function(uncomment) {
-  var uncommentedPhoto = _findPhotoById(uncomment.photo_id);
-  var removedComment = _findCommentById(uncomment.id, uncommentedPhoto);
-  uncommentedPhoto.comments.splice(uncommentedPhoto.comments.indexOf(removedComment), 1);
+  var uncommentedPhoto = _findPhotoIndexById(uncomment.photo_id);
+  if (uncomment.photo_id === _singlePhotoShow.id) {
+    var removeCommentSinglePhoto = _findCommentIndexById(uncomment.id, _singlePhotoShow);
+    _singlePhotoShow.comments.splice(removeCommentSinglePhoto, 1);
+  }
+  if (uncommentedPhoto !== undefined) {
+    var removedComment = _findCommentIndexById(uncomment.id, _photos[uncommentedPhoto]);
+    _photos[uncommentedPhoto].comments.splice(removedComment, 1);
+  }
 };
 
 PhotoStore.commentOnPhoto = function(comment) {
-  var commentedPhoto = _findPhotoById(comment.photo_id);
-  commentedPhoto.comments.push(comment);
+  var commentedPhoto = _findPhotoIndexById(comment.photo_id);
+  if (commentedPhoto !== undefined) _photos[commentedPhoto].comments.push(comment);
+  if (comment.photo_id === _singlePhotoShow.id) _singlePhotoShow.comments.push(comment);
 };
 
 
 PhotoStore.likePhoto = function(like) {
-  var likedPhoto = _findPhotoById(like.photo_id);
-  likedPhoto.likes.push({username: like.username});
+  var likedPhoto = _findPhotoIndexById(like.photo_id);
+  if (likedPhoto !== undefined) _photos[likedPhoto].likes.push({username: like.username});
+  if (like.photo_id === _singlePhotoShow.id) _singlePhotoShow.likes.push(like);
 };
 
+
 PhotoStore.unlikePhoto = function(unlike) {
-  var unlikedPhoto = _findPhotoById(unlike.photo_id);
-  var removedLike = _findLikeByUsername(unlike.username, unlikedPhoto);
-  unlikedPhoto.likes.splice(unlikedPhoto.likes.indexOf(removedLike), 1);
+  var unlikedPhoto = _findPhotoIndexById(unlike.photo_id);
+  if (unlike.photo_id === _singlePhotoShow.id) {
+    var removeLikeSinglePhoto = _findLikeIndexByUsername(unlike.username, _singlePhotoShow);
+    _singlePhotoShow.likes.splice(removeLikeSinglePhoto, 1);
+  }
+  if (unlikedPhoto !== undefined) {
+    var removedLike = _findLikeIndexByUsername(unlike.username, _photos[unlikedPhoto]);
+    _photos[unlikedPhoto].likes.splice(removedLike, 1);
+  }
 };
 
 

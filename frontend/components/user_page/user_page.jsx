@@ -93,7 +93,7 @@ var UserPage = React.createClass({
           isOpen={this.state.modalShown}
           onRequestClose={this._toggleModal}
           style={PhotoShowPageStyle} >
-          <ShowPhotoModalContent photo={this.state.photoToShow}/>
+          <ShowPhotoModalContent photo={this.state.photoToShow} currentUser={this.props.currentUser}/>
         </Modal>
 
 

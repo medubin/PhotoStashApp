@@ -13,7 +13,7 @@ var PhotoIndexItem = React.createClass({
       <li className='photo-index-item'>
 
         <div className='photo-top'>
-          <UserPageLink username={this.props.photo.user.username} id='photo-top-user-link'/>
+          <UserPageLink username={this.props.photo.user.username} className='photo-top-user-link'/>
         </div>
 
         <div className='photo-image'>

@@ -8,7 +8,8 @@ var PhotoShowPageStyle = {
     transform             : 'translate(-50%, -50%)',
     height                : '600px',
     width                 : '935px',
-    padding               : '0px'
+    padding               : '0px',
+    border                : '0px'
   },
   overlay : {
    position          : 'fixed',

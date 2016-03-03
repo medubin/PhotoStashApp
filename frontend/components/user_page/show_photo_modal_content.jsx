@@ -4,10 +4,17 @@ var PropTypes = React.PropTypes;
 var PhotoStore = require('../../stores/photo_store');
 var PhotoActions = require('../../actions/photo_actions');
 
+var PhotoCaption = require('../photos/photo_caption');
+var PhotoLikes = require('../photos/photo_likes');
+var PhotoComments = require('../photos/photo_comments');
+var UserPageLink = require('../links/user_page_link');
+var PhotoLikeButton = require('../photos/photo_like_button');
+var PhotoCommentInput = require('../photos/photo_comment_input');
+
 
 var ShowPhotoModalContent = React.createClass({
   getInitialState: function() {
-    return({shownPhoto: {image: null} });
+    return({shownPhoto: {image: null, user: {username: null}, comments: [], likes: []} });
 
   },
 
@@ -21,22 +28,36 @@ var ShowPhotoModalContent = React.createClass({
   },
 
   _onChangePhoto: function() {
+
    this.setState({shownPhoto: PhotoStore.singlePhotoShow()});
+
  },
 
 
   render: function() {
-
     return (
       <div className='user-page-photo-show'>
         <div className='user-page-photo-show-left'>
           <img src={this.state.shownPhoto.image} width='600' height='600' />
         </div>
 
-        <div className='user-page-photo-show-left'>
-        </div>
 
         <div className='user-page-photo-show-right'>
+          <div className='user-page-photo-show-username'>
+            <UserPageLink username={this.state.shownPhoto.user.username} id='photo-top-user-link'/>
+          </div>
+
+          <div className='user-page-photo-show-reactions'>
+            <PhotoCaption caption={this.state.shownPhoto.caption} username={this.state.shownPhoto.user.username}/>
+            <PhotoComments comments={this.state.shownPhoto.comments}/>
+            <PhotoLikes likes={this.state.shownPhoto.likes} currentUser={this.state.currentUser}/>
+          </div>
+
+          <div className='user-page-photo-show-input'>
+            <PhotoLikeButton photo={this.state.shownPhoto}/>
+            <PhotoCommentInput photo={this.state.shownPhoto}/>
+          </div>
+
         </div>
 
       </div>
@@ -46,3 +67,5 @@ var ShowPhotoModalContent = React.createClass({
 });
 
 module.exports = ShowPhotoModalContent;
+//
+//

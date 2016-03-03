@@ -15,6 +15,7 @@ var PhotoLikeButton = React.createClass({
 
 
   _toggleLike: function() {
+    console.log(this.props.photo);
     if (this._userLikedPhoto()) {
       LikeActions.deleteLike(this.props.photo);
     } else {
