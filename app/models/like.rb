@@ -4,11 +4,11 @@ class Like < ActiveRecord::Base
   validates :photo_id, uniqueness: { scope: :user_id }
 
   belongs_to :user
-  belongs_to :photo
+  belongs_to :photo, counter_cache: true
 
   validates :user, presence: true
   validates :photo, presence: true
 
-  
+
 
 end

@@ -10,9 +10,18 @@ var UserFollowersCount = require('./user_followers_count');
 var UserPage = React.createClass({
   getInitialState: function() {
     return({
-      selectedUser: UserStore.selectedUser() || {username: '', followed: []}
+      selectedUser: UserStore.selectedUser() || {username: '', followed: [],
+      modalShown: false,
+      photoToShow: null
+      }
     });
   },
+
+  _toggleModal: function(photoToShow) {
+    this.setState({modalShown: !this.state.modalShown });
+    this.setState({photoToShow: photoToShow });
+  },
+
   componentWillReceiveProps: function(newProps) {
     if (newProps.routeParams && newProps.routeParams.username && newProps.routeParams.username !== this.state.selectedUser.username) {
       UserActions.retrieveSelectedUser({username: newProps.routeParams.username});
@@ -34,10 +43,12 @@ var UserPage = React.createClass({
 
 
 
+
+
  createPhotos: function() {
    return this.state.selectedUser.photos.map(function(photo, idx) {
-     return ( <UserPhotoItem key={idx} photo={photo} /> );
-   });
+     return ( <UserPhotoItem key={idx} photo={photo} toggle={this._toggleModal} /> );
+   }.bind(this));
  },
 
  // updateSelectedUser: function() {

@@ -28,7 +28,7 @@ var App = React.createClass({
   render: function() {
     return (
       <main >
-        <Header currentUser={this.state.currentUser}/>
+        <Header currentUser={this.state.currentUser} selectedUser={this.props.params.username}/>
          {this.props.children && React.cloneElement(this.props.children, {
            currentUser: this.state.currentUser
          })}

@@ -18,11 +18,13 @@ class Follow < ActiveRecord::Base
     foreign_key: :follower_id,
     primary_key: :id,
     class_name: "User"
+    #, counter_cache: true
 
   belongs_to :followed,
     foreign_key: :followed_id,
     primary_key: :id,
     class_name: "User"
+    #, counter_cache: true
 
   validates :follower, presence: true
   validates :followed, presence: true

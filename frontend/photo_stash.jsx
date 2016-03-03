@@ -58,5 +58,7 @@ var routes = (
 document.addEventListener('DOMContentLoaded', function() {
   var root = document.getElementById('content');
   Modal.setAppElement(root);
-  ReactDOM.render(<Router>{routes}</Router>, root);
+  if (root) {
+    ReactDOM.render(<Router>{routes}</Router>, root);
+  }
 });

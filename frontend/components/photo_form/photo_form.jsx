@@ -28,6 +28,7 @@ var PhotoForm = React.createClass({
       upload_preset: window.UPLOAD_PRESET},
       function(error, results){
       if(!error){
+        console.log(results);
         this.setState({image: results[0].url});
       }
     }.bind(this));

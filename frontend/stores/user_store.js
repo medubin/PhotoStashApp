@@ -27,13 +27,23 @@ UserStore.__onDispatch = function(payload) {
   }
 };
 
+var _findFollowIndexByUsernameInCurrentUser = function(username) {
+  for (var i = 0; i < _currentUser.followed.length; i++) {
+    if (_currentUser.followed[i].username === username) return i;
+  }
+};
+
+
 UserStore.addFollow = function(followed) {
   _currentUser.followed.push(followed);
   if (_currentUser.username === _selectedUser.username) _selectedUser.followed += 1;
 };
 
 UserStore.removeFollow = function(unfollowed) {
-  _currentUser.followed.splice(unfollowed, 1);
+  var indexOfUnfollow = _findFollowIndexByUsernameInCurrentUser(unfollowed.username);
+  if (indexOfUnfollow !== undefined) {
+    _currentUser.followed.splice(indexOfUnfollow, 1);
+  }
   if (_currentUser.username === _selectedUser.username) _selectedUser.followed -= 1;
 };
 

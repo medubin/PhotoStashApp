@@ -45,6 +45,12 @@ SelectedUserFollowsStore.__onDispatch = function(payload) {
   }
 };
 
+// var _findFollowIndexByUsernameInCurrentUser = function(username) {
+//   for (var i = 0; i < _followed.length; i++) {
+//     if (_followed[i].username === username) return i;
+//   }
+// };
+//
 // SelectedUserFollowsStore.addFollow = function(follow) {
 //   if(UserStore.selectedUser().username === UserStore.currentUser().username){
 //     console.log(follow);
@@ -54,9 +60,9 @@ SelectedUserFollowsStore.__onDispatch = function(payload) {
 // };
 //
 // SelectedUserFollowsStore.removeFollow = function(unfollow) {
+//   var followIndex = _findFollowIndexByUsernameInCurrentUser(unfollow.username);
 //   if(UserStore.selectedUser().username === UserStore.currentUser().username){
-//     console.log(unfollow);
-//     _followed.splice(unfollow, 1);
+//     _followed.splice(followIndex, 1);
 //     this.__emitChange();
 //   }
 // };

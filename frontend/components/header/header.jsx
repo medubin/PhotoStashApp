@@ -4,10 +4,19 @@ var UserName = require('./user_name');
 var PhotoUploader = require('./photo_uploader_button');
 var SearchBar = require('./search_bar');
 var LogoutButton = require('./logout_button');
+// var UserStore = require('../../stores/user_store');
 
 
 var Header = React.createClass({
 
+userLinkOrLogout: function() {
+  if (this.props.selectedUser === this.props.currentUser.username) {
+    return (<LogoutButton/>);
+  } else {
+    return(<UserName currentUser={this.props.currentUser}/>);
+  }
+
+},
 
 
 
@@ -17,8 +26,7 @@ var Header = React.createClass({
         <Logo/>
         <PhotoUploader currentUser ={this.props.currentUser}/>
         <SearchBar/>
-        <UserName currentUser={this.props.currentUser}/>
-        <LogoutButton/>
+        {this.userLinkOrLogout()}
       </ul>
     );
   }
