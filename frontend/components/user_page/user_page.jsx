@@ -2,10 +2,14 @@ var React = require('react');
 var UserActions = require('../../actions/user_actions');
 var UserStore = require('../../stores/user_store');
 var UserPhotoItem = require('./user_photo_item');
+var Modal = require('react-modal');
+var PhotoShowPageStyle = require('../../modal_styles/photo_show_page_style');
+var PhotoActions = require('../../actions/photo_actions');
 
 var FollowUserButton = require('../links/follow_user_button');
 var UserFollowedCount = require('./user_followed_count');
 var UserFollowersCount = require('./user_followers_count');
+var ShowPhotoModalContent = require('./show_photo_modal_content');
 
 var UserPage = React.createClass({
   getInitialState: function() {
@@ -18,8 +22,8 @@ var UserPage = React.createClass({
   },
 
   _toggleModal: function(photoToShow) {
+    this.setState({photoToShow: photoToShow});
     this.setState({modalShown: !this.state.modalShown });
-    this.setState({photoToShow: photoToShow });
   },
 
   componentWillReceiveProps: function(newProps) {
@@ -47,7 +51,7 @@ var UserPage = React.createClass({
 
  createPhotos: function() {
    return this.state.selectedUser.photos.map(function(photo, idx) {
-     return ( <UserPhotoItem key={idx} photo={photo} toggle={this._toggleModal} /> );
+     return ( <UserPhotoItem key={idx} photo={photo} toggle={this._toggleModal} that={this} /> );
    }.bind(this));
  },
 
@@ -84,6 +88,15 @@ var UserPage = React.createClass({
         <ul className='user-photos-index'>
           {(this.state.selectedUser.photos) ? this.createPhotos() : null}
         </ul>
+
+        <Modal
+          isOpen={this.state.modalShown}
+          onRequestClose={this._toggleModal}
+          style={PhotoShowPageStyle} >
+          <ShowPhotoModalContent photo={this.state.photoToShow}/>
+        </Modal>
+
+
       </div>
 
     );

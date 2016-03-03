@@ -1,6 +1,7 @@
 var PhotoConstants = {
   PHOTOS_RECIEVED: 'PHOTOS_RECIEVED',
-  PHOTO_SAVED: 'PHOTO_SAVED'
+  PHOTO_SAVED: 'PHOTO_SAVED',
+  SINGLE_PHOTO_RECIEVED: 'SINGLE_PHOTO_RECIEVED'
 };
 
 module.exports = PhotoConstants;

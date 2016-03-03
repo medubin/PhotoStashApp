@@ -24,7 +24,20 @@ var PhotoActions = {
 
   postPhoto: function(photo) {
     ApiUtil.addPhoto(photo, this.postedPhotoSuccess);
+  },
+
+  recieveSinglePhoto: function(photo) {
+    Dispatcher.dispatch({
+      actionType: PhotoConstants.SINGLE_PHOTO_RECIEVED,
+      photo: photo
+    });
+  },
+
+  retrieveSinglePhoto: function(photo) {
+    ApiUtil.fetchSinglePhoto(photo, this.recieveSinglePhoto);
   }
+
+
 
 };
 

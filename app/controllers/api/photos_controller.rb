@@ -20,6 +20,10 @@ class Api::PhotosController < ApplicationController
   end
 
 
+  def show
+    @photo = Photo.find_by(id: params[:id])
+    render :show
+  end
 
   def create
     @photo = Photo.new(photo_params)

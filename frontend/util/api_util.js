@@ -7,6 +7,14 @@ var ApiUtil = {
     });
   },
 
+  fetchSinglePhoto: function(photo, callback) {
+    $.ajax({
+      url: 'api/photos/' + photo.id,
+      dataType: 'json',
+      success: callback
+    });
+  },
+
   fetchCurrentUser: function(callback) {
     $.ajax({
       url: 'api/session',

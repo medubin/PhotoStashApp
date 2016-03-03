@@ -3,6 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 
 var PhotoStore = new Store(AppDispatcher);
 var _photos = [];
+var _singlePhotoShow = {};
 
 PhotoStore.resetPhotos = function(photos) {
   _photos = photos;
@@ -38,6 +39,9 @@ PhotoStore.__onDispatch = function(payload) {
       this.deleteComment(payload.uncomment);
       this.__emitChange();
       break;
+    case 'SINGLE_PHOTO_RECIEVED':
+      this.addSinglePhotoShow(payload.photo);
+      this.__emitChange();
   }
 };
 
@@ -59,6 +63,10 @@ var _findCommentById = function(id, uncommentedPhoto) {
   }
 };
 
+PhotoStore.addSinglePhotoShow = function(photo) {
+  _singlePhotoShow = photo;
+};
+
 PhotoStore.deleteComment = function(uncomment) {
   var uncommentedPhoto = _findPhotoById(uncomment.photo_id);
   var removedComment = _findCommentById(uncomment.id, uncommentedPhoto);
@@ -67,7 +75,6 @@ PhotoStore.deleteComment = function(uncomment) {
 
 PhotoStore.commentOnPhoto = function(comment) {
   var commentedPhoto = _findPhotoById(comment.photo_id);
-  console.log(comment);
   commentedPhoto.comments.push(comment);
 };
 
@@ -88,6 +95,10 @@ PhotoStore.unlikePhoto = function(unlike) {
 
 PhotoStore.all = function() {
   return _photos.slice(0);
+};
+
+PhotoStore.singlePhotoShow = function() {
+  return _singlePhotoShow;
 };
 
 
