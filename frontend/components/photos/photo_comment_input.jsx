@@ -24,7 +24,7 @@ var PhotoCommentInput = React.createClass({
     return (
       <form onSubmit={this._submitComment} className='comment-form'>
         <input type='text'
-               id='comment-box'
+               className='comment-box'
                ref='input'
                placeholder=' Add a comment'
                valueLink ={this.linkState('commentText')} />

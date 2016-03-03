@@ -31,7 +31,7 @@ var UserFollowedList = React.createClass({
 
     if (this.state.selectedUserFollowers) {
       return this.state.selectedUserFollowers.map(function(user, idx) {
-        return (  <li key={idx} id='followers-user-list-item'>
+        return (  <li key={idx} className='followers-user-list-item'>
           <UserPageLink username={user.username} callback={this.props.callback}/>
           <FollowUserButton selectedUser={user} currentUser={this.props.currentUser}/>
         </li> );
@@ -44,7 +44,7 @@ var UserFollowedList = React.createClass({
   },
 
   render: function() {
-    return ( <ul id='user-followers-list'> {this.createFollowersList()} </ul> );
+    return ( <ul className='user-followers-list'> {this.createFollowersList()} </ul> );
   }
 });
 

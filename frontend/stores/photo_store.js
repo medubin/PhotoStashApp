@@ -67,7 +67,8 @@ PhotoStore.deleteComment = function(uncomment) {
 
 PhotoStore.commentOnPhoto = function(comment) {
   var commentedPhoto = _findPhotoById(comment.photo_id);
-  commentedPhoto.comments.push({username: comment.username, body: comment.body});
+  console.log(comment);
+  commentedPhoto.comments.push(comment);
 };
 
 

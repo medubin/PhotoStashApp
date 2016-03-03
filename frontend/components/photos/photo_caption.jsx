@@ -4,23 +4,23 @@ var UserPageLink = require('../links/user_page_link');
 
 var PhotoCaption = React.createClass({
 
-  checkForUsername: function() {
+  checkForcaption: function() {
     if (this.props.caption) {
       return (
-        <UserPageLink username={this.props.username} />);
+        <span>
+          <UserPageLink username={this.props.username} />
+          {' ' + this.props.caption}
+        </span>
+      );
     } else {
       return null;
     }
-
   },
 
   render: function() {
-
     return (
-      <div id='caption'>
-
-        {this.checkForUsername()}
-        {' ' + this.props.caption}
+      <div className='caption'>
+        {this.checkForcaption()}
       </div>
     );
   }

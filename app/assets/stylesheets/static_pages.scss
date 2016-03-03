@@ -48,13 +48,13 @@ button:focus {
 
 /************** USER LINKS **************/
 
-#user-link {
+.user-link {
   color: #135582;
   font-size: 18px;
   font-weight: bold;
 }
 
-#user-link {
+.user-link {
   cursor: pointer;
 }
 
@@ -145,12 +145,12 @@ button:focus {
   text-align: left;
 }
 
-#search-results>li>#user-link{
+#search-results>li>.user-link{
   color: black;
   font-weight: normal;
   border: 1px #EEEFEF solid;
 }
-#search-results #user-link:hover{
+#search-results .user-link:hover{
   background-color: rgba(200,200,200,1);
 }
 
@@ -245,7 +245,7 @@ button:focus {
 
 }
 
-#comment-box {
+.comment-box {
   box-sizing: border-box;
   margin: 0;
   width: 750px;
@@ -267,7 +267,7 @@ button:focus {
   display: inline;
 }
 
-#photo-like {
+.photo-like {
   box-sizing: border-box;
   display: inline-block;
   width: 50px;
@@ -279,7 +279,7 @@ button:focus {
   transform: translateY(-50%);
 }
 
-#photo-like:hover {
+.photo-like:hover {
   cursor: pointer;
 }
 
@@ -295,13 +295,13 @@ button:focus {
 
 
 
-.likes-overflow-modal #user-link {
+.likes-overflow-modal .user-link {
   display: inline-block;
   position: relative;
   border: 1px #EEEFEF solid;
 }
 
-.likes-overflow-modal #user-link:hover {
+.likes-overflow-modal .user-link:hover {
   background-color: rgba(200,200,200,1);
   cursor: pointer;
 }
@@ -331,24 +331,23 @@ button:focus {
 
 .likes-overflow-modal span {
   display: block;
-
 }
 
-
-
-#photo-bottom {
-  min-height: 60px;
+.photo-bottom {
+  box-sizing: padding-box;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
-.photo-feed-users-who-liked #user-link {
+.photo-feed-users-who-liked .user-link {
   display: inline-block;
 }
 
-#photo-input-fields {
+.photo-input-fields {
   height: 50px;
 }
 
-#photo-top {
+.photo-top {
   height: 48px;
   margin-left: 75px;
   margin-top: 24px;
@@ -356,20 +355,20 @@ button:focus {
 }
 
 
-#photo-top-user-link {
+.photo-top-user-link {
 
 }
 
-#caption-user-link {
+.caption-user-link {
   display: inline-block;
   width: 20px;
 }
-#caption > #user-link {
+.caption > .user-link {
   display: inline-block;
 
 }
 
-#caption {
+.caption {
   display: inline-block;
 }
 
@@ -414,7 +413,7 @@ button:focus {
 
 
 
-#photo-image > img {
+.photo-image > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -446,7 +445,7 @@ button:focus {
 }
 
 
-#user-page-top > .follow-unfollow-button {
+.user-page-top > .follow-unfollow-button {
   display: inline-block;
   background-color: #fff;
   border: 1px #6dc993 solid;
@@ -460,13 +459,13 @@ button:focus {
   margin-left: 5
 }
 
-#user-page-top > .follow-unfollow-button:hover {
+.user-page-top > .follow-unfollow-button:hover {
   background-color: #6dc993;
   border: 1px #fff solid;
   color: #fff;
 }
 
-#user-followed-count, #user-followers-count {
+.user-followed-count, .user-followers-count {
   display: inline;
   font-weight: bold;
   margin-right: 30px;
@@ -481,16 +480,16 @@ button:focus {
   color: #4090DB;
 }
 
-#user-followed-count {
+.user-followed-count {
   margin-right: 25%;
 }
 
-#user-followers-count {
+.user-followers-count {
 
     margin-left: 25%;
 }
 
-#user-followed-count:hover, #user-followers-count:hover {
+.user-followed-count:hover, .user-followers-count:hover {
   background-color: #4090DB;
   border: 1px #fff solid;
   color: #fff;
@@ -498,12 +497,12 @@ button:focus {
 }
 
 
-#user-followed-count > div, #user-followers-count > div {
+.user-followed-count > div, .user-followers-count > div {
   display: inline;
 }
 
 
-#user-followed-list, #user-followers-list {
+.user-followed-list, .user-followers-list {
   padding: 0;
   margin: 0;
   word-wrap: break-word;
@@ -513,20 +512,20 @@ button:focus {
 
 
 
-#user-followed-list > li, #user-followers-list > li {
+.user-followed-list > li, .user-followers-list > li {
   width: auto;
   padding: 0;
   border: 1px #EEEFEF solid;
 }
 
 
-#user-followed-list > li > div, #user-followers-list > li > div {
+.user-followed-list > li > div, .user-followers-list > li > div {
   border: 0;
   height: 24px;
   display: inline;
 
 }
-#user-followed-list > li > div > span, #user-followers-list > li > div > span {
+.user-followed-list > li > div > span, .user-followers-list > li > div > span {
   display: inline;
   border: 0;
   text-align: center;
@@ -535,7 +534,7 @@ button:focus {
 }
 
 
-#user-followed-list > li > div > span:first-child, #user-followers-list > li > div > span:first-child {
+.user-followed-list > li > div > span:first-child, .user-followers-list > li > div > span:first-child {
   border: 1px #EEEFEF solid;
   background-color: #fff;
   width: 70px;
@@ -546,7 +545,7 @@ button:focus {
   color: #4090DB;
 }
 
-#user-followed-list > li > div > span:first-child:hover, #user-followers-list > li > div > span:first-child:hover {
+.user-followed-list > li > div > span:first-child:hover, .user-followers-list > li > div > span:first-child:hover {
   background-color: #4090DB;
   border: 1px #fff solid;
   color: #fff;
@@ -554,7 +553,7 @@ button:focus {
 
 
 
-#user-followed-list>li>#user-link, #user-followers-list>li>#user-link{
+.user-followed-list>li>.user-link, .user-followers-list>li>.user-link{
   color: black;
   font-weight: normal;
 }
@@ -563,17 +562,17 @@ button:focus {
 
 
 
-#user-followed-list>li>#user-link:hover, #user-followers-list>li>#user-link:hover {
+.user-followed-list>li>.user-link:hover, .user-followers-list>li>.user-link:hover {
   background-color: rgba(200,200,200,1);
 }
 
 
 
-#user-page-top {
+.user-page-top {
   margin-bottom: 50px;
 }
 
-#user-photos-index {
+.user-photos-index {
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;

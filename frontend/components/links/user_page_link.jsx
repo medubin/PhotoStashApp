@@ -18,7 +18,7 @@ var UserLink = React.createClass({
 
   render: function() {
     return (
-      <div onClick={this._goToUserPage} id='user-link'>
+      <div onClick={this._goToUserPage} className='user-link'>
         {this.props.username}
       </div>
     );

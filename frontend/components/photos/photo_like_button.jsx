@@ -36,7 +36,7 @@ var PhotoLikeButton = React.createClass({
 
   render: function() {
     return (
-      <div id='photo-like' onClick={this._toggleLike}>
+      <div className='photo-like' onClick={this._toggleLike}>
         {this._setIcon()}
       </div>
     );

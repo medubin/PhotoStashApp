@@ -12,20 +12,20 @@ var PhotoIndexItem = React.createClass({
     return (
       <li className='photo-index-item'>
 
-        <div id='photo-top'>
+        <div className='photo-top'>
           <UserPageLink username={this.props.photo.user.username} id='photo-top-user-link'/>
         </div>
 
-        <div id='photo-image'>
+        <div className='photo-image'>
           <img src={this.props.photo.image} className='image'/>
         </div>
 
-        <div id ='photo-bottom'>
+        <div className ='photo-bottom'>
           <PhotoCaption caption={this.props.photo.caption} username={this.props.photo.user.username}/>
           <PhotoComments comments={this.props.photo.comments}/>
           <PhotoLikes likes={this.props.photo.likes} currentUser={this.props.currentUser}/>
         </div>
-        <div id = 'photo-input-fields'>
+        <div className = 'photo-input-fields'>
           <PhotoLikeButton photo={this.props.photo}/>
           <PhotoCommentInput photo={this.props.photo}/>
         </div>

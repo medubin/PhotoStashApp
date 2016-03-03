@@ -50,8 +50,8 @@ var UserPage = React.createClass({
 
     // this.updateSelectedUser();
     return (
-      <div id='user-page-landing'>
-          <div id='user-page-top'>
+      <div className='user-page-landing'>
+          <div className='user-page-top'>
             <h3 className='username-user-page'>{this.state.selectedUser.username}</h3>
 
             <FollowUserButton
@@ -70,7 +70,7 @@ var UserPage = React.createClass({
             currentUser={this.props.currentUser}
           />
         </div>
-        <ul id='user-photos-index'>
+        <ul className='user-photos-index'>
           {(this.state.selectedUser.photos) ? this.createPhotos() : null}
         </ul>
       </div>
