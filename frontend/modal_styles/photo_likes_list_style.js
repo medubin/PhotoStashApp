@@ -10,9 +10,15 @@ var PhotoLikesListStyle = {
     width                 : '300px',
     padding               : '0',
     overflow              : 'visible',
-    // padding: 25px '20px',
-    // padding-bottom: '35px'
-  }
+  },
+  overlay : {
+   position          : 'fixed',
+   top               : 0,
+   left              : 0,
+   right             : 0,
+   bottom            : 0,
+   backgroundColor   : 'rgba(0, 0, 0, 0.75)'
+ }
 };
 
 module.exports = PhotoLikesListStyle;

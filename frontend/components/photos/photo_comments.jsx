@@ -4,7 +4,9 @@ var UserPageLink = require('../links/user_page_link');
 var UserStore = require('../../stores/user_store');
 var Modal = require('react-modal');
 var DeleteCommentStyle = require('../../modal_styles/delete_comment_style');
+// var ModalBackdropStyle = require('../../modal_styles/modal_backdrop_style');
 var DeleteCommentModalContent = require('./delete_comment_modal_content');
+
 
 var PhotoComments = React.createClass({
   getInitialState: function() {
