@@ -44,7 +44,7 @@ var SearchBar = React.createClass({
 
   render: function() {
     return (
-      <li className='headerItem'>
+      <li className='headerItem search-bar-container'>
         <input type='text'
           id='header-search-input'
           placeholder='Search...'

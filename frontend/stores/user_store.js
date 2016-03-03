@@ -29,10 +29,12 @@ UserStore.__onDispatch = function(payload) {
 
 UserStore.addFollow = function(followed) {
   _currentUser.followed.push(followed);
+  if (_currentUser.username === _selectedUser.username) _selectedUser.followed += 1;
 };
 
 UserStore.removeFollow = function(unfollowed) {
   _currentUser.followed.splice(unfollowed, 1);
+  if (_currentUser.username === _selectedUser.username) _selectedUser.followed -= 1;
 };
 
 UserStore.resetCurrentUser = function(user) {

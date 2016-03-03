@@ -46,7 +46,7 @@ button:focus {
 
 
 
-/************** USER LINKS **************/
+/************** LINKS **************/
 
 .user-link {
   color: #135582;
@@ -58,9 +58,9 @@ button:focus {
   cursor: pointer;
 }
 
-
-
-
+.follow-unfollow-button {
+  cursor: pointer;
+}
 
 
 /************* Header ***************/
@@ -126,28 +126,31 @@ button:focus {
   font-weight: 200;
   text-align: center;
 }
+.search-bar-container {
+}
 
 #search-results {
   overflow: hidden;
   float: none;
   display: block;
   position:absolute;
+  padding: 0;
   top: 50px;
-  padding-left: 0px;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-45%, 0%);
   background: rgba(255,255,255,1);
-  width: 100px;
+  width: 150px;
 
 }
 #search-results>li{
   position:relative;
-  text-align: left;
+  text-align: center;
+  width: auto;
 }
 
-#search-results>li>.user-link{
+#search-results .user-link{
   color: black;
-  font-weight: normal;
+  font-weight: lighter;
   border: 1px #EEEFEF solid;
 }
 #search-results .user-link:hover{
@@ -306,7 +309,7 @@ button:focus {
   cursor: pointer;
 }
 
-.likes-overflow-modal .follow-unfollow-button {
+.likes-overflow-modal .-un-button {
   display: inline;
   float: right;
   border: 1px #EEEFEF solid;
@@ -322,7 +325,7 @@ button:focus {
 }
 
 
-.likes-overflow-modal .follow-unfollow-button:hover {
+.likes-overflow-modal .-un-button:hover {
   background-color: #4090DB;
   border: 1px #fff solid;
   color: #fff;
@@ -459,6 +462,13 @@ button:focus {
   margin-left: 5
 }
 
+
+user-page-top > .follow-unfollow-button:hover {
+  background-color: #6dc993;
+  border: 1px #fff solid;
+  color: #fff;
+}
+
 .user-page-top > .follow-unfollow-button:hover {
   background-color: #6dc993;
   border: 1px #fff solid;
@@ -485,8 +495,7 @@ button:focus {
 }
 
 .user-followers-count {
-
-    margin-left: 25%;
+  margin-left: 25%;
 }
 
 .user-followed-count:hover, .user-followers-count:hover {
@@ -496,11 +505,9 @@ button:focus {
   cursor: pointer;
 }
 
-
 .user-followed-count > div, .user-followers-count > div {
   display: inline;
 }
-
 
 .user-followed-list, .user-followers-list {
   padding: 0;
@@ -509,30 +516,24 @@ button:focus {
   text-align: left;
 }
 
-
-
-
 .user-followed-list > li, .user-followers-list > li {
   width: auto;
   padding: 0;
   border: 1px #EEEFEF solid;
 }
 
-
 .user-followed-list > li > div, .user-followers-list > li > div {
   border: 0;
   height: 24px;
   display: inline;
-
 }
+
 .user-followed-list > li > div > span, .user-followers-list > li > div > span {
   display: inline;
   border: 0;
   text-align: center;
   float: right;
-
 }
-
 
 .user-followed-list > li > div > span:first-child, .user-followers-list > li > div > span:first-child {
   border: 1px #EEEFEF solid;
@@ -551,22 +552,14 @@ button:focus {
   color: #fff;
 }
 
-
-
 .user-followed-list>li>.user-link, .user-followers-list>li>.user-link{
   color: black;
   font-weight: normal;
 }
 
-
-
-
-
 .user-followed-list>li>.user-link:hover, .user-followers-list>li>.user-link:hover {
   background-color: rgba(200,200,200,1);
 }
-
-
 
 .user-page-top {
   margin-bottom: 50px;
@@ -576,7 +569,6 @@ button:focus {
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
-
 }
 
 .user-page-photo {
@@ -585,12 +577,10 @@ button:focus {
     margin-left: 1%;
     margin-right: 1%;
     margin-bottom: 1%;
-
 }
 
 .user-photo-item {
   max-width:100%;
   margin-left: auto;
   margin-right: auto;
-
 }

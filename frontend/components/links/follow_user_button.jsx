@@ -6,9 +6,6 @@ var FollowUserActions = require('../../actions/follow_users_actions');
 
 
 var FollowUserButton = React.createClass({
-  // getInitialState: function() {
-  //   return ({following: null});
-  // },
 
 _isFollowing: function() {
   if (!this.props.currentUser.followed || !this.props.selectedUser) return false;
