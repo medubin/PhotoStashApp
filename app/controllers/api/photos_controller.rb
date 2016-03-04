@@ -31,7 +31,18 @@ class Api::PhotosController < ApplicationController
     if @photo.save
       render :show
     else
-      #throw errors?
+      render json: ["can't create photo"], status: 422
+    end
+  end
+
+  def destroy
+    @photo = Photo.find_by(id: params[:id])
+
+    if @photo && @photo.user_id == current_user.id
+      @photo.destroy
+      render :show
+    else
+      render json: ["can't delete photo"], status: 422
     end
   end
 

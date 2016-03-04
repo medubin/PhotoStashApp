@@ -56,6 +56,15 @@ var ApiUtil = {
     });
   },
 
+  removePhoto: function(photo, callback) {
+    $.ajax({
+      url: '/api/photos/' + photo.id,
+      method: 'delete',
+      dataType: 'json',
+      success: callback
+    });
+  },
+
   addFollow: function(user, callback) {
     $.ajax({
       url: 'api/users/' + user.id + '/follow',

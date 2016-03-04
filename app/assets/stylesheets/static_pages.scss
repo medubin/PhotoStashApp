@@ -609,12 +609,13 @@ button:focus
 
 .user-page-photo:hover .user-photo-item {
   opacity: .4;
+  cursor: pointer;
+
 }
 .user-page-photo:hover .user-page-photo-likes{
   display: inline;
   z-index: 5;
 }
-
 .user-page-photo:hover .user-page-photo-comments{
   display: inline;
   z-index: 5;
@@ -648,7 +649,8 @@ button:focus
 
 .user-page-show-photo-left {
   float: left;
-  width: 600px
+  width: 600px;
+  height: 600px;
 }
 
 .user-page-photo-show-left img {
@@ -679,4 +681,19 @@ button:focus
 }
 .user-page-photo-show-input .comment-box {
   width: 285px;
+}
+
+.user-page-photo-show-delete {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 500;
+  transform: translate(0, -20%);
+  cursor: pointer;
+  display: none;
+
+}
+
+.user-page-photo-show-left:hover .user-page-photo-show-delete {
+  display: inline;
+
 }

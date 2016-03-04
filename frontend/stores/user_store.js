@@ -24,13 +24,40 @@ UserStore.__onDispatch = function(payload) {
     case 'UNFOLLOWED_USER':
       this.removeFollow(payload.unfollow);
       this.__emitChange();
+      break;
+    case 'DELETED_PHOTO':
+      this.deletePhotoFromSelectedUser(payload.deletedPhoto);
+      this.__emitChange();
+      break;
+    case 'PHOTO_SAVED':
+      this.addPhoto(payload.photo);
+      break;
   }
+
 };
 
 var _findFollowIndexByUsernameInCurrentUser = function(username) {
   for (var i = 0; i < _currentUser.followed.length; i++) {
     if (_currentUser.followed[i].username === username) return i;
   }
+};
+
+var _findPhotoByIdInSelectedUser = function(id) {
+  for (var i = 0; i < _selectedUser.photos.length; i++) {
+    if (_selectedUser.photos[i].id === id ) return i;
+  }
+};
+
+UserStore.addPhoto = function(photo) {
+  if (_selectedUser.username === photo.user.username) {
+    _selectedUser.photos.push(photo);
+    this.__emitChange();
+  }
+};
+
+UserStore.deletePhotoFromSelectedUser = function(deletedPhoto) {
+  var deletedPhotoIndex = _findPhotoByIdInSelectedUser(deletedPhoto.id);
+  _selectedUser.photos.splice(deletedPhotoIndex, 1);
 };
 
 

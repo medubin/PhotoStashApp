@@ -28,16 +28,27 @@ var ShowPhotoModalContent = React.createClass({
   },
 
   _onChangePhoto: function() {
+    this.setState({shownPhoto: PhotoStore.singlePhotoShow()});
+ },
 
-   this.setState({shownPhoto: PhotoStore.singlePhotoShow()});
+ deletePhoto: function() {
+   PhotoActions.deletePhoto(this.state.shownPhoto);
+   this.props.toggle();
+ },
 
+ createDeleteButton: function() {
+   if (this.state.shownPhoto.user.username === this.props.currentUser.username) {
+     return (<span className='user-page-photo-show-delete' onClick={this.deletePhoto}>⨉</span>);
+   }
  },
 
 
   render: function() {
+
     return (
       <div className='user-page-photo-show'>
         <div className='user-page-photo-show-left'>
+          {this.createDeleteButton()}
           <img src={this.state.shownPhoto.image} width='600' height='600' />
         </div>
 

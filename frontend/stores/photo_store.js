@@ -42,6 +42,10 @@ PhotoStore.__onDispatch = function(payload) {
     case 'SINGLE_PHOTO_RECIEVED':
       this.addSinglePhotoShow(payload.photo);
       this.__emitChange();
+      break;
+    case 'DELETED_PHOTO':
+      this.deletePhoto(payload.deletedPhoto);
+      this.__emitChange();
   }
 };
 
@@ -61,6 +65,11 @@ var _findCommentIndexById = function(id, uncommentedPhoto) {
   for (var i = 0; i < uncommentedPhoto.comments.length; i++) {
     if (uncommentedPhoto.comments[i].id === id) return i;
   }
+};
+
+PhotoStore.deletePhoto = function(deletedPhoto) {
+  var deletedPhotoIndex = _findPhotoIndexById(deletedPhoto.id);
+  _photos.splice(deletedPhotoIndex, 1);
 };
 
 PhotoStore.addSinglePhotoShow = function(photo) {

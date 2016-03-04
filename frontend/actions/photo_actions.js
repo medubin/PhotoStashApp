@@ -14,7 +14,7 @@ var PhotoActions = {
     ApiUtil.fetchAllPhotos(this.recieveAllPhotos);
   },
 
-  postedPhotoSuccess: function(photo) {
+  postedPhotoSuccessful: function(photo) {
 
     Dispatcher.dispatch({
       actionType: PhotoConstants.PHOTO_SAVED,
@@ -23,7 +23,7 @@ var PhotoActions = {
   },
 
   postPhoto: function(photo) {
-    ApiUtil.addPhoto(photo, this.postedPhotoSuccess);
+    ApiUtil.addPhoto(photo, this.postedPhotoSuccessful);
   },
 
   recieveSinglePhoto: function(photo) {
@@ -35,6 +35,17 @@ var PhotoActions = {
 
   retrieveSinglePhoto: function(photo) {
     ApiUtil.fetchSinglePhoto(photo, this.recieveSinglePhoto);
+  },
+
+  deletePhoto: function(photo) {
+    ApiUtil.removePhoto(photo, this.deletedPhotoSuccessful);
+  },
+
+  deletedPhotoSuccessful: function(deletedPhoto) {
+    Dispatcher.dispatch({
+      actionType: PhotoConstants.DELETED_PHOTO,
+      deletedPhoto: deletedPhoto
+    });
   }
 
 
