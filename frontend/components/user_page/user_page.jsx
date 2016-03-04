@@ -72,7 +72,7 @@ var UserPage = React.createClass({
     return (
       <div className='user-page-landing'>
           <div className='user-page-top'>
-            <UserProfilePicture currentUser={this.props.currentUser}/>
+            <UserProfilePicture selectedUser={this.state.selectedUser} currentUser={this.props.currentUser}/>
             <h3 className='username-user-page'>{this.state.selectedUser.username}</h3>
 
             <FollowUserButton

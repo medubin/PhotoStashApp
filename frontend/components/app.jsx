@@ -12,10 +12,7 @@ var App = React.createClass({
     return({currentUser: UserStore.currentUser() });
   },
 
-  componentWillReceiveProps: function(newProps) {
-    console.log(newProps);
-    console.log(this.props);
-  },
+
 
   componentDidMount: function() {
     this.currentUserToken = UserStore.addListener(this._onChange);

@@ -27,6 +27,8 @@ var ApiUtil = {
     $.ajax({
       url: '/api/users/' + user.id,
       dataType: 'json',
+      method: 'patch',
+      data: user,
       success: callback
     });
   },

@@ -46,7 +46,7 @@ var UserActions = {
 
   UpdateUserSuccessful: function(currentUser) {
     Dispatcher.dispatch({
-      actionType: UserConstants.UPDATED_CURRENT_USER,
+      actionType: UserConstants.UPDATE_CURRENT_USER,
       currentUser: currentUser
     });
   },

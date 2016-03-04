@@ -33,7 +33,7 @@ UserStore.__onDispatch = function(payload) {
       this.addPhoto(payload.photo);
       break;
     case 'UPDATE_CURRENT_USER':
-      this.resetCurrentUser(payload.currentUser);
+      this.updateCurrentUser(payload.currentUser);
       this.__emitChange();
   }
 
@@ -82,6 +82,12 @@ UserStore.removeFollow = function(unfollowed) {
 UserStore.resetCurrentUser = function(user) {
   _currentUser = user;
 };
+
+UserStore.updateCurrentUser = function(user) {
+  _currentUser = user;
+  if (_currentUser.username === _selectedUser.username) _selectedUser.picture = user.picture;
+};
+
 
 UserStore.resetSelectedUser = function(user) {
   if(_selectedUser.username !== user.username){

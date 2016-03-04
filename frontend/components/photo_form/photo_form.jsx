@@ -54,7 +54,7 @@ var PhotoForm = React.createClass({
 
   render: function() {
     return (
-      <detail id='modalPhotoForm' className='modal'>
+      <detail className='photo-upload-modal'>
         <h3>Upload A Photo</h3>
         <div id='photo-input-fields'>
           <textarea valueLink={this.linkState('caption')} placeholder='Write your caption here...'></textarea>
