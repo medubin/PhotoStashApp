@@ -8,7 +8,8 @@ var UserActions = require('../../actions/user_actions');
 var UserLink = React.createClass({
   mixins: [History],
 
-  _goToUserPage: function() {
+  _goToUserPage: function(e) {
+    e.preventDefault();
     this.history.pushState(null, '/users/' + this.props.username, {});
     if (this.props.callback) this.props.callback();
     UserActions.retrieveSelectedUser({username: this.props.username});

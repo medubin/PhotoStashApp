@@ -113,6 +113,8 @@ PhotoStore.all = function() {
 };
 
 PhotoStore.singlePhotoShow = function() {
+  // var copy =  $.extend({}, singlePhotoShow )
+  //
   return _singlePhotoShow;
 };
 

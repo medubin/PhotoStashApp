@@ -13,7 +13,8 @@ var PhotoCommentInput = React.createClass({
 
 
 
-  _submitComment: function() {
+  _submitComment: function(e) {
+    e.preventDefault();
     CommentActions.postComment({body: this.state.commentText, photo_id: this.props.photo.id});
     this.setState({commentText: ''});
     this.refs.input.blur();

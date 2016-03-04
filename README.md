@@ -70,7 +70,7 @@ user interface.
   - [X] `PhotosIndex`
   - [X] `PhotoIndexItem`
   - [X] `PhotoForm`
-  - [ ] `PhotoDetail`
+  - [X] `PhotoDetail`
 
 
 ### Phase 4: Start Styling (0.5 days / 4.0 days total)
@@ -91,19 +91,19 @@ user interface.
   - [X] A user follow other users
     - [X] `FollowsIndex`
     - [X] `FollowIndexItem`
-  - [ ] A user can search for other users
-    - [ ] `UserIndex`
-    - [ ] `UserIndexItem`
-  - [ ] A users photo index page shows only users that they have followed
-- [ ] Use CSS to style new views
+  - [X] A user can search for other users
+    - [X] `UserIndex`
+    - [X] `UserIndexItem`
+  - [X] A users photo index page shows only users that they have followed
+- [X] Use CSS to style new views
 
 ## Phase 6: Comments (1.5 days/ 8.0 days total)
-- [ ] create `Comment` model and table
+- [X] create `Comment` model and table
 - build out API, Flux loop, and components for:
-  - [ ] Comment CRUD
-  - [ ] fetching comments for photo
-  - [ ] adding comments to photog
-- [ ] Style new elements
+  - [X] Comment CRUD
+  - [X] fetching comments for photo
+  - [X] adding comments to photog
+- [X] Style new elements
 
 
 
@@ -111,9 +111,9 @@ user interface.
 
 **objective:** Make the site feel more cohesive and awesome.
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [~] Get feedback on my UI from others
+- [X] Refactor HTML classes & CSS rules
+- [X] Add modals, transitions, and other styling flourishes.
 <!--  bonus -->
 
 ### Phase 8: Hash Tags (1.5 days / 10.0 days total)

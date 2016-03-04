@@ -476,12 +476,6 @@ button:focus
 }
 
 
-user-page-top > .follow-unfollow-button:hover {
-  background-color: #6dc993;
-  border: 1px #fff solid;
-  color: #fff;
-}
-
 .user-page-top > .follow-unfollow-button:hover {
   background-color: #6dc993;
   border: 1px #fff solid;
@@ -609,6 +603,7 @@ user-page-top > .follow-unfollow-button:hover {
   margin-right: auto;
   opacity: 1;
   background-color: black
+  // cursor: pointer;
 
 }
 
