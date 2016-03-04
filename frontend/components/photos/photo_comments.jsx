@@ -28,6 +28,13 @@ var PhotoComments = React.createClass({
     }
   },
 
+  _checkForCallback: function(comment,idx) {
+    if (this.props.callback) {
+      return (<UserPageLink username={comment.username} callback={this.props.callback}  key={idx+ 0.1}/>);
+    } else {
+      return (<UserPageLink username={comment.username}  key={idx+ 0.1}/>);
+    }
+  },
 
 
   createComments: function() {
@@ -35,7 +42,7 @@ var PhotoComments = React.createClass({
       return(
         <div key={idx} className='photo-comment'>
           {this.createDeleteButton(comment)}
-          <UserPageLink username={comment.username} key={idx+ 0.1}/>
+          {this._checkForCallback(comment, idx)}
           {' ' + comment.body}
         </div>
       );

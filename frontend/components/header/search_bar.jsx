@@ -49,7 +49,8 @@ var SearchBar = React.createClass({
           id='header-search-input'
           placeholder='Search...'
           value={this.state.searchPartial}
-          onChange={this._searchChanged}>
+          onChange={this._searchChanged}
+          onBlur={this.closeSearch} >
         </input>
         {this.renderSearchResults()}
       </li>

@@ -64,6 +64,7 @@ UserStore.deletePhotoFromSelectedUser = function(deletedPhoto) {
 UserStore.addFollow = function(followed) {
   _currentUser.followed.push(followed);
   if (_currentUser.username === _selectedUser.username) _selectedUser.followed += 1;
+  if (_selectedUser.username === followed.username) _selectedUser.followers += 1;
 };
 
 UserStore.removeFollow = function(unfollowed) {
@@ -72,6 +73,7 @@ UserStore.removeFollow = function(unfollowed) {
     _currentUser.followed.splice(indexOfUnfollow, 1);
   }
   if (_currentUser.username === _selectedUser.username) _selectedUser.followed -= 1;
+  if (_selectedUser.username === unfollowed.username) _selectedUser.followers -= 1;
 };
 
 UserStore.resetCurrentUser = function(user) {

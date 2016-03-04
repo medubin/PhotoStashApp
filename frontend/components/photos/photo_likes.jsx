@@ -45,13 +45,22 @@ var PhotoLikes = React.createClass({
       </span> );
   },
 
+  _checkForCallback: function(user,idx) {
+    if (this.props.callback) {
+      return (<UserPageLink username={user.username} callback={this.props.callback}  key={idx}/>);
+    } else {
+      return (<UserPageLink username={user.username}  key={idx}/>);
+    }
+  },
+
+
   createLikes: function() {
     if (this.props.likes.length > 10) return (this.createModal());
 
     return this.props.likes.map(function(user, idx) {
       return (
         <span key={idx}>
-        <UserPageLink username={user.username} key={idx} />
+          {this._checkForCallback(user, idx)}
           {this._createLikeGrammar(idx)}
         </span>);
     }.bind(this));
