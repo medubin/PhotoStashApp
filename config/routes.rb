@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
       # should this be resource or resources?
     end
-    resources :users, only: [:show, :index] do
+    resources :users, only: [:show, :index, :update] do
       resource :follow, only: [:create, :destroy]
       resources :follows, only: [:index]
     end

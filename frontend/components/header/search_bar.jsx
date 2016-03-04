@@ -2,10 +2,11 @@ var React = require('react');
 // var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchActions = require('../../actions/search_actions');
 var SearchResults = require('./search_results');
+var History = require('react-router').History;
 ////
 
 var SearchBar = React.createClass({
-
+  mixins: [History],
   getInitialState: function() {
     // this.preventFirstUpdate = true;
     return( {searchPartial: ''});
@@ -42,6 +43,13 @@ var SearchBar = React.createClass({
     this.setState({searchPartial: ''});
   },
 
+  componentWillReceiveProps: function(newProps) {
+    if (newProps.location !== this.props.location) {
+      this.closeSearch();
+    }
+
+  },
+
   render: function() {
     return (
       <li className='headerItem search-bar-container'>
@@ -50,7 +58,7 @@ var SearchBar = React.createClass({
           placeholder='Search...'
           value={this.state.searchPartial}
           onChange={this._searchChanged}
-          onBlur={this.closeSearch} >
+          >
         </input>
         {this.renderSearchResults()}
       </li>

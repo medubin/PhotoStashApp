@@ -9,10 +9,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    currentUser.update(user_params);
+    render :show
+  end
+
 
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :picture)
   end
 
 

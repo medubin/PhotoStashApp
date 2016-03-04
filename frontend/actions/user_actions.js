@@ -37,8 +37,19 @@ var UserActions = {
       actionType : UserConstants.LOGOUT_CURRENT_USER,
       logout: 'successful'
     });
-    
-  }
+
+  },
+
+  updateCurrentUser: function(user) {
+    ApiUtil.updateCurrentUser(user, this.UpdateUserSuccessful);
+  },
+
+  UpdateUserSuccessful: function(currentUser) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.UPDATED_CURRENT_USER,
+      currentUser: currentUser
+    });
+  },
 
 
 

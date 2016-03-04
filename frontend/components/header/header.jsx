@@ -25,7 +25,7 @@ userLinkOrLogout: function() {
       <ul className='header'>
         <Logo/>
         <PhotoUploader currentUser ={this.props.currentUser}/>
-        <SearchBar/>
+        <SearchBar location={this.props.location}/>
         {this.userLinkOrLogout()}
       </ul>
     );

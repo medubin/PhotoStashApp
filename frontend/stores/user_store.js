@@ -32,6 +32,9 @@ UserStore.__onDispatch = function(payload) {
     case 'PHOTO_SAVED':
       this.addPhoto(payload.photo);
       break;
+    case 'UPDATE_CURRENT_USER':
+      this.resetCurrentUser(payload.currentUser);
+      this.__emitChange();
   }
 
 };

@@ -5,7 +5,9 @@ var UserPhotoItem = require('./user_photo_item');
 var Modal = require('react-modal');
 var PhotoShowPageStyle = require('../../modal_styles/photo_show_page_style');
 var PhotoActions = require('../../actions/photo_actions');
+var SearchActions = require('../../actions/search_actions');
 
+var UserProfilePicture = require('./user_profile_picture');
 var FollowUserButton = require('../links/follow_user_button');
 var UserFollowedCount = require('./user_followed_count');
 var UserFollowersCount = require('./user_followers_count');
@@ -31,6 +33,9 @@ var UserPage = React.createClass({
       UserActions.retrieveSelectedUser({username: newProps.routeParams.username});
     }
   },
+  // componentWillMount: function() {
+  //   SearchActions.clearSearch();
+  // },
 
   componentDidMount: function() {
     this.selectedUserToken = UserStore.addListener(this._onChangeSelectedUser);
@@ -67,6 +72,7 @@ var UserPage = React.createClass({
     return (
       <div className='user-page-landing'>
           <div className='user-page-top'>
+            <UserProfilePicture currentUser={this.props.currentUser}/>
             <h3 className='username-user-page'>{this.state.selectedUser.username}</h3>
 
             <FollowUserButton
@@ -93,7 +99,7 @@ var UserPage = React.createClass({
           isOpen={this.state.modalShown}
           onRequestClose={this._toggleModal}
           style={PhotoShowPageStyle} >
-          
+
           <ShowPhotoModalContent
             photo={this.state.photoToShow}
             currentUser={this.props.currentUser}

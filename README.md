@@ -128,7 +128,7 @@ user interface.
 
 
 ### Bonus Features (TBD)
-  - [ ] Like other users photos
+  - [X] Like other users photos
   - [ ] Tag users in a photo
   - [ ] Add locations to photos
   - [ ] Search photos by location
@@ -136,7 +136,7 @@ user interface.
   - [ ] Infinite scroll for Photos Index
   - [ ] Multiple sessions
   - [ ] Tag other users in photos
-  - [ ] Comments on a photo
+  - [X] Comments on a photo
   - [ ] Search for a photo by hash tag
 
 

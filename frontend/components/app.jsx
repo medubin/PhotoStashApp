@@ -12,6 +12,11 @@ var App = React.createClass({
     return({currentUser: UserStore.currentUser() });
   },
 
+  componentWillReceiveProps: function(newProps) {
+    console.log(newProps);
+    console.log(this.props);
+  },
+
   componentDidMount: function() {
     this.currentUserToken = UserStore.addListener(this._onChange);
     UserActions.retrieveCurrentUser();
@@ -28,7 +33,7 @@ var App = React.createClass({
   render: function() {
     return (
       <main >
-        <Header currentUser={this.state.currentUser} selectedUser={this.props.params.username}/>
+        <Header location={this.props.location.pathname} currentUser={this.state.currentUser} selectedUser={this.props.params.username}/>
          {this.props.children && React.cloneElement(this.props.children, {
            currentUser: this.state.currentUser
          })}

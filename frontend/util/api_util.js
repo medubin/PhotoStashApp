@@ -23,6 +23,14 @@ var ApiUtil = {
     });
   },
 
+  updateCurrentUser: function(user, callback){
+    $.ajax({
+      url: '/api/users/' + user.id,
+      dataType: 'json',
+      success: callback
+    });
+  },
+
 
   fetchSelectedUser: function(user, callback) {
     $.ajax({

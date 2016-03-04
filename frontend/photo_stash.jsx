@@ -2,6 +2,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Router = require('react-router').Router;
+var browserHistory = require('react-router').browserHistory;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var Modal = require('react-modal');
@@ -59,6 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var root = document.getElementById('content');
   Modal.setAppElement(root);
   if (root) {
-    ReactDOM.render(<Router>{routes}</Router>, root);
+    ReactDOM.render(<Router history={browserHistory}>{routes}</Router>, root);
   }
 });

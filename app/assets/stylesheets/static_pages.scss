@@ -457,10 +457,20 @@ button:focus
 /************** USER PAGE **************/
 
 
+.user-page-profile-picture {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: 20%;
+  display: inline;
+}
+
 .username-user-page {
   font-size: 36px;
   color: #132b41;
-  margin-left: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
   display: inline;
 }
 
@@ -678,7 +688,8 @@ button:focus
 
 
 .user-page-photo-show-right .user-page-photo-show-reactions {
-  max-height: 472px;
+  // max-height: 472px;
+  height: 472px;
   // background-color: blue;
   margin-right: 10px;
   margin-left: 10px;

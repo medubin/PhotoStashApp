@@ -2,7 +2,7 @@ var React = require('react');
 var PhotoStore = require('../../stores/photo_store');
 var PhotoActions = require('../../actions/photo_actions');
 var PhotoIndexItem = require('./photo_index_item');
-
+var SearchActions = require('../../actions/search_actions');
 var PhotosIndex = React.createClass({
   getInitialState: function() {
     return { photos : PhotoStore.all() };
@@ -32,6 +32,10 @@ var PhotosIndex = React.createClass({
   _onChange: function() {
     this.setState({photos: PhotoStore.all()});
   },
+
+  // componentWillMount: function() {
+  //   SearchActions.clearSearch();
+  // },
 
 
 });
