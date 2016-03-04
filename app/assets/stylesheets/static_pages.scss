@@ -666,6 +666,7 @@ button:focus
   float: right;
   width: 335px;
   height: 600px;
+
 }
 
 .user-page-photo-show-right .user-page-photo-show-username {
@@ -677,11 +678,12 @@ button:focus
 
 
 .user-page-photo-show-right .user-page-photo-show-reactions {
-  min-height: 472px;
+  max-height: 472px;
   // background-color: blue;
   margin-right: 10px;
   margin-left: 10px;
   border-bottom: 1px #EEEFEF solid;
+  overflow:scroll;
 }
 .user-page-photo-show-input .comment-box {
   width: 285px;

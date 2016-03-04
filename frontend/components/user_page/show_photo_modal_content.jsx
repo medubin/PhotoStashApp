@@ -79,9 +79,9 @@ var ShowPhotoModalContent = React.createClass({
           </div>
 
           <div className='user-page-photo-show-reactions'>
+            <PhotoLikes likes={this.state.shownPhoto.likes} callback={this.props.toggle} currentUser={this.state.currentUser}/>
             <PhotoCaption caption={this.state.shownPhoto.caption} username={this.state.shownPhoto.user.username}/>
             <PhotoComments comments={this.state.shownPhoto.comments} callback={this.props.toggle}/>
-            <PhotoLikes likes={this.state.shownPhoto.likes} callback={this.props.toggle} currentUser={this.state.currentUser}/>
           </div>
 
           <div className='user-page-photo-show-input'>
