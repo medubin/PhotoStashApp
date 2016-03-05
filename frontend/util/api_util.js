@@ -35,10 +35,11 @@ var ApiUtil = {
   },
 
 
-  fetchSelectedUser: function(user, callback) {
+  fetchSelectedUser: function(user, count, callback) {
     $.ajax({
       url: 'api/users/' + user.username,
       dataType: 'json',
+      data: {count: count},
       success: callback
     });
 

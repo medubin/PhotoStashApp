@@ -16,10 +16,10 @@ var ShowPhotoModalContent = require('./show_photo_modal_content');
 var UserPage = React.createClass({
   getInitialState: function() {
     return({
-      selectedUser: UserStore.selectedUser() || {username: '', followed: [],
+      selectedUser: UserStore.selectedUser() || {username: '', followed: []},
       modalShown: false,
-      photoToShow: null
-      }
+      photoToShow: null,
+      scrollCount: 1
     });
   },
 
@@ -30,16 +30,21 @@ var UserPage = React.createClass({
 
   componentWillReceiveProps: function(newProps) {
     if (newProps.routeParams && newProps.routeParams.username && newProps.routeParams.username !== this.state.selectedUser.username) {
-      UserActions.retrieveSelectedUser({username: newProps.routeParams.username});
+      UserActions.retrieveSelectedUser({username: newProps.routeParams.username}, 1);
     }
   },
-  // componentWillMount: function() {
-  //   SearchActions.clearSearch();
-  // },
 
   componentDidMount: function() {
     this.selectedUserToken = UserStore.addListener(this._onChangeSelectedUser);
-    UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
+    this.infiniteScrollToken = window.addEventListener("scroll", this.addNewPhotos);
+    UserActions.retrieveSelectedUser({username: this.props.routeParams.username}, this.state.scrollCount);
+  },
+
+  addNewPhotos: function() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && UserStore.selectedUser().photos.length < UserStore.selectedUser().photos_count ) {
+      this.state.scrollCount += 1;
+      UserActions.retrieveSelectedUser({username: this.props.routeParams.username}, this.state.scrollCount);
+    }
   },
 
   componentWillUnmount: function() {
@@ -60,15 +65,7 @@ var UserPage = React.createClass({
    }.bind(this));
  },
 
- // updateSelectedUser: function() {
- //   if (this.state.selectedUser.username !== this.props.routeParams.username){
- //    //  UserActions.retrieveSelectedUser({username: this.props.routeParams.username});
- //   }
- //  },
-
   render: function() {
-
-    // this.updateSelectedUser();
     return (
       <div className='user-page-landing'>
           <div className='user-page-top'>

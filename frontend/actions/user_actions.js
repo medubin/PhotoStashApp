@@ -23,8 +23,8 @@ var UserActions = {
     });
   },
 
-  retrieveSelectedUser: function(selectedUser) {
-    ApiUtil.fetchSelectedUser(selectedUser, this.recieveSelectedUser);
+  retrieveSelectedUser: function(selectedUser, count) {
+    ApiUtil.fetchSelectedUser(selectedUser, count, this.recieveSelectedUser);
   },
 
 

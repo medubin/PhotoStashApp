@@ -1,22 +1,8 @@
 class Api::PhotosController < ApplicationController
   def index
-    # @photos = Photo.all.reverse
-
-    # might not need this 10:24 march 2
-    # @user = current_user if signed_in?
     all_user_ids = current_user.followed.pluck(:id, :picture) + [current_user.id]
     @photo_count = {count: Photo.where(user_id: all_user_ids).count}
-
-    @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc).limit(2 * params[:count].to_i)
-
-    # @user.followed.each do |followed|
-    #   @all_photos += followed.photos.includes(:likes)
-    # end
-    #
-    # @all_photos += @user.photos.includes(:likes)
-    # @all_photos.sort!{ |x,y| y.created_at <=> x.created_at }
-
-
+    @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc).limit(10 * params[:count].to_i)
     render :index
   end
 

@@ -28,32 +28,6 @@ var FollowUsersActions = {
     });
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-////////////DEPRACTED FOR NOW////////////////////////////
-
-//   recieveAllFollowed: function(followed) {
-//     Dispatcher.dispatch({
-//       actionType: FollowUsersConstants.FOLLOWED_RECIEVED,
-//       followed: followed
-//     });
-//   },
-//
-//   retrieveAllFollowed: function(selectedUser) {
-//     ApiUtil.fetchAllFollowed(selectedUser, this.recieveAllFollowed);
-//   },
-//
 };
 
 module.exports = FollowUsersActions;

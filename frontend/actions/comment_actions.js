@@ -25,10 +25,6 @@ var CommentActions = {
     });
   }
 
-
-
-
 };
-
 
 module.exports = CommentActions;

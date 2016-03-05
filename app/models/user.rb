@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
-  has_many :photos
+  has_many :photos, -> { order(:created_at => :desc) }
 
   has_many :follower_connections,
     foreign_key: :follower_id,

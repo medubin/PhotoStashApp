@@ -21,7 +21,6 @@ class Api::CommentsController < ApplicationController
   end
 
 
-
   private
   def comment_params
     params.require(:comment).permit(:body, :user_id)

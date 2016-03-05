@@ -4,9 +4,30 @@ var Modal = require('react-modal');
 var UserUpdateProfilePictureModalContent = require('./user_update_profile_picture_modal_content');
 var ProfilePictureStyle = require('../../modal_styles/profile_picture_style');
 
+
+
+
+
+
 var UserProfilePicture = React.createClass({
   getInitialState: function() {
     return({modalShown: false});
+  },
+
+
+
+  createProfilePicture: function() {
+    if(this.props.selectedUser.picture) {
+      return(  <img src={this.props.selectedUser.picture}
+                    onClick={this._toggleModal}
+                    className='user-page-profile-picture' />);
+    } else {
+      return(  <img src='assets/Default_profile_pic.png'
+                    onClick={this._toggleModal}
+                    className='user-page-profile-picture' />);
+    }
+
+
   },
 
   _toggleModal: function(photoToShow) {
@@ -16,7 +37,7 @@ var UserProfilePicture = React.createClass({
   render: function() {
     return (
       <span>
-        <img onClick={this._toggleModal} className='user-page-profile-picture' src={this.props.selectedUser.picture}/>
+        {this.createProfilePicture()}
 
         <Modal
           className = 'photo-upload-modal profile-picture-modal'

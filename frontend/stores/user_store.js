@@ -90,10 +90,12 @@ UserStore.updateCurrentUser = function(user) {
 
 
 UserStore.resetSelectedUser = function(user) {
-  if(_selectedUser.username !== user.username){
+  //TODO 3/5/15 12:25 I DON'T KNOW WHY I HAD I NEED TO REMOVE
+  // if(_selectedUser.username !== user.username){
     _selectedUser = user;
+    console.log(user);
     this.__emitChange();
-  }
+  // }
 
 };
 

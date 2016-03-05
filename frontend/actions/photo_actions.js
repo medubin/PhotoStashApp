@@ -59,8 +59,6 @@ var PhotoActions = {
     });
   }
 
-
-
 };
 
 module.exports = PhotoActions;
