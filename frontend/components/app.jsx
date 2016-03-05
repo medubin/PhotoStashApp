@@ -5,6 +5,7 @@ var Header = require('./header/header');
 
 var UserStore = require('../stores/user_store');
 var UserActions = require('../actions/user_actions');
+var Footer = require('./footer/footer');
 
 
 var App = React.createClass({
@@ -34,6 +35,7 @@ var App = React.createClass({
          {this.props.children && React.cloneElement(this.props.children, {
            currentUser: this.state.currentUser
          })}
+         <Footer/>
       </main>
     );
   }

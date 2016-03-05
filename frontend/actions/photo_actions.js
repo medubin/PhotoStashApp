@@ -10,9 +10,20 @@ var PhotoActions = {
     });
   },
 
-  retrieveAllPhotos: function() {
-    ApiUtil.fetchAllPhotos(this.recieveAllPhotos);
+  retrieveAllPhotos: function(count) {
+    ApiUtil.fetchAllPhotos(count, this.recieveAllPhotos);
   },
+
+  // recieveNextTenPhotos: function(photos) {
+  //   Dispatcher.dispatch({
+  //     actionType: PhotoConstants.NEXT_TEN_PHOTOS,
+  //     photos: photos
+  //   });
+  // },
+  //
+  // retrieveNextTenPhotos: function(count) {
+  //   ApiUtil.fetchNextTenPhotos(count, this.recieveNextTenPhotos);
+  // },
 
   postedPhotoSuccessful: function(photo) {
 

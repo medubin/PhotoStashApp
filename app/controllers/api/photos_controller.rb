@@ -4,9 +4,10 @@ class Api::PhotosController < ApplicationController
 
     # might not need this 10:24 march 2
     # @user = current_user if signed_in?
+    all_user_ids = current_user.followed.pluck(:id, :picture) + [current_user.id]
+    @photo_count = {count: Photo.where(user_id: all_user_ids).count}
 
-    all_user_ids = current_user.followed.pluck(:id) + [current_user.id]
-    @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc)
+    @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc).limit(2 * params[:count].to_i)
 
     # @user.followed.each do |followed|
     #   @all_photos += followed.photos.includes(:likes)

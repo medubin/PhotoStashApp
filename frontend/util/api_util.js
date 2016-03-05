@@ -1,8 +1,9 @@
 var ApiUtil = {
-  fetchAllPhotos: function(callback) {
+  fetchAllPhotos: function(count, callback) {
     $.ajax({
       url: 'api/photos',
       dataType: 'json',
+      data: {count: count},
       success: callback
     });
   },
@@ -163,6 +164,15 @@ var ApiUtil = {
       success: callback
     });
   },
+
+  // fetchNextTenPhotos: function(count, callback){
+  //   $.ajax({
+  //     url: 'api/photos',
+  //     dataType: 'json',
+  //     data: {count: count},
+  //     success: callback
+  //   });
+  // },
 
 
 

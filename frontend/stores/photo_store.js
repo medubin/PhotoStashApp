@@ -3,10 +3,13 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 
 var PhotoStore = new Store(AppDispatcher);
 var _photos = [];
+var _photoCount = 100;
 var _singlePhotoShow = {id: undefined};
 
 PhotoStore.resetPhotos = function(photos) {
-  _photos = photos;
+  _photos = photos.photos;
+  _photoCount = photos.count;
+
 };
 
 PhotoStore.addPhoto = function(photo) {
@@ -127,6 +130,9 @@ PhotoStore.singlePhotoShow = function() {
   return _singlePhotoShow;
 };
 
+PhotoStore.photoCount = function() {
+  return _photoCount;
+};
 
 
 module.exports = PhotoStore;

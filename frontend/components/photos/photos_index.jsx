@@ -5,7 +5,7 @@ var PhotoIndexItem = require('./photo_index_item');
 var SearchActions = require('../../actions/search_actions');
 var PhotosIndex = React.createClass({
   getInitialState: function() {
-    return { photos : PhotoStore.all() };
+    return { photos : PhotoStore.all(), scrollCount: 1 };
   },
 
   createPhotoList: function() {
@@ -22,7 +22,16 @@ var PhotosIndex = React.createClass({
 
   componentDidMount: function () {
     this.photoToken = PhotoStore.addListener(this._onChange);
-    PhotoActions.retrieveAllPhotos();
+    PhotoActions.retrieveAllPhotos(this.state.scrollCount);
+    this.infiniteScrollToken = window.addEventListener("scroll", this.addNewPhotos);
+ },
+
+ addNewPhotos: function() {
+   if (window.innerHeight + window.scrollY >= document.body.offsetHeight && PhotoStore.all().length < PhotoStore.photoCount() ) {
+     this.state.scrollCount += 1;
+     PhotoActions.retrieveAllPhotos(this.state.scrollCount);
+
+   }
  },
 
   componentWillUnmount: function() {

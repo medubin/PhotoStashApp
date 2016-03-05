@@ -13,6 +13,7 @@ var PhotoIndexItem = React.createClass({
       <li className='photo-index-item'>
 
         <div className='photo-top'>
+          <img src={this.props.photo.user.profile_picture} width='50px' height= '50px' className='photo-feed-profile-picture' />
           <UserPageLink username={this.props.photo.user.username} className='photo-top-user-link'/>
         </div>
 

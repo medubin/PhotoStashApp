@@ -1,5 +1,6 @@
-# json.partial! 'photo', collection: @photos, as: :photo
+#
 
-json.partial! 'photo', collection: @all_photos, as: :photo
-
-# followed photos, and put in controller
+json.extract!(@photo_count, :count)
+json.photos do
+  json.partial! 'photo', collection: @all_photos, as: :photo
+end
