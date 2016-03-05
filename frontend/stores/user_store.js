@@ -3,7 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 
 var UserStore = new Store(AppDispatcher);
 var _currentUser = {};
-var _selectedUser = {username:'', followed: []};
+var _selectedUser = {username:'', followed: [], photos: []};
 
 UserStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
@@ -35,8 +35,46 @@ UserStore.__onDispatch = function(payload) {
     case 'UPDATE_CURRENT_USER':
       this.updateCurrentUser(payload.currentUser);
       this.__emitChange();
-  }
+      break;
 
+    case 'LIKED_PHOTO':
+      this.likePhoto(payload.like);
+      this.__emitChange();
+      break;
+    case 'UNLIKED_PHOTO':
+      this.unlikePhoto(payload.unlike);
+      this.__emitChange();
+      break;
+    case 'POSTED_COMMENT':
+      this.commentOnPhoto(payload.comment);
+      this.__emitChange();
+      break;
+    case 'DELETED_COMMENT':
+      this.deleteComment(payload.uncomment);
+      this.__emitChange();
+      break;
+  }
+};
+
+
+UserStore.likePhoto = function(like) {
+  var likedPhoto = _findPhotoByIdInSelectedUser(like.photo_id);
+  _selectedUser.photos[likedPhoto].likes_count += 1;
+};
+
+UserStore.unlikePhoto = function(unlike) {
+  var unlikedPhoto = _findPhotoByIdInSelectedUser(unlike.photo_id);
+  _selectedUser.photos[unlikedPhoto].likes_count -= 1;
+};
+
+UserStore.commentOnPhoto = function(comment) {
+  var commentedPhoto = _findPhotoByIdInSelectedUser(comment.photo_id);
+  _selectedUser.photos[commentedPhoto].comments_count += 1;
+};
+
+UserStore.deleteComment = function(uncomment) {
+  var uncommentedPhoto = _findPhotoByIdInSelectedUser(uncomment.photo_id);
+  _selectedUser.photos[uncommentedPhoto].comments_count -= 1;
 };
 
 var _findFollowIndexByUsernameInCurrentUser = function(username) {
@@ -93,7 +131,6 @@ UserStore.resetSelectedUser = function(user) {
   //TODO 3/5/15 12:25 I DON'T KNOW WHY I HAD I NEED TO REMOVE
   // if(_selectedUser.username !== user.username){
     _selectedUser = user;
-    console.log(user);
     this.__emitChange();
   // }
 

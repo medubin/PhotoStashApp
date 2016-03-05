@@ -41,9 +41,11 @@ var UserPage = React.createClass({
   },
 
   addNewPhotos: function() {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && UserStore.selectedUser().photos.length < UserStore.selectedUser().photos_count ) {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight
+        && UserStore.selectedUser().photos.length < UserStore.selectedUser().photos_count ) {
       this.state.scrollCount += 1;
-      UserActions.retrieveSelectedUser({username: this.props.routeParams.username}, this.state.scrollCount);
+      UserActions.retrieveSelectedUser(
+          {username: this.props.routeParams.username}, this.state.scrollCount);
     }
   },
 
@@ -55,10 +57,6 @@ var UserPage = React.createClass({
    this.setState({selectedUser: UserStore.selectedUser()});
  },
 
-
-
-
-
  createPhotos: function() {
    return this.state.selectedUser.photos.map(function(photo, idx) {
      return ( <UserPhotoItem key={idx} photo={photo} toggle={this._toggleModal} that={this} /> );
@@ -69,7 +67,9 @@ var UserPage = React.createClass({
     return (
       <div className='user-page-landing'>
           <div className='user-page-top'>
-            <UserProfilePicture selectedUser={this.state.selectedUser} currentUser={this.props.currentUser}/>
+            <UserProfilePicture selectedUser={this.state.selectedUser}
+                                currentUser={this.props.currentUser}/>
+
             <h3 className='username-user-page'>{this.state.selectedUser.username}</h3>
 
             <FollowUserButton
