@@ -52,7 +52,7 @@ var SearchBar = React.createClass({
 
   render: function() {
     return (
-      <li className='headerItem search-bar-container'>
+      <span className='headerItem search-bar-container'>
         <input type='text'
           id='header-search-input'
           placeholder='Search...'
@@ -61,7 +61,7 @@ var SearchBar = React.createClass({
           >
         </input>
         {this.renderSearchResults()}
-      </li>
+      </span>
     );
   }
 

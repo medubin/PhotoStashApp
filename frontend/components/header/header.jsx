@@ -22,12 +22,12 @@ userLinkOrLogout: function() {
 
   render: function() {
     return (
-      <ul className='header'>
+      <div className='header'>
         <Logo/>
         <PhotoUploader currentUser ={this.props.currentUser}/>
         <SearchBar location={this.props.location}/>
         {this.userLinkOrLogout()}
-      </ul>
+      </div>
     );
   }
 

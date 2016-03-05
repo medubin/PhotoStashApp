@@ -23,8 +23,8 @@ _toggleModal: function() {
 
   render: function() {
     return (
-      <li className='headerItem'>
-        <img alt="Upload" src="/assets/Photo_uploader.png" width='25' onClick={this._toggleModal} />
+      <span className='headerItem'>
+        <img alt="Upload" src="/assets/Photo_uploader.png" width='25' onClick={this._toggleModal} className='photo-upload'/>
         <Modal
           isOpen={this.state.modalShown}
           onRequestClose={this._toggleModal}
@@ -32,7 +32,7 @@ _toggleModal: function() {
           >
             <PhotoForm toggle={this._toggleModal}/>
         </Modal>
-      </li>
+      </span>
     );
   }
 });
