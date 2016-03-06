@@ -20,6 +20,8 @@ var PhotoIndexItem = React.createClass({
           <UserPageLink username={this.props.photo.user.username}
                         className='photo-top-user-link'/>
 
+                      <span className='photo-top-post-time'>{this.props.photo.time}</span>
+
         </div>
 
         <div className='photo-image'>

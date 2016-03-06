@@ -24,7 +24,7 @@ _toggleModal: function() {
   render: function() {
     return (
       <span className='headerItem'>
-        <img alt="Upload" src="/assets/Photo_uploader.png" width='25' onClick={this._toggleModal} className='photo-upload'/>
+        <img alt="Upload" src="/assets/Photo_uploader_small.png" width='25' onClick={this._toggleModal} className='photo-upload'/>
         <Modal
           isOpen={this.state.modalShown}
           onRequestClose={this._toggleModal}

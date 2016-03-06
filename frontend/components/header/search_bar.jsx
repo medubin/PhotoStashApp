@@ -2,23 +2,14 @@ var React = require('react');
 // var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchActions = require('../../actions/search_actions');
 var SearchResults = require('./search_results');
-var History = require('react-router').History;
+
 ////
 
 var SearchBar = React.createClass({
-  mixins: [History],
+
   getInitialState: function() {
     // this.preventFirstUpdate = true;
     return( {searchPartial: ''});
-  },
-
-  componentDidUpdate: function() {
-
-    // } else if (!this.preventFirstUpdate){
-      // SearchActions.clearSearch();
-    // } else {
-      // this.preventFirstUpdate = false;
-
   },
 
   _searchChanged: function(e) {
@@ -60,7 +51,7 @@ var SearchBar = React.createClass({
           onChange={this._searchChanged}
           >
         </input>
-        {this.renderSearchResults()}
+          {this.renderSearchResults()}
       </span>
     );
   }

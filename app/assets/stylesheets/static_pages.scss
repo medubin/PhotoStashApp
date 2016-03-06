@@ -124,7 +124,7 @@ button:focus
 
 #header-title {
   font-family: 'Brush Script MT', cursive;
-	font-size: 24px;
+	font-size: 30px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
@@ -132,7 +132,7 @@ button:focus
   margin-left: 10%;
   position:absolute;
   left: 10%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   // top: -334px;
 }
 
@@ -161,11 +161,14 @@ button:focus
 
 
 #header-logout, .header .link-wrapper{
-  position:fixed;
-  left: 65%;
+  // position:fixed;
+  left: 75%;
   transform: translate(-50%, -50%);
   top: 39px;
+}
 
+.header .link-wrapper{
+  position: fixed;
 }
 
 
@@ -439,7 +442,14 @@ button:focus
 .photo-top .user-link {
   position: relative;
   top: 25%;
+}
 
+.photo-top-post-time {
+  float: right;
+  transform: translate( -100% ,100%);
+  color: gray;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 .caption-user-link {

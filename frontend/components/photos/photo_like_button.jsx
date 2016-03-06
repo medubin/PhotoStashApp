@@ -24,9 +24,9 @@ var PhotoLikeButton = React.createClass({
 
   _setIcon: function() {
     if (this._userLikedPhoto()) {
-      return (<img alt="Upload" src="/assets/moustache-monocle-red-small" width='50'/>);
+      return (<img alt="Upload" src="/assets/stache-heart-red-small" width='50'/>);
     } else {
-      return (<img alt="Upload" src="/assets/moustache-monocle-clear-small" width='50'/>);
+      return (<img alt="Upload" src="/assets/stache-heart-black-small" width='50'/>);
     }
   },
 

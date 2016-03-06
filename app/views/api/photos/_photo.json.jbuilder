@@ -1,4 +1,4 @@
-json.extract!(photo, :user_id, :image, :caption, :id)
+json.extract!(photo, :user_id, :image, :caption, :id, :time)
 
 json.user do
   json.username photo.user.username

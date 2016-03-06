@@ -23,6 +23,9 @@ var PhotoForm = React.createClass({
       // max_image_height: 1080,
       // max_image_width: 1080,
       cropping: 'server',
+      // width: 1080,   #POSSIBLY NECESSARY
+      // height: 1080,
+      crop: "fill",
       cropping_aspect_ratio: 1,
       cloud_name: window.CLOUD_NAME,
       upload_preset: window.UPLOAD_PRESET},

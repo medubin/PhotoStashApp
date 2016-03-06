@@ -91,7 +91,7 @@ var _findPhotoByIdInSelectedUser = function(id) {
 
 UserStore.addPhoto = function(photo) {
   if (_selectedUser.username === photo.user.username) {
-    _selectedUser.photos.push(photo);
+    _selectedUser.photos.shift(photo);
     this.__emitChange();
   }
 };

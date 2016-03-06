@@ -50,7 +50,8 @@ var ApiUtil = {
       url: 'session',
       method: 'delete',
       success: function() {
-        window.location.reload();
+        // window.location.reload();
+        window.location.href = '/session/new';
         callback();
       }
     });
