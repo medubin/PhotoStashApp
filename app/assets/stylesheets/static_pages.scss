@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  font-family: 'Lustria';
+}
+
 ul {
   list-style: none;
 }
@@ -108,7 +112,7 @@ button:focus
 .header span {
   // margin-left:auto;
   // margin-right:auto;
-  font-family: sans-serif;
+  // font-family: sans-serif;
   font-size: 16px;
   color: #135582;
   font-weight: 200;
@@ -123,7 +127,7 @@ button:focus
 
 
 #header-title {
-  font-family: 'Brush Script MT', cursive;
+
 	font-size: 30px;
 	font-style: normal;
 	font-variant: normal;
@@ -134,6 +138,10 @@ button:focus
   left: 10%;
   transform: translate(-50%, 0%);
   // top: -334px;
+}
+
+.header-title-link {
+    font-family: 'Brush Script MT', cursive !important;
 }
 
 
@@ -417,7 +425,7 @@ button:focus
 
 .photo-feed-users-who-liked {
   display: block;
-  min-height: 22px;
+  min-height: 23px;
 }
 
 .photo-input-fields {

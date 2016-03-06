@@ -11,6 +11,8 @@ var UserPageLink = require('../links/user_page_link');
 var PhotoLikeButton = require('../photos/photo_like_button');
 var PhotoCommentInput = require('../photos/photo_comment_input');
 var DeleteCommentStyle = require('../../modal_styles/delete_comment_style');
+var UserProfilePicture = require('../links/user_profile_picture');
+
 
 var Modal = require('react-modal');
 
@@ -75,6 +77,10 @@ var ShowPhotoModalContent = React.createClass({
 
         <div className='user-page-photo-show-right'>
           <div className='user-page-photo-show-username'>
+            <UserProfilePicture class='photo-feed-profile-picture'
+                                size='50px'
+                                user={this.state.shownPhoto.user}/>
+
             <UserPageLink username={this.state.shownPhoto.user.username} callback={this.props.toggle} className='photo-top-user-link'/>
           </div>
 
