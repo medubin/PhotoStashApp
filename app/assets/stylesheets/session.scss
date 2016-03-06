@@ -4,10 +4,12 @@
 //
 //
 
+
+
 .sign-in-box, .sign-up-box {
   display: block;
   background-color: #fff;
-  height: 320px;
+  height: 330px;
   width: 450px;
   border: 1px #EEEFEF solid;
   text-align: center;
@@ -19,8 +21,12 @@
 }
 
 .sign-up-box {
-  height: 380px;
+  height: 390px;
   // align
+}
+
+.auth-error {
+  color: #135582;
 }
 
 

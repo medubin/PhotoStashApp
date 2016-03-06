@@ -1,6 +1,6 @@
   <section class='sign-up-box'>
   <h1 class='logo'> Photostash </h1>
-  <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
+  <span class='auth-error'><%= flash[:errors].join("<br>").html_safe if flash[:errors] %></span>
   <form action='<%=users_url%>' method="post">
     <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
 
@@ -10,8 +10,8 @@
              value='<%=@user.username%>'
              class='username-input'
              placeholder= 'Username'
-             required
-             title='Username cannot be blank'>
+             pattern=".{1,15}" required title="Username must be between 1 and 15 characters">
+
     </article>
 
 
@@ -48,10 +48,52 @@
              value="Sign Up",
              class='submitbutton'>
     </article>
-  
+
     <article class='yes-account'>
     Already have an account? <%=  link_to 'Log in', new_session_url %>
     </article>
 
   </form>
 </section>
+
+
+
+
+
+
+<script>
+  var backgroundImage=new Array()
+  backgroundImage[0]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=10"
+  backgroundImage[1]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=301"
+  backgroundImage[2]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=307"
+  backgroundImage[3]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=309"
+  backgroundImage[4]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=314"
+  backgroundImage[5]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=315"
+  backgroundImage[6]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=316"
+  backgroundImage[7]="https://unsplash.it/" +2000 + "/"+ 1200 +"/?image=319"
+
+  var pathToImages=new Array()
+  for (i = 0; i < backgroundImage.length; i++){
+    pathToImages[i]=new Image()
+    pathToImages[i].src=backgroundImage[i]
+  }
+  var currentImageIndex = 1
+
+  function rotateImage(){
+    document.body.background = pathToImages[0].src
+    window.setInterval(function() {
+      if (currentImageIndex <backgroundImage.length-1)
+        currentImageIndex++
+      else
+        currentImageIndex = 0
+        pathToImages[currentImageIndex] = new Image()
+        pathToImages[currentImageIndex].src=backgroundImage[currentImageIndex]
+
+      document.body.background = pathToImages[currentImageIndex].src
+    }, 8000)
+}
+
+if (document.all||document.getElementById)
+
+  window.onload=new Function("rotateImage()")
+</script>

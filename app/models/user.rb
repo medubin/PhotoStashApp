@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
-  validates :username, length: {maximum: 12}
+  validates :username, length: {maximum: 15}
   attr_reader :password
 
   has_many :photos, -> { order(:created_at => :desc) }
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
 
 
   def self.search(query)
-    where("username like ?", "%#{query}%")
+    where("username like ?", "%#{query}%").limit(10)
   end
 
   def self.find_by_credentials(username, password)

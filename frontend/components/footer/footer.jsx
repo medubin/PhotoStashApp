@@ -6,7 +6,7 @@ var Footer = React.createClass({
   render: function() {
     return (
       <div className ='footer'>
-        ABOUT ME AND CONTACT INFORMATION GOES HERE
+        <img src='assests/GitHub-Mark-32px.png'/>
       </div>
     );
   }

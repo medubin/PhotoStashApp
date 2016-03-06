@@ -46,7 +46,7 @@ var SearchBar = React.createClass({
       <span className='headerItem search-bar-container'>
         <input type='text'
           id='header-search-input'
-          placeholder='Search...'
+          placeholder='🔍 Search...'
           value={this.state.searchPartial}
           onChange={this._searchChanged}
           >
