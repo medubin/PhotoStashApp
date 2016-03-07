@@ -37,15 +37,15 @@ var CommentActions = require('./actions/comment_actions');
 
 
 //Testing
-window.PhotoStore = PhotoStore;
-window.PhotoActions = PhotoActions;
-window.UserActions = UserActions;
-window.ApiUtil = ApiUtil;
-window.FollowUsersActions = FollowUsersActions;
-window.SearchActions = SearchActions;
-window.SearchStore = SearchStore;
-window.LikeActions = LikeActions;
-window.CommentActions = CommentActions;
+// window.PhotoStore = PhotoStore;
+// window.PhotoActions = PhotoActions;
+// window.UserActions = UserActions;
+// window.ApiUtil = ApiUtil;
+// window.FollowUsersActions = FollowUsersActions;
+// window.SearchActions = SearchActions;
+// window.SearchStore = SearchStore;
+// window.LikeActions = LikeActions;
+// window.CommentActions = CommentActions;
 
 var routes = (
   <Route component={App} path = '/'>
