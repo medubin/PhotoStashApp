@@ -15,16 +15,20 @@ var UserProfilePicture = React.createClass({
   },
 
 
-
   createProfilePicture: function() {
+    var currentUserClass = '';
+    if (this.props.currentUser.username === this.props.selectedUser.username) {
+      currentUserClass = ' profile-pic-current-user';
+    }
+
     if(this.props.selectedUser.picture) {
       return(  <img src={this.props.selectedUser.picture}
                     onClick={this._toggleModal}
-                    className='user-page-profile-picture' />);
+                    className={'user-page-profile-picture' + currentUserClass} />);
     } else {
       return(  <img src='assets/Default_profile_pic.png'
                     onClick={this._toggleModal}
-                    className='user-page-profile-picture' />);
+                    className={'user-page-profile-picture' + currentUserClass} />);
     }
 
 

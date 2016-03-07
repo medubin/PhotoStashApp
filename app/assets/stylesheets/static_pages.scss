@@ -229,7 +229,17 @@ button:focus
   height: 28px;
   z-index: 10;
   width: 101%;
-  border-top: 1px solid black;
+  border-top: 1px solid #EEEFEF;
+}
+
+.linkedinlink{
+  margin-left:5%;
+  cursor: pointer;
+}
+
+.githublink {
+  margin-right:5%;
+  cursor: pointer;
 }
 
 
@@ -803,4 +813,9 @@ button:focus
 .user-page-photo-show-left:hover .user-page-photo-show-delete {
   display: inline;
 
+}
+
+
+.profile-pic-current-user {
+  cursor: pointer;
 }

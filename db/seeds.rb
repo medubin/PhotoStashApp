@@ -13,17 +13,23 @@ usernames.each_with_index do |username, idx|
   User.create(username: username, password: password, picture: 'https://unsplash.it/1080/1080?image=' + (500 + idx).to_s)
 end
 
+photoblacklist = [489, 561, 597]
+
+
 User.all.each_with_index do |user, idx|
   15.times do |i|
-    photo = Photo.new(user_id: user.id, image: 'https://unsplash.it/1080/1080?image=' + (499 + idx + i).to_s, caption: Faker::Hipster.sentence)
-    photo.created_at = (rand*10000).minutes.ago
-    photo.save
+    unless photoblacklist.include?(474 + (idx * 15) + i)
+      photo = Photo.new(user_id: user.id, image: 'https://unsplash.it/1080/1080?image=' + (474 + (idx * 15) + i).to_s, caption: Faker::Hipster.sentence)
+      photo.created_at = (rand*10000).minutes.ago
+      photo.save
+    end
 
   end
   5.times do |i|
     Follow.create(follower_id: user.id, followed_id: (user.id + i) % User.all.length )
   end
 end
+
 
 
 
