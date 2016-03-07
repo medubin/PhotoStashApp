@@ -17,7 +17,7 @@ class Api::LikesController < ApplicationController
       @like.destroy
       render :show
     else
-      render json: @like.errors.full_messages, status: 422
+      render json: ["can't unlike"], status: 422
     end
   end
 

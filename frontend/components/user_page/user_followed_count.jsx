@@ -15,15 +15,7 @@ var UserFollowedCount = React.createClass({
 
 toggleFollowedList: function() {
   this.setState({followedShown: !this.state.followedShown });
-
 },
-
-
-  //
-  // componentWillReceiveProps: function(newProps) {
-  //   console.log(newProps.followCount);
-  //
-  // },
 
   createFollowingButton: function() {
     return (this.props.selectedUser.followed || this.props.selectedUser.followed === 0)

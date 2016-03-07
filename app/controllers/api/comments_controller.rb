@@ -5,7 +5,7 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render :show
     else
-      render json: @comment.errors.full_messages, status: 422
+      render json: ["can't create comment"], status: 422
     end
   end
 
@@ -16,7 +16,7 @@ class Api::CommentsController < ApplicationController
       @comment.destroy
       render :show
     else
-      render json: @comment.errors.full_messages, status: 422
+      render json: ["can't delete comment"], status: 422
     end
   end
 

@@ -1,5 +1,4 @@
   <section class='sign-in-box'>
-    <!-- <img src='/assets/logo-blue.png' width='60px' class='front-page-logo' /> -->
     <h1 class='logo'> Photostash </h1>
       <span class='auth-error'><%= flash[:errors].join("<br>").html_safe if flash[:errors] %></span>
 
@@ -61,7 +60,7 @@
     pathToImages[i]=new Image()
     pathToImages[i].src=backgroundImage[i]
   }
-  var currentImageIndex = 1
+  var currentImageIndex = 0
 
   function rotateImage(){
     document.body.background = pathToImages[0].src

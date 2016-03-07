@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-usernames = %w(demo-account matt steven bob georgina tyrion doglover86 catscatscats cool-guy38 joe samantha sarah chuck brian nature ziggy-stardust ethel victor elise ibrahim toy dion rick kamryn dustin darren dejon kole robbie dennis lawrence_ko aleia arden kylie maria pinkie waino_rohan rosanna foster.fritsch amely joanne mertie chris_towne alene velva lloyd mitchel america lucile efren bobbie shaun geo_west adah alanis )
+usernames = %w(demo-account matt steven bob georgina tyrion doglover86 catscatscats cool-guy38 joe samantha sarah chuck brian nature ziggy-stardust ethel victor elise ibrahim toy dion rick kamryn dustin darren dejon kole robbie dennis lawrence_ko aleia arden kylie maria pinkie waino_rohan rosanna foster.fritsch amely joanne mertie chris_towne alene velva lloyd mitchel america lucile efren bobbie shaun )
 password = '123456'
 
 comments = [
@@ -111,6 +111,26 @@ comments = [
   "They look like they are old pals shaking hands. Adorable !",
   "Outstanding!",
   "LOVE this! Thanks for sharing",
+  "Oh my! Gorgeous view!",
+  "Dear god, it never stops.",
+  "Don't stop get it get it!",
+  "The puns or the funs?",
+  "Makes me want to go back to the river!!",
+  "So much love for this guy",
+  "I am the ball!",
+  "trash",
+  "Also, does anyone know who wrote or directed this?",
+  "You working for Vogue now?",
+  "Great pictures Cory!! Thanks for the email I enjoy every time I sit down with the computer.",
+  "Wow! She is hogging up all the cute! I almost (...almost..) feel bad for the kids that didn't get any being born near her because she got it all. You all look great and looks like you are having a great time!",
+  "totally think we need these in our lives!!",
+  "Thanks everyone for the awesome birthday wishes. I got to celebrate 51 on an eight-day paddle down the Rio Grande in south Texas. It was an awesome trip.",
+  "Sorry to hear! Good vibes your way, babe.",
+  "YES. THIS. ALL OF THIS. Down with cereal! No thank you please.",
+  "Is it weird that I feel like I need this?",
+  "Yes. The difference between need and want.",
+  "Im so glad you found this!",
+  "I found my own sunshine today"
 
 
 
