@@ -30,15 +30,12 @@ var PhotoForm = React.createClass({
       cloud_name: window.CLOUD_NAME,
       upload_preset: window.UPLOAD_PRESET},
       function(error, results){
-      if(!error){
-        this.setState({image: results[0].url});
-      }
+        if(!error){
+          this.setState({image: results[0].url});
+        }
     }.bind(this));
   },
 
-  // onChangeOfCaption: function(e) {
-  //   this.setState({caption:e.target.value});
-  // },
 
   previewPhoto: function() {
     if (this.state.image) {

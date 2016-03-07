@@ -3,6 +3,11 @@ class Api::PhotosController < ApplicationController
     all_user_ids = current_user.followed.pluck(:id, :picture) + [current_user.id]
     @photo_count = {count: Photo.where(user_id: all_user_ids).count}
     @all_photos = Photo.where(user_id: all_user_ids).includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc).limit(10 * params[:count].to_i)
+
+    # do this if there are no photos from users the person is follow / they are following no users
+    if @all_photos.empty?
+       @all_photos = Photo.all.includes(:user_likes, :user, :comments, :commenters).order(created_at: :desc).limit(10 * params[:count].to_i)
+    end
     render :index
   end
 
