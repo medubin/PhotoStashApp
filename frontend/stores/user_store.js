@@ -59,12 +59,12 @@ UserStore.__onDispatch = function(payload) {
 
 UserStore.likePhoto = function(like) {
   var likedPhoto = _findPhotoByIdInSelectedUser(like.photo_id);
-  _selectedUser.photos[likedPhoto].likes_count += 1;
+  if (likedPhoto) _selectedUser.photos[likedPhoto].likes_count += 1;
 };
 
 UserStore.unlikePhoto = function(unlike) {
   var unlikedPhoto = _findPhotoByIdInSelectedUser(unlike.photo_id);
-  _selectedUser.photos[unlikedPhoto].likes_count -= 1;
+  if (unlikedPhoto) _selectedUser.photos[unlikedPhoto].likes_count -= 1;
 };
 
 UserStore.commentOnPhoto = function(comment) {
