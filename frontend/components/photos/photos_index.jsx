@@ -36,6 +36,7 @@ var PhotosIndex = React.createClass({
 
   componentWillUnmount: function() {
     this.photoToken.remove();
+    window.removeEventListener('scroll',this.addNewPhotos, false);
  },
 
   _onChange: function() {

@@ -51,6 +51,8 @@ var UserPage = React.createClass({
 
   componentWillUnmount: function() {
     this.selectedUserToken.remove();
+    window.removeEventListener('scroll',this.addNewPhotos, false);
+    // this.infiniteScrollToken.removeEventListener();
   },
 
   _onChangeSelectedUser: function() {
