@@ -146,7 +146,7 @@ usernames.each_with_index do |username, idx|
   User.create(username: username, password: password, picture: 'https://unsplash.it/1080/1080?image=' + (500 + idx).to_s)
 end
 
-photoblacklist = [205,224, 226, 245, 246, 262, 285, 286, 303, 359, 414, 422, 462 489, 561,578, 587,589, 597, 636, 895, 1091]
+photoblacklist = [205,224, 226, 245, 246, 262, 285, 286, 303, 359, 414, 422, 462, 489, 561,578, 587,589, 597, 636, 895, 1091]
 
 
 User.all.each_with_index do |user, idx|
