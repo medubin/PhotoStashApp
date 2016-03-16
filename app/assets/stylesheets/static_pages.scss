@@ -743,6 +743,10 @@ button:focus
   display: none;
 
 }
+.user-page-photo-show {
+  display: flex;
+}
+
 
 .user-page-show-photo-left {
   float: left;
@@ -781,6 +785,11 @@ button:focus
 }
 .user-page-photo-show-input .comment-box {
   width: 285px;
+}
+
+.user-page-photo-show-input {
+  display: flex;
+  align-items: center;
 }
 
 .user-page-photo-show-delete {
