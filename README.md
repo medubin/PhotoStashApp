@@ -2,7 +2,7 @@
 *Ruby, Ruby on Rails, Javascript, React, Flux*
 
 
-[Visit Photostash](www.photostash.space)
+[Visit Photostash](https://www.photostash.space)
 
 Photostash is a web application inspired by Instagram and built using Ruby on Rails and React.js.
 
@@ -11,7 +11,6 @@ To get started, log into the demo account and look for the camera icon in the he
 
 ##Features
 
-![Photostash](http://res.cloudinary.com/photostash/image/upload/v1457894902/user-page_oveijd.jpg)
 
 Photostash currently allows users to:
 
