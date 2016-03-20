@@ -6,7 +6,7 @@ var PhotoUploadFormStyle = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    height                : '340px',
+    height                : '385px',
     width                 : '300px',
   },
   overlay : {

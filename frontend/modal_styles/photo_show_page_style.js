@@ -6,7 +6,7 @@ var PhotoShowPageStyle = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    height                : '600px',
+    height                : 'auto',
     width                 : '935px',
     padding               : '0px',
     border                : '0px'
